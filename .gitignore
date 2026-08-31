@@ -1,0 +1,10 @@
+# Local development
+server.py
+leads.json
+leads.txt
+__pycache__/
+.DS_Store
+*.pyc
+
+# Stitch reference folders
+stitch_andrea_rodrigues_design_studio/
