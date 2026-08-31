@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marta &amp; Jerónimo — Invitación de Boda</title>
+  <meta name="description" content="Nos casamos el 12 de abril de 2027. Acompáñanos a celebrar nuestro amor en un día inolvidable." />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Marta &amp; Jerónimo — Invitación de Boda" />
+  <meta property="og:description" content="12 de Abril de 2027. Descubre todos los detalles y confirma tu asistencia." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Envelope Opening Screen ("OPEN THIS") -->
+  <div class="envelope-screen" id="envelopeScreen">
+    <div class="envelope-ambient-glow"></div>
+    <div class="envelope-container">
+      <div class="envelope-shadow"></div>
+      <div class="envelope" id="envelopeBox">
+        <!-- Back interior of the envelope -->
+        <div class="envelope-back"></div>
+
+        <!-- The letter card that slides out -->
+        <div class="envelope-letter" id="envelopeLetter">
+          <div class="letter-inner">
+            <span class="letter-monogram">M <span class="gold-amp">&amp;</span> J</span>
+            <p class="letter-title">Estáis invitados</p>
+            <p class="letter-names">Marta &amp; Jerónimo</p>
+            <div class="letter-divider"></div>
+            <p class="letter-date">12 . 04 . 2027</p>
+          </div>
+        </div>
+
+        <!-- Front pocket folds of envelope -->
+        <div class="envelope-pocket"></div>
+
+        <!-- Top Triangular Flap -->
+        <div class="envelope-flap" id="envelopeFlap"></div>
+
+        <!-- Wax Seal button with 'OPEN THIS' -->
+        <div class="envelope-seal-wrapper" id="envelopeSealBtn" role="button" tabindex="0" aria-label="Abrir invitación">
+          <div class="seal-pulse-glow"></div>
+          <div class="envelope-seal-disc">
+            <img src="assets/wax_seal.png" alt="Sello de cera dorada" class="envelope-seal-img" />
+          </div>
+          <div class="open-this-tag">
+            <span class="open-this-text">OPEN THIS</span>
+            <span class="open-this-sub">Toca para abrir</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="envelope-prompt-text">Haz clic en el sello para abrir la invitación</p>
+    </div>
+  </div>
+  <div class="audio-control-wrapper" id="audioControlWrapper" title="Música romántica de fondo">
+    <button id="musicToggleBtn" class="audio-btn" aria-label="Reproducir o pausar música">
+      <span class="audio-waves" id="audioWaves">
+        <span></span><span></span><span></span><span></span>
+      </span>
+      <svg id="musicIconPlay" class="music-icon" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="musicIconPause" class="music-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+    <span class="audio-tooltip">Música de fondo</span>
+  </div>
+
+  <!-- Minimal Luxury Navigation -->
+  <nav class="nav-bar" id="mainNav">
+    <div class="nav-container">
+      <a href="#hero" class="nav-monogram">M <span class="gold-amp">&amp;</span> J</a>
+      <ul class="nav-links">
+        <li><a href="#mensaje">Mensaje</a></li>
+        <li><a href="#detalles">Lugares</a></li>
+        <li><a href="#itinerario">Itinerario</a></li>
+        <li><a href="#historia">Nuestra Historia</a></li>
+        <li><a href="#regalos">Lista de Deseos</a></li>
+        <li><a href="#rsvp" class="nav-rsvp-btn">Confirmar</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="hero-bg-media">
+      <img src="assets/hero.png" alt="Marta y Jerónimo retrato nupcial vintage" class="hero-image" id="heroImage" />
+      <div class="hero-gradient-overlay"></div>
+      <div class="hero-vignette"></div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="gold-line-small"></span>
+        <span class="eyebrow-text">Nos Casamos</span>
+        <span class="gold-line-small"></span>
+      </div>
+      
+      <h1 class="hero-title">
+        Marta <span class="gold-amp">&amp;</span> Jerónimo
+      </h1>
+      
+      <div class="hero-date-wrapper">
+        <span class="hero-date">12 . 04 . 2027</span>
+        <span class="hero-location">Madrid</span>
+      </div>
+
+      <!-- Quick Calendar Action -->
+      <div class="hero-actions">
+        <button id="addToCalendarBtn" class="btn-ghost-gold">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Reservar en Calendario
+        </button>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#mensaje" class="scroll-indicator" aria-label="Desplazarse al mensaje">
+        <span class="scroll-mouse">
+          <span class="scroll-wheel"></span>
+        </span>
+        <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Wrapper -->
+  <main class="main-content">
+
+    <!-- Welcoming Message Section -->
+    <section class="section message-section" id="mensaje">
+      <div class="container">
+        <div class="velvet-card message-card">
+          <!-- Top Wax Seal -->
+          <div class="wax-seal-badge">
+            <img src="assets/wax_seal.png" alt="Sello de cera dorada floral" class="wax-seal-img" />
+          </div>
+
+          <p class="card-pretitle">Con inmensa alegría</p>
+          <h2 class="card-script-title">Bienvenidos a nuestro gran día</h2>
+          
+          <div class="gold-divider">
+            <span class="divider-diamond">◆</span>
+          </div>
+
+          <p class="message-paragraph">
+            El destino nos unió y el amor nos ha traído hasta aquí. Nos hace muchísima ilusión compartir con vosotros el día más importante de nuestras vidas. 
+          </p>
+          <p class="message-paragraph">
+            Vuestra compañía, vuestras sonrisas y vuestro cariño serán el mejor de los regalos en esta nueva etapa que comenzamos juntos.
+          </p>
+
+          <div class="message-signature">
+            <span>Con todo nuestro cariño,</span>
+            <strong class="signature-names">Marta &amp; Jerónimo</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="section countdown-section" id="contador">
+      <div class="container">
+        <div class="countdown-card">
+          <h3 class="countdown-eyebrow">La cuenta atrás para el Sí, Quiero</h3>
+          
+          <div class="countdown-timer" id="countdownTimer">
+            <div class="time-block">
+              <span class="time-number" id="days">--</span>
+              <span class="time-label">Días</span>
+            </div>
+            <span class="time-separator">:</span>
+            <div class="time-block">
+              <span class="time-number" id="hours">--</span>
+              <span class="time-label">Horas</span>
+            </div>
+            <span class="time-separator">:</span>
+            <div class="time-block">
+              <span class="time-number" id="minutes">--</span>
+              <span class="time-label">Min</span>
+            </div>
+            <span class="time-separator">:</span>
+            <div class="time-block">
+              <span class="time-number" id="seconds">--</span>
+              <span class="time-label">Seg</span>
+            </div>
+          </div>
+
+          <p class="countdown-footer-text">Lunes, 12 de Abril de 2027 a las 12:00 H</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Details Section: Ceremony & Celebration -->
+    <section class="section details-section" id="detalles">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="gold-tag">Ubicaciones y Horarios</span>
+          <h2 class="section-title">Dónde &amp; Cuándo</h2>
+          <div class="gold-divider">
+            <span class="divider-diamond">◆</span>
+          </div>
+        </div>
+
+        <div class="cards-grid-two">
+          <!-- Ceremony Card (Cathedral Arch Top) -->
+          <div class="stationery-card card-ceremony">
+            <div class="seal-header">
+              <div class="wax-seal-badge-sm">
+                <img src="assets/wax_seal.png" alt="Sello de cera dorada" class="wax-seal-img" />
+              </div>
+            </div>
+
+            <div class="church-illustration-box">
+              <img src="assets/church.png" alt="Ilustración a pluma de la iglesia de San Miguel" class="church-illustration" />
+            </div>
+
+            <div class="stationery-content">
+              <h3 class="stationery-title">La Ceremonia</h3>
+              <p class="stationery-datetime">12 DE ABRIL 2027 | 12:00 H</p>
+              
+              <div class="stationery-address">
+                <strong>Parroquia de San Miguel Arcángel</strong>
+                <span>Plaza de la Iglesia, s/n</span>
+                <span>28005 Madrid, España</span>
+              </div>
+
+              <div class="stationery-actions">
+                <button class="btn-stationery open-map-btn" data-location="ceremonia">
+                  <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                  Ver Mapa &amp; Cómo Llegar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Celebration Card (Cathedral Arch Bottom) -->
+          <div class="stationery-card card-celebration">
+            <div class="celebration-badge-top">
+              <span class="celebration-stars">✦ ✦ ✦</span>
+            </div>
+
+            <div class="stationery-content">
+              <h3 class="stationery-title">La Celebración</h3>
+              <p class="stationery-datetime">A CONTINUACIÓN DE LA CEREMONIA</p>
+              
+              <div class="stationery-address">
+                <strong>Finca Los Rosales</strong>
+                <span>Camino del Cortijo, km 4</span>
+                <span>28220 Majadahonda, Madrid</span>
+              </div>
+
+              <p class="celebration-note">
+                Cóctel de bienvenida en los jardines, banquete en el pabellón de cristal y fiesta hasta el amanecer.
+              </p>
+
+              <div class="stationery-actions">
+                <button class="btn-stationery open-map-btn" data-location="celebracion">
+                  <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                    <circle cx="12" cy="9" r="2.5"/>
+                  </svg>
+                  Ver Mapa &amp; Cómo Llegar
+                </button>
+              </div>
+            </div>
+
+            <div class="seal-footer">
+              <div class="wax-seal-badge-sm">
+                <img src="assets/wax_seal.png" alt="Sello de cera dorada" class="wax-seal-img" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Itinerary / Chronogram Section -->
+    <section class="section itinerary-section" id="itinerario">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="gold-tag">Planificación del Gran Día</span>
+          <h2 class="section-title">El Itinerario</h2>
+          <div class="gold-divider">
+            <span class="divider-diamond">◆</span>
+          </div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-line"></div>
+
+          <!-- Step 1 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-time">11:30 H</span>
+              <h4 class="timeline-item-title">Llegada de Invitados</h4>
+              <p class="timeline-desc">Recepción en el atrio de la Parroquia de San Miguel y bienvenida.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot active-dot"></span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-time">12:00 H</span>
+              <h4 class="timeline-item-title">La Ceremonia Religiosa</h4>
+              <p class="timeline-desc">El instante más emotivo: el intercambio de votos y anillos.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-time">14:00 H</span>
+              <h4 class="timeline-item-title">Cóctel de Bienvenida</h4>
+              <p class="timeline-desc">Aperitivos selectos, cortador de jamón y música en vivo en los jardines de Finca Los Rosales.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-time">15:45 H</span>
+              <h4 class="timeline-item-title">Banquete Nupcial</h4>
+              <p class="timeline-desc">Almuerzo especial, brindis, sorpresas y momentos inolvidables.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="marker-dot"></span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-time">18:30 H</span>
+              <h4 class="timeline-item-title">Apertura de Baile &amp; Fiesta</h4>
+              <p class="timeline-desc">Vals nupcial, barra libre, cócteles y DJ hasta que el cuerpo aguante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Story / Gallery Section -->
+    <section class="section gallery-section" id="historia">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="gold-tag">Nuestra Trayectoria</span>
+          <h2 class="section-title">Nuestra Historia de Amor</h2>
+          <div class="gold-divider">
+            <span class="divider-diamond">◆</span>
+          </div>
+          <p class="section-subtitle">
+            Momentos que forjaron nuestro camino juntos y que nos han conducido hasta este hermoso capítulo.
+          </p>
+        </div>
+
+        <div class="collage-wrapper">
+          <div class="passepartout-frame">
+            <img src="assets/collage.png" alt="Collage de fotos vintage de la historia de amor de Marta y Jerónimo" class="collage-img" id="mainCollageImg" />
+            <div class="frame-caption">
+              <span>Nuestra Historia de Amor — Un viaje eterno</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dress Code Section -->
+    <section class="section dresscode-section" id="dresscode">
+      <div class="container">
+        <div class="dresscode-card velvet-card">
+          <span class="gold-tag">Etiqueta &amp; Estilo</span>
+          <h2 class="card-script-title">Código de Vestimenta</h2>
+          <div class="gold-divider">
+            <span class="divider-diamond">◆</span>
+          </div>
+          <p class="dresscode-highlight">Formal / Traje de Etiqueta / Cocktail Elegante</p>
+          
+          <div class="dresscode-details">
+            <div class="dresscode-column">
+              <h4>Caballeros</h4>
+              <p>Traje oscuro formal o chaqué con corbata o pajarita clásica.</p>
+            </div>
+            <div class="dresscode-column">
+              <h4>Señoras</h4>
+              <p>Vestido largo, midi de cóctel o traje sastre sofisticado.</p>
+            </div>
+          </div>
+
+          <!-- Color Palette Inspiration -->
+          <div class="swatches-box">
+            <p class="swatches-title">Inspiración de tonos para invitados:</p>
+            <div class="swatches-list">
+              <div class="swatch-item">
+                <span class="swatch-circle" style="background-color: #3b111a;"></span>
+                <span class="swatch-name">Burdeos</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-circle" style="background-color: #2b3a4a;"></span>
+                <span class="swatch-name">Azul Noche</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-circle" style="background-color: #3c4436;"></span>
+                <span class="swatch-name">Verde Salvia</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-circle" style="background-color: #d1b48c;"></span>
+                <span class="swatch-name">Champán</span>
+              </div>
+              <div class="swatch-item">
+                <span class="swatch-circle" style="background-color: #4a4039;"></span>
+                <span class="swatch-name">Moka</span>
+              </div>
+            </div>
+            <p class="dresscode-note">* Por favor, recordad que el color blanco y marfil está reservado exclusivamente para la novia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wishlist / Gifts Section -->
+    <section class="section wishlist-section" id="regalos">
+      <div class="container">
+        <div class="wishlist-card velvet-card">
+          <div class="wishlist-icon-box">
+            <svg class="gold-gift-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 12v10H4V12"/>
+              <path d="M2 7h20v5H2z"/>
+              <path d="M12 22V7"/>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            </svg>
+          </div>
+
+          <h2 class="card-script-title">Lista de Deseos &amp; Luna de Miel</h2>
+          <div class="gold-divider">
+            <span class="divider-diamond">◆</span>
+          </div>
+
+          <p class="wishlist-description">
+            El regalo más valioso para nosotros es vuestra presencia en nuestro enlace. Si aún así deseáis tener un detalle que nos ayude a cumplir nuestro sueño de la Luna de Miel por la Costa Amalfitana y Japón, os dejamos aquí nuestros datos:
+          </p>
+
+          <button id="openGiftsModalBtn" class="btn-gold-foil">
+            Ver Datos Bancarios &amp; Bizum
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="section rsvp-section" id="rsvp">
+      <div class="container">
+        <div class="rsvp-card stationery-paper">
+          <div class="rsvp-header">
+            <div class="wax-seal-badge-sm">
+              <img src="assets/wax_seal.png" alt="Sello de cera dorada" class="wax-seal-img" />
+            </div>
+            <h2 class="rsvp-title">Confirmación de Asistencia</h2>
+            <p class="rsvp-deadline">Ruego confirmación antes del 1 de Marzo de 2027</p>
+            <div class="gold-divider-sm"></div>
+          </div>
+
+          <form id="rsvpForm" class="rsvp-form" novalidate>
+            <!-- Name -->
+            <div class="form-group">
+              <label for="fullName" class="form-label">Nombre y Apellidos *</label>
+              <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Ej. Carlos Martínez Pérez" required />
+            </div>
+
+            <!-- Attending Choice -->
+            <div class="form-group">
+              <span class="form-label">¿Podrás acompañarnos? *</span>
+              <div class="attendance-options">
+                <label class="custom-radio-label">
+                  <input type="radio" name="attending" value="si" checked class="custom-radio-input" />
+                  <span class="radio-wax-emblem"></span>
+                  <span class="radio-text">¡Sí, allí estaré!</span>
+                </label>
+                <label class="custom-radio-label">
+                  <input type="radio" name="attending" value="no" class="custom-radio-input" />
+                  <span class="radio-wax-emblem"></span>
+                  <span class="radio-text">Lamentablemente no podré</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Dynamic Fields for Attending -->
+            <div id="attendingDetails" class="attending-fields">
+              <!-- Companions -->
+              <div class="form-group">
+                <label for="companionsCount" class="form-label">¿Vienes acompañado? (Nº acompañantes)</label>
+                <select id="companionsCount" name="companionsCount" class="form-select">
+                  <option value="0">Vengo solo / sola</option>
+                  <option value="1">+1 Acompañante</option>
+                  <option value="2">+2 Acompañantes</option>
+                  <option value="3">+3 Acompañantes</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="companionsNamesGroup" style="display: none;">
+                <label for="companionsNames" class="form-label">Nombre de tu(s) acompañante(s)</label>
+                <input type="text" id="companionsNames" name="companionsNames" class="form-input" placeholder="Nombres completos de los acompañantes" />
+              </div>
+
+              <!-- Dietary Requirements -->
+              <div class="form-group">
+                <label for="dietaryPreferences" class="form-label">Alergias o Menú Especial</label>
+                <select id="dietaryPreferences" name="dietaryPreferences" class="form-select">
+                  <option value="estandar">Menú Estándar (Sin restricciones)</option>
+                  <option value="celiaco">Celíaco / Sin Gluten</option>
+                  <option value="vegetariano">Vegetariano</option>
+                  <option value="vegano">Vegano</option>
+                  <option value="intolerancia-lactosa">Intolerancia a la Lactosa</option>
+                  <option value="otro">Otras alergias (especificar a continuación)</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="allergiesDetailGroup" style="display: none;">
+                <label for="allergiesDetail" class="form-label">Especifica tus alergias o intolerancias</label>
+                <input type="text" id="allergiesDetail" name="allergiesDetail" class="form-input" placeholder="Ej. Alergia a frutos secos o mariscos" />
+              </div>
+
+              <!-- Transportation / Bus -->
+              <div class="form-group">
+                <label class="form-label">Servicio de Autobús (Ida y vuelta)</label>
+                <div class="bus-options">
+                  <label class="bus-check-label">
+                    <input type="radio" name="busService" value="si" class="form-radio-native" />
+                    <span>Sí, necesitaré plaza en el autobús (Madrid ↔ Finca Los Rosales)</span>
+                  </label>
+                  <label class="bus-check-label">
+                    <input type="radio" name="busService" value="no" checked class="form-radio-native" />
+                    <span>No, me desplazaré por mi cuenta</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Song Request -->
+              <div class="form-group">
+                <label for="songRequest" class="form-label">¿Qué canción no puede faltar en la fiesta?</label>
+                <input type="text" id="songRequest" name="songRequest" class="form-input" placeholder="Canción y artista que te hará bailar" />
+              </div>
+            </div>
+
+            <!-- Dedication Message -->
+            <div class="form-group">
+              <label for="specialMessage" class="form-label">Mensaje o dedicatoria para Marta &amp; Jerónimo</label>
+              <textarea id="specialMessage" name="specialMessage" rows="3" class="form-textarea" placeholder="Dedícanos unas palabras con cariño..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-submit-container">
+              <button type="submit" class="btn-rsvp-submit" id="submitRsvpBtn">
+                Confirmar Asistencia
+              </button>
+            </div>
+          </form>
+
+          <!-- Discreet Admin RSVP link -->
+          <div class="admin-link-container">
+            <button id="viewRsvpListBtn" class="admin-link-btn" title="Ver lista de confirmaciones recibidas en este dispositivo">
+              ★ Panel de novios: Ver confirmaciones registradas
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-section">
+    <!-- Huge Monogram Background Watermark -->
+    <div class="footer-watermark">M &amp; J</div>
+    
+    <div class="container footer-content">
+      <p class="footer-script-text">Os esperamos con todo nuestro amor</p>
+      
+      <div class="footer-monogram-line">
+        <span class="gold-line"></span>
+        <span class="monogram-emblem">M <span class="gold-amp">&amp;</span> J</span>
+        <span class="gold-line"></span>
+      </div>
+
+      <p class="footer-date-info">12 DE ABRIL DE 2027 — MADRID</p>
+      
+      <p class="footer-copy">
+        Con infinito amor, Marta &amp; Jerónimo
+      </p>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+
+  <!-- Modal 1: Gift Registry / Bank Info -->
+  <div class="modal-overlay" id="giftsModal" role="dialog" aria-modal="true">
+    <div class="modal-card velvet-card">
+      <button class="modal-close-btn" id="closeGiftsModal" aria-label="Cerrar ventana">✕</button>
+      
+      <div class="wax-seal-badge-sm">
+        <img src="assets/wax_seal.png" alt="Sello de cera" class="wax-seal-img" />
+      </div>
+
+      <h3 class="modal-title">Datos para Nuestra Luna de Miel</h3>
+      <div class="gold-divider-sm"></div>
+      
+      <p class="modal-text">
+        Muchísimas gracias por formar parte de nuestras vidas y por vuestro cariño. Si deseáis colaborar en nuestro viaje de novios:
+      </p>
+
+      <!-- Bank Transfer Option -->
+      <div class="gift-option-card">
+        <div class="gift-option-header">
+          <span class="gift-badge">Transferencia Bancaria</span>
+          <strong>Banco Santander</strong>
+        </div>
+        <p class="gift-field-label">Titulares: Marta Sánchez &amp; Jerónimo De la Torre</p>
+        
+        <div class="copy-box">
+          <span class="copy-value" id="ibanCode">ES91 0049 1500 0512 3456 7890</span>
+          <button class="btn-copy" data-copy-target="ibanCode" title="Copiar IBAN">
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-btn-text">Copiar</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Bizum Option -->
+      <div class="gift-option-card">
+        <div class="gift-option-header">
+          <span class="gift-badge bizum-badge">Bizum</span>
+          <strong>Envío inmediato</strong>
+        </div>
+        <p class="gift-field-label">Jerónimo: +34 600 123 456 / Marta: +34 611 987 654</p>
+        
+        <div class="copy-box">
+          <span class="copy-value" id="bizumCode">+34 600 123 456</span>
+          <button class="btn-copy" data-copy-target="bizumCode" title="Copiar número de Bizum">
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-btn-text">Copiar</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="modal-closing-note">¡Vuestro abrazo en la fiesta será nuestro mejor regalo!</p>
+    </div>
+  </div>
+
+  <!-- Modal 2: Location Map Details -->
+  <div class="modal-overlay" id="mapModal" role="dialog" aria-modal="true">
+    <div class="modal-card modal-large stationery-paper">
+      <button class="modal-close-btn" id="closeMapModal" aria-label="Cerrar ventana">✕</button>
+      
+      <div class="wax-seal-badge-sm">
+        <img src="assets/wax_seal.png" alt="Sello de cera" class="wax-seal-img" />
+      </div>
+
+      <h3 class="modal-title" id="mapModalTitle">Ubicación del Evento</h3>
+      <p class="modal-subtitle" id="mapModalSubtitle">Cómo llegar y detalles de acceso</p>
+      <div class="gold-divider-sm"></div>
+
+      <div class="map-container">
+        <!-- Interactive Simulated Leaflet / Google styled view -->
+        <iframe id="mapIframe" class="map-embed" src="about:blank" title="Mapa de ubicación" loading="lazy"></iframe>
+      </div>
+
+      <div class="map-info-box">
+        <div class="map-info-details" id="mapInfoDetails">
+          <strong>Dirección completa:</strong>
+          <span id="mapAddressText">Cargando dirección...</span>
+        </div>
+        
+        <div class="map-cta-group">
+          <a href="#" id="openExternalGmapsBtn" target="_blank" rel="noopener noreferrer" class="btn-gold-foil">
+            Abrir en Google Maps / Waze
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: RSVP Confirmation Success -->
+  <div class="modal-overlay" id="rsvpSuccessModal" role="dialog" aria-modal="true">
+    <div class="modal-card velvet-card text-center">
+      <div class="wax-seal-badge-sm">
+        <img src="assets/wax_seal.png" alt="Sello de cera" class="wax-seal-img" />
+      </div>
+
+      <h3 class="modal-title" id="rsvpSuccessTitle">¡Muchísimas Gracias!</h3>
+      <div class="gold-divider-sm"></div>
+
+      <p class="modal-text" id="rsvpSuccessMessage">
+        Hemos guardado tu confirmación de asistencia correctamente. Nos hace una ilusión inmensa celebrar este día contigo.
+      </p>
+
+      <div class="rsvp-whatsapp-action">
+        <p class="whatsapp-prompt">¿Quieres enviar un mensaje directo a los novios por WhatsApp?</p>
+        <a href="#" id="whatsappSendBtn" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.42 1.44.54.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29z"/>
+          </svg>
+          Notificar por WhatsApp
+        </a>
+      </div>
+
+      <button class="btn-ghost-gold" id="closeRsvpSuccessBtn">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal 4: Admin Guest List (Stored locally) -->
+  <div class="modal-overlay" id="adminModal" role="dialog" aria-modal="true">
+    <div class="modal-card modal-large stationery-paper">
+      <button class="modal-close-btn" id="closeAdminModal" aria-label="Cerrar ventana">✕</button>
+      
+      <h3 class="modal-title">Confirmaciones Registradas (Local)</h3>
+      <p class="modal-subtitle">Resumen de respuestas guardadas en este navegador</p>
+      <div class="gold-divider-sm"></div>
+
+      <div class="admin-stats-bar">
+        <div class="stat-pill"><strong id="statTotalResponses">0</strong> Respuestas</div>
+        <div class="stat-pill"><strong id="statTotalAttending">0</strong> Asistentes</div>
+        <div class="stat-pill"><strong id="statTotalDeclined">0</strong> No asisten</div>
+        <div class="stat-pill"><strong id="statTotalBus">0</strong> Bus requerido</div>
+      </div>
+
+      <div class="admin-table-wrapper">
+        <table class="admin-table" id="adminGuestTable">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Nombre</th>
+              <th>Asiste</th>
+              <th>Acompañantes</th>
+              <th>Dieta / Menú</th>
+              <th>Bus</th>
+              <th>Mensaje</th>
+            </tr>
+          </thead>
+          <tbody id="adminTableBody">
+            <tr>
+              <td colspan="7" class="text-center py-4">Aún no hay confirmaciones registradas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="admin-actions-bar">
+        <button id="exportCsvBtn" class="btn-stationery">Descargar CSV</button>
+        <button id="clearRsvpsBtn" class="btn-danger-ghost">Borrar registros de prueba</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-notification" id="toastNotification">
+    <span id="toastMessage">¡Copiado con éxito!</span>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
