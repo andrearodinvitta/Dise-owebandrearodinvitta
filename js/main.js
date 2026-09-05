@@ -322,6 +322,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioData = [
     // --- CATEGORÍA: COMERCIO & NEGOCIOS LOCALES ---
     {
+      id: 'tech-gamer',
+      name: 'Tech Gamer',
+      type: 'comercio',
+      categoryLabel: 'Reparación de Ordenadores & PC Gaming • Madrid',
+      desc: 'Plataforma con estética dark & cyber para taller de reparación y montaje de ordenadores en Madrid. Diagnóstico rápido, catálogo de servicios y solicitud de presupuestos.',
+      previewImg: 'assets/portfolio/tech_gamer.jpg',
+      urlDemo: 'https://reparacion-de-ordenadores.vercel.app/',
+      status: 'active'
+    },
+    {
       id: 'dumore-chocolate',
       name: 'DUMORE Chocolate',
       type: 'comercio',

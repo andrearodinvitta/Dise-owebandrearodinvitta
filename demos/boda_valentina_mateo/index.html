@@ -1399,6 +1399,16 @@
         });
       }
 
+      // Si está dentro del visor lightbox / iframe, abrir automáticamente tras 2 segundos si el usuario no ha hecho clic
+      try {
+        const isInsideIframe = (window.self !== window.top);
+        if (isInsideIframe) {
+          setTimeout(() => {
+            if (!isOpened) triggerOpeningSequence();
+          }, 2000);
+        }
+      } catch (err) {}
+
       // 4. CUENTA REGRESIVA HASTA EL 3 DE JULIO DE 2027
       const weddingDate = new Date('2027-07-03T17:00:00+02:00').getTime();
       function updateCountdown() {
