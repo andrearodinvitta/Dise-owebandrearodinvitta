@@ -382,6 +382,16 @@ document.addEventListener('DOMContentLoaded', () => {
       previewImg: 'assets/portfolio/boda_valentina_mateo.png',
       urlDemo: '/demos/boda_valentina_mateo/index.html',
       status: 'active'
+    },
+    {
+      id: 'luciana-xv',
+      name: 'Luciana Villarreal XV',
+      type: 'celebraciones',
+      categoryLabel: 'Revista Digital de XV Años • Vogue XV & Alta Costura',
+      desc: 'Revista digital interactiva estilo Vogue XV con pase de páginas, portada editorial, carta con cuenta regresiva, protocolo de gala, guía de ubicaciones, fashion spread fotográfico y confirmación RSVP con sello dorado.',
+      previewImg: 'assets/portfolio/luciana_xv.png',
+      urlDemo: '/demos/luciana_xv/index.html',
+      status: 'active'
     }
   ];
 
