@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Fresas con Chocolate & Regalos Gourmet • Alta Repostería',
       desc: 'Catálogo dulce de alta gama con selector interactivo de cajas de fresas personalizadas, chocobombas y ramos artesanales para celebraciones y fechas especiales.',
       previewImg: 'assets/portfolio/dumore_chocolate.png',
-      urlDemo: 'demos/dumore_chocolate/index.html',
+      urlDemo: '/demos/dumore_chocolate/index.html',
       status: 'active'
     },
     {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Agencia de Viajes Oficial • Carabanchel (Madrid)',
       desc: 'Web corporativa y comercial con buscador de paquetes vacacionales al Caribe, vuelos a Latinoamérica, circuitos por Europa, financiación a medida y contacto directo con agentes.',
       previewImg: 'assets/portfolio/viajes_sol_y_arena.png',
-      urlDemo: 'demos/viajes_sol_y_arena/index.html',
+      urlDemo: '/demos/viajes_sol_y_arena/index.html',
       status: 'active'
     },
     {
@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Viajes, Circuitos Europeos & Visados • Madrid',
       desc: 'Diseño editorial para agencia especializada en circuitos europeos 100% en español, cruceros internacionales, vuelos y asesoría experta para trámites y visados Schengen y USA.',
       previewImg: 'assets/portfolio/zafiro_travel.png',
-      urlDemo: 'demos/zafiro_travel/index.html',
+      urlDemo: '/demos/zafiro_travel/index.html',
       status: 'active'
     },
 
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Editorial de Boda • Burdeos & Sello de Cera',
       desc: 'Invitación web de lujo con apertura interactiva de sobre y sello de cera dorado ("OPEN THIS"), confirmación RSVP con selector de alérgenos, playlist y cronograma del evento.',
       previewImg: 'assets/portfolio/boda_marta_jeronimo.png',
-      urlDemo: 'demos/boda_marta_jeronimo/index.html',
+      urlDemo: '/demos/boda_marta_jeronimo/index.html',
       status: 'active'
     },
     {
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Romántica & Floral • Música & RSVP Inteligente',
       desc: 'Experiencia nupcial interactiva con reproductor musical, cuenta regresiva en vivo, formulario inteligente de confirmación de invitados, código de vestimenta e indicaciones en mapa.',
       previewImg: 'assets/portfolio/boda_valentina_mateo.png',
-      urlDemo: 'demos/boda_valentina_mateo/index.html',
+      urlDemo: '/demos/boda_valentina_mateo/index.html',
       status: 'active'
     }
   ];
@@ -518,6 +518,12 @@ document.addEventListener('DOMContentLoaded', () => {
       portfolioIframeWrapper.classList.remove('mobile-view');
     }
 
+    const hideLoader = () => {
+      if (portfolioLoader) {
+        portfolioLoader.classList.add('hidden');
+      }
+    };
+
     // Show loading spinner while iframe connects
     if (portfolioLoader) {
       portfolioLoader.classList.remove('hidden');
@@ -525,12 +531,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set iframe src to initiate clean loading
     portfolioIframe.src = project.urlDemo;
+    portfolioIframe.onload = hideLoader;
 
-    portfolioIframe.onload = () => {
-      if (portfolioLoader) {
-        portfolioLoader.classList.add('hidden');
-      }
-    };
+    // Fallback: Ensure loader never blocks the user even if onload is delayed
+    setTimeout(hideLoader, 500);
 
     // Open modal and lock background scroll
     portfolioModal.classList.add('active');

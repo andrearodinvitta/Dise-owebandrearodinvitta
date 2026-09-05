@@ -54,9 +54,20 @@ function initEnvelopeOpening() {
     }, 1100);
   };
 
-  // Click on seal button
+  // Click on seal button or anywhere on screen
   envelopeSealBtn.addEventListener('click', handleOpen);
   envelopeBox.addEventListener('click', handleOpen);
+  envelopeScreen.addEventListener('click', handleOpen);
+
+  // Auto-reveal if inside portfolio iframe
+  try {
+    const isInsideIframe = (window.self !== window.top);
+    if (isInsideIframe) {
+      setTimeout(() => {
+        if (!hasOpened) handleOpen();
+      }, 2000);
+    }
+  } catch (err) {}
 
   // Keyboard accessibility (Enter or Space)
   envelopeSealBtn.addEventListener('keydown', (e) => {

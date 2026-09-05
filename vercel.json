@@ -1,14 +1,4 @@
 {
   "version": 2,
-  "name": "andrea-rodriguez-design",
-  "cleanUrls": true,
-  "headers": [
-    {
-      "source": "/demos/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
-      ]
-    }
-  ]
+  "name": "andrea-rodriguez-design"
 }
