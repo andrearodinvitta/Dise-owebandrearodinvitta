@@ -313,15 +313,20 @@
 
           <!-- Tabs Filter -->
           <div class="portfolio-tabs-container" role="tablist" aria-label="Filtrar proyectos del portafolio">
+            <button class="portfolio-tab" id="tabTodos" role="tab" aria-selected="false" data-category="todos">
+              <span class="tab-icon">■</span>
+              TODOS
+              <span class="tab-badge" id="countTodos">8</span>
+            </button>
             <button class="portfolio-tab active" id="tabComercio" role="tab" aria-selected="true" data-category="comercio">
               <span class="tab-icon">■</span>
               COMERCIO
-              <span class="tab-badge" id="countComercio">2</span>
+              <span class="tab-badge" id="countComercio">5</span>
             </button>
             <button class="portfolio-tab" id="tabCelebraciones" role="tab" aria-selected="false" data-category="celebraciones">
               <span class="tab-icon">■</span>
               CELEBRACIONES
-              <span class="tab-badge" id="countCelebraciones">1</span>
+              <span class="tab-badge" id="countCelebraciones">3</span>
             </button>
           </div>
         </div>
@@ -632,6 +637,15 @@
           <span class="portfolio-modal-category" id="portfolioModalCategory">Categoría</span>
         </div>
         <div class="portfolio-modal-actions">
+          <!-- Viewport Simulator Switch -->
+          <div class="portfolio-device-switch" role="group" aria-label="Cambiar vista de dispositivo">
+            <button class="device-btn active" id="btnDeviceDesktop" title="Vista Escritorio">
+              <span>💻</span> ESCRITORIO
+            </button>
+            <button class="device-btn" id="btnDeviceMobile" title="Vista Móvil">
+              <span>📱</span> MÓVIL
+            </button>
+          </div>
           <a href="#" target="_blank" rel="noopener noreferrer" class="btn-brutalist btn-modal-external" id="portfolioExternalBtn">
             PANTALLA COMPLETA ↗
           </a>

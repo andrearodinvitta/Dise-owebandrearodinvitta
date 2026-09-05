@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soraya Nails & Braids | Salón Boutique en Madrid Carabanchel</title>
+  <meta name="description" content="Soraya Nails: Estética de uñas de lujo y trenzas africanas en Carabanchel, Madrid. Manicura rusa, pedicura spa, nail art exclusivo y box braids. Reserva tu cita." />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20%220%22%20100%22%20100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols Outlined -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Site Header / Navbar -->
+  <header class="site-header glass-nav" id="mainHeader">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" id="brandLogo">
+        <span class="logo-title">Soraya Nails</span>
+        <span class="logo-sub">& Braids • Madrid</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#servicios" class="nav-link">Servicios</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#nosotros" class="nav-link">Sobre Soraya</a></li>
+        <li><a href="#testimonios" class="nav-link">Reseñas</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#contacto" class="nav-link">Ubicación</a></li>
+      </ul>
+
+      <!-- Desktop Actions -->
+      <div class="nav-actions">
+        <a href="tel:+34614154881" class="nav-phone" id="headerPhoneLink">
+          <span class="material-symbols-outlined" style="font-size: 18px; color: var(--color-secondary-gold);">call</span>
+          +34 614 15 48 81
+        </a>
+        <a href="#reservar" class="btn-pill-primary" id="navReserveBtn">
+          <span>Reservar Cita</span>
+          <span class="material-symbols-outlined" style="font-size: 16px;">calendar_today</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir menú">
+          <span class="material-symbols-outlined" id="menuToggleIcon">menu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="nav-links">
+        <li><a href="#servicios" class="nav-link mobile-link">Servicios y Tarifas</a></li>
+        <li><a href="#galeria" class="nav-link mobile-link">Galería de Trabajos</a></li>
+        <li><a href="#nosotros" class="nav-link mobile-link">Sobre Soraya Matos</a></li>
+        <li><a href="#testimonios" class="nav-link mobile-link">Opiniones de Clientas</a></li>
+        <li><a href="#faq" class="nav-link mobile-link">Preguntas Frecuentes</a></li>
+        <li><a href="#contacto" class="nav-link mobile-link">Ubicación & Horarios</a></li>
+      </ul>
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+        <a href="#reservar" class="btn-pill-primary mobile-link" style="text-align: center;">Reservar Cita Ahora</a>
+        <a href="https://wa.me/34614154881" target="_blank" rel="noopener" class="btn-pill-outline" style="text-align: center;">
+          <span class="material-symbols-outlined" style="font-size: 16px; color: #25D366;">chat</span> WhatsApp Directo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div class="hero-text-col">
+            <div class="rating-badge" id="googleRatingBadge">
+              <div class="rating-stars">
+                <span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined" style="font-size: 16px; font-variation-settings: 'FILL' 1;">star_half</span>
+              </div>
+              <span class="rating-text">4.7★ (54 reseñas en Google)</span>
+            </div>
+
+            <h1 class="hero-title">
+              Arte en cada uña,<br />
+              <span>elegancia</span> sin esfuerzo.
+            </h1>
+
+            <p class="hero-subtitle">
+              Descubre un santuario de belleza en el corazón de Madrid. Cuidado de uñas elevado a una experiencia de lujo, bienestar y maestría en trenzado africano.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#reservar" class="btn-pill-primary" id="heroBookBtn">
+                <span>Reservar Cita Online</span>
+                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+              </a>
+              <a href="#servicios" class="btn-pill-outline" id="heroServicesBtn">
+                <span>Ver Carta de Servicios</span>
+              </a>
+            </div>
+
+            <div class="hero-features">
+              <div class="hero-feat-item">
+                <span class="material-symbols-outlined hero-feat-icon">verified_user</span>
+                <span>Esterilización médica certificada</span>
+              </div>
+              <div class="hero-feat-item">
+                <span class="material-symbols-outlined hero-feat-icon">workspace_premium</span>
+                <span>Marcas internacionales de alta gama</span>
+              </div>
+              <div class="hero-feat-item">
+                <span class="material-symbols-outlined hero-feat-icon">schedule</span>
+                <span>Atención puntual y personalizada</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Media -->
+          <div class="hero-visual">
+            <div class="hero-image-wrapper">
+              <img src="assets/hero_hands.jpg" alt="Manicura elegante de alta gama con detalles dorados" id="heroMainImage" />
+            </div>
+            
+            <!-- Floating Trust Pill -->
+            <div class="hero-floating-card">
+              <div class="floating-icon">
+                <span class="material-symbols-outlined">favorite</span>
+              </div>
+              <div>
+                <p class="floating-text-title">+500 Clientas Satisfechas</p>
+                <p class="floating-text-sub">Especialistas en manicura rusa & trenzas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar-section">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <span class="material-symbols-outlined">front_hand</span>
+            </div>
+            <div>
+              <h4>Atención Meticulosa</h4>
+              <p>Trato exclusivo uno a uno para cada clienta</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <span class="material-symbols-outlined">health_and_safety</span>
+            </div>
+            <div>
+              <h4>Higiene Hospitalaria</h4>
+              <p>Autoclave y material desechable de un solo uso</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <span class="material-symbols-outlined">diamond</span>
+            </div>
+            <div>
+              <h4>Materiales Premium</h4>
+              <p>Esmaltes hipoalergénicos de máxima durabilidad</p>
+            </div>
+          </div>
+
+          <div class="trust-item">
+            <div class="trust-icon-box">
+              <span class="material-symbols-outlined">location_on</span>
+            </div>
+            <div>
+              <h4>Fácil Acceso Madrid</h4>
+              <p>C. de Argüeso 11 (Metro Oporto / Vista Alegre)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="servicios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Nuestros Rituales</span>
+          <h2 class="section-title">Servicios Exclusivos</h2>
+          <p class="section-subtitle">
+            Cada tratamiento está diseñado para resaltar tu belleza natural con técnicas de vanguardia y productos respetuosos con tu uña.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: Manicura Rusa & Semipermanente -->
+          <div class="service-card">
+            <div class="service-image-header">
+              <img src="assets/hero_hands.jpg" alt="Manicura rusa y esmaltado semipermanente" />
+              <span class="service-badge-pill">Top Ventas</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-card-title">Manicura Semipermanente & Rusa</h3>
+              <p class="service-card-desc">
+                Limpieza profunda de cutículas con torno diamantado, nivelación de la placa ungueal y esmaltado de alta resistencia.
+              </p>
+              <ul class="service-features-list">
+                <li><span class="bullet">✓</span> Duración impecable de 3 a 4 semanas</li>
+                <li><span class="bullet">✓</span> Fortalecimiento de uña natural</li>
+                <li><span class="bullet">✓</span> Brillo espejo duradero</li>
+              </ul>
+              <div class="service-footer">
+                <div class="price-box">
+                  <span class="price-label">Desde</span>
+                  <span class="price-value">15€</span>
+                </div>
+                <button class="btn-service-book" onclick="selectServiceInForm('Manicura Semipermanente / Rusa')">Reservar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 2: Pedicura Spa con Rosas -->
+          <div class="service-card">
+            <div class="service-image-header">
+              <img src="assets/pedicura_spa.jpg" alt="Pedicura spa con baño de rosas y aceites esenciales" />
+              <span class="service-badge-pill">Bienestar</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-card-title">Pedicura Spa de Lujo</h3>
+              <p class="service-card-desc">
+                Inmersión en tina de mármol con sales del Himalaya y pétalos de rosa, exfoliación suave, masaje podal relajante y esmaltado.
+              </p>
+              <ul class="service-features-list">
+                <li><span class="bullet">✓</span> Hidratación profunda con aceites</li>
+                <li><span class="bullet">✓</span> Eliminación de durezas y callosidades</li>
+                <li><span class="bullet">✓</span> Masaje drenante y revitalizante</li>
+              </ul>
+              <div class="service-footer">
+                <div class="price-box">
+                  <span class="price-label">Desde</span>
+                  <span class="price-value">25€</span>
+                </div>
+                <button class="btn-service-book" onclick="selectServiceInForm('Pedicura Spa de Lujo')">Reservar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 3: Nail Art & Efecto Mármol Foil Oro -->
+          <div class="service-card">
+            <div class="service-image-header">
+              <img src="assets/nail_art_gold.jpg" alt="Nail Art exclusivo con oro 24k y efecto mármol" />
+              <span class="service-badge-pill">Arte & Diseño</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-card-title">Nail Art Exclusivo</h3>
+              <p class="service-card-desc">
+                Diseños personalizados de autor a mano alzada: pan de oro de 24k, trazos de mármol sutil, encapsulados y pedrería fina.
+              </p>
+              <ul class="service-features-list">
+                <li><span class="bullet">✓</span> Diseños a mano alzada únicos</li>
+                <li><span class="bullet">✓</span> Foil dorado, glitter y degradados</li>
+                <li><span class="bullet">✓</span> Diseños para eventos y bodas</li>
+              </ul>
+              <div class="service-footer">
+                <div class="price-box">
+                  <span class="price-label">Desde</span>
+                  <span class="price-value">5€ <span style="font-size:12px; font-family:var(--font-sans); color:var(--color-outline);">/uña</span></span>
+                </div>
+                <button class="btn-service-book" onclick="selectServiceInForm('Nail Art Exclusivo')">Reservar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 4: Trenzas Africanas -->
+          <div class="service-card">
+            <div class="service-image-header">
+              <img src="assets/trenzas_africanas.jpg" alt="Trenzas africanas profesionales box braids con accesorios dorados" />
+              <span class="service-badge-pill">Especialidad</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-card-title">Trenzas Africanas de Autor</h3>
+              <p class="service-card-desc">
+                Maestría artesanal en Box Braids, Knotless Braids y Cornrows. Particiones geométricas perfectas y protección capilar.
+              </p>
+              <ul class="service-features-list">
+                <li><span class="bullet">✓</span> Técnica sin tensión dañina</li>
+                <li><span class="bullet">✓</span> Accesorios dorados incluidos</li>
+                <li><span class="bullet">✓</span> Duración de hasta 2 meses</li>
+              </ul>
+              <div class="service-footer">
+                <div class="price-box">
+                  <span class="price-label">Desde</span>
+                  <span class="price-value">40€</span>
+                </div>
+                <button class="btn-service-book" onclick="selectServiceInForm('Trenzas Africanas')">Reservar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 5: Uñas Esculpidas en Gel / Acrílico -->
+          <div class="service-card">
+            <div class="service-image-header">
+              <img src="assets/salon_interior.jpg" alt="Estaciones de manicura y esculpido en salón boutique" />
+              <span class="service-badge-pill">Estructura</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-card-title">Esculpido en Gel & Acrílico</h3>
+              <p class="service-card-desc">
+                Extensión y remodelación de uñas con estructura almendrada, coffin o stiletto de alta precisión y aspecto ultra natural.
+              </p>
+              <ul class="service-features-list">
+                <li><span class="bullet">✓</span> Estructuras resistentes y ligeras</li>
+                <li><span class="bullet">✓</span> Corrección de uñas mordidas</li>
+                <li><span class="bullet">✓</span> Formas a medida según tus manos</li>
+              </ul>
+              <div class="service-footer">
+                <div class="price-box">
+                  <span class="price-label">Desde</span>
+                  <span class="price-value">35€</span>
+                </div>
+                <button class="btn-service-book" onclick="selectServiceInForm('Esculpido en Gel / Acrílico')">Reservar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service 6: Tratamiento Reparador de Queratina -->
+          <div class="service-card">
+            <div class="service-image-header">
+              <img src="assets/screen_mockup.png" alt="Tratamiento spa de hidratación y queratina para uñas" />
+              <span class="service-badge-pill">Cuidado</span>
+            </div>
+            <div class="service-body">
+              <h3 class="service-card-title">Tratamiento IBX & Queratina</h3>
+              <p class="service-card-desc">
+                Terapia intensiva reconstructora para uñas quebradizas o dañadas tras retiradas agresivas. Devuelve la elasticidad y grosor.
+              </p>
+              <ul class="service-features-list">
+                <li><span class="bullet">✓</span> Penetración térmica profunda</li>
+                <li><span class="bullet">✓</span> Estimulación del crecimiento fuerte</li>
+                <li><span class="bullet">✓</span> Brillo natural saludable</li>
+              </ul>
+              <div class="service-footer">
+                <div class="price-box">
+                  <span class="price-label">Desde</span>
+                  <span class="price-value">18€</span>
+                </div>
+                <button class="btn-service-book" onclick="selectServiceInForm('Tratamiento Queratina / IBX')">Reservar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="#reservar" class="btn-pill-primary">
+            <span>Consultar Disponibilidad de Horarios</span>
+            <span class="material-symbols-outlined" style="font-size: 16px;">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section with Interactive Filter & Lightbox -->
+    <section class="gallery-section" id="galeria">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portfolio & Resultados</span>
+          <h2 class="section-title">Galería de Trabajos</h2>
+          <p class="section-subtitle">
+            Cada creación es un reflejo de nuestra pasión por el detalle. Haz clic en cualquier imagen para verla en pantalla completa.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="gallery-filters" id="galleryFilters">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="manicura">Manicura & Gel</button>
+          <button class="filter-btn" data-filter="nail-art">Nail Art de Autor</button>
+          <button class="filter-btn" data-filter="pedicura">Pedicura Spa</button>
+          <button class="filter-btn" data-filter="trenzas">Trenzas Africanas</button>
+          <button class="filter-btn" data-filter="salon">Nuestro Salón</button>
+        </div>
+
+        <!-- Gallery Grid (100% Real High Quality Generated Images) -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Item 1: Manicura -->
+          <div class="gallery-item" data-category="manicura" onclick="openLightbox('assets/hero_hands.jpg', 'Manicura Almendrada Nude con Detalle en Oro')">
+            <img src="assets/hero_hands.jpg" alt="Manicura Almendrada Nude con Detalle en Oro" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Esmaltado Nude Rosa</span>
+              <span class="gallery-item-tag">Manicura & Gel</span>
+            </div>
+          </div>
+
+          <!-- Item 2: Nail Art Gold -->
+          <div class="gallery-item" data-category="nail-art" onclick="openLightbox('assets/nail_art_gold.jpg', 'Nail Art Mármol con Pan de Oro 24K')">
+            <img src="assets/nail_art_gold.jpg" alt="Nail Art Mármol con Pan de Oro 24K" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Efecto Mármol & Oro</span>
+              <span class="gallery-item-tag">Nail Art de Autor</span>
+            </div>
+          </div>
+
+          <!-- Item 3: Trenzas Africanas -->
+          <div class="gallery-item" data-category="trenzas" onclick="openLightbox('assets/trenzas_africanas.jpg', 'Box Braids con Accesorios Dorados Geométricos')">
+            <img src="assets/trenzas_africanas.jpg" alt="Box Braids con Accesorios Dorados Geométricos" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Box Braids Geométricas</span>
+              <span class="gallery-item-tag">Trenzas Africanas</span>
+            </div>
+          </div>
+
+          <!-- Item 4: Pedicura Spa -->
+          <div class="gallery-item" data-category="pedicura" onclick="openLightbox('assets/pedicura_spa.jpg', 'Pedicura Spa con Baño de Pétalos de Rosa')">
+            <img src="assets/pedicura_spa.jpg" alt="Pedicura Spa con Baño de Pétalos de Rosa" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Ritual Pedicura Spa</span>
+              <span class="gallery-item-tag">Pedicura Spa</span>
+            </div>
+          </div>
+
+          <!-- Item 5: Salon Interior -->
+          <div class="gallery-item" data-category="salon" onclick="openLightbox('assets/salon_interior.jpg', 'Espacio Boutique en Madrid con Espejos Arqueados')">
+            <img src="assets/salon_interior.jpg" alt="Espacio Boutique en Madrid con Espejos Arqueados" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Ambiente Boutique</span>
+              <span class="gallery-item-tag">Nuestro Salón</span>
+            </div>
+          </div>
+
+          <!-- Item 6: Retrato Sorayda -->
+          <div class="gallery-item" data-category="salon" onclick="openLightbox('assets/sorayda_portrait.jpg', 'Sorayda Matos preparando instrumental y esmaltes')">
+            <img src="assets/sorayda_portrait.jpg" alt="Sorayda Matos en el salón" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="gallery-item-title">Meticulosidad & Higiene</span>
+              <span class="gallery-item-tag">Nuestro Salón</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
+      <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar modal">✕</button>
+      <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img src="" alt="" id="lightboxImg" />
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+    </div>
+
+    <!-- About Us Section: Sorayda Matos -->
+    <section class="about-section" id="nosotros">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Image Column -->
+          <div class="about-image-col">
+            <div class="about-image-card">
+              <img src="assets/sorayda_portrait.jpg" alt="Sorayda Matos, fundadora de Soraya Nails en su salón boutique de Madrid" />
+            </div>
+            <div class="experience-badge">
+              <div class="exp-number">+8</div>
+              <div class="exp-label">Años de Maestría</div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="about-content-col">
+            <span class="section-tag">Nuestra Historia & Filosofía</span>
+            <h2>Sobre Sorayda Matos</h2>
+            <p class="about-lead">
+              "Mi pasión es convertir cada cita en un ritual de autocuidado, donde cada mujer se sienta escuchada, mimada y radiante."
+            </p>
+            <p class="about-text">
+              Con más de 8 años de trayectoria profesional en el sector estético de Madrid, Sorayda Matos ha creado un concepto único donde convergen la precisión de la manicura rusa, el diseño vanguardista de uñas y la belleza ancestral de las trenzas africanas.
+            </p>
+            <p class="about-text">
+              En nuestro salón no entendemos las prisas: dedicamos a cada clienta el tiempo necesario, asegurando una higiene escrupulosa con protocolos de esterilización hospitalaria y empleando únicamente fórmulas que cuidan la integridad biológica de tu uña y cabello.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <h3>4.7 ★</h3>
+                <p>Valoración en Google</p>
+              </div>
+              <div class="stat-item">
+                <h3>+1,200</h3>
+                <p>Servicios Realizados</p>
+              </div>
+              <div class="stat-item">
+                <h3>100%</h3>
+                <p>Productos Premium</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <section class="reviews-section" id="testimonios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Experiencias Reales</span>
+          <h2 class="section-title">Opiniones de Nuestras Clientas</h2>
+          <p class="section-subtitle">
+            La confianza de nuestras clientas en Madrid es nuestro mayor orgullo.
+          </p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card">
+            <div>
+              <div class="review-stars">
+                ★★★★★
+              </div>
+              <p class="review-quote">
+                "Sorayda es una artista de los pies a la cabeza. Llevo haciéndome las uñas y trenzas con ella desde hace casi un año y jamás se me han roto ni despegado. El salón huele delicioso y sales como nueva."
+              </p>
+            </div>
+            <div class="review-author">
+              <div class="author-avatar">PC</div>
+              <div class="author-info">
+                <h4>Paula Calderón</h4>
+                <span>Clienta habitual • Carabanchel</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card">
+            <div>
+              <div class="review-stars">
+                ★★★★★
+              </div>
+              <p class="review-quote">
+                "El nail art que me hizo para mi boda dejó a todo el mundo impresionado. Delicado, elegante con pan de oro y aguantó intacto toda la luna de miel. Un 10 absoluto en atención y simpatía."
+              </p>
+            </div>
+            <div class="review-author">
+              <div class="author-avatar">EM</div>
+              <div class="author-info">
+                <h4>Elena Morales</h4>
+                <span>Madrid Centro • Google Review</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card">
+            <div>
+              <div class="review-stars">
+                ★★★★★
+              </div>
+              <p class="review-quote">
+                "Me hice knotless braids por primera vez y no sentí ningún dolor ni tirantez en el cuero cabelludo. La técnica es impecable, super prolija y rápida. Totalmente recomendable."
+              </p>
+            </div>
+            <div class="review-author">
+              <div class="author-avatar">MD</div>
+              <div class="author-info">
+                <h4>Mariama Diallo</h4>
+                <span>Vista Alegre • Google Review</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking System Section -->
+    <section class="booking-section" id="reservar">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Agenda Tu Momento</span>
+          <h2 class="section-title">Reserva Tu Cita Online</h2>
+          <p class="section-subtitle">
+            Selecciona tu servicio y fecha preferida. Te confirmaremos al instante por WhatsApp para asegurar tu plaza sin esperas.
+          </p>
+        </div>
+
+        <div class="booking-wrapper">
+          <form class="booking-form" id="bookingForm" onsubmit="handleBookingSubmit(event)">
+            <!-- Service Selector -->
+            <div>
+              <label class="form-label" for="serviceSelect">Servicio Deseado</label>
+              <select class="form-control" id="serviceSelect" onchange="updateBookingPrice()">
+                <option value="Manicura Semipermanente / Rusa" data-price="Desde 15€">Manicura Semipermanente / Rusa (Desde 15€)</option>
+                <option value="Pedicura Spa de Lujo" data-price="Desde 25€">Pedicura Spa de Lujo (Desde 25€)</option>
+                <option value="Nail Art Exclusivo" data-price="Desde 5€ / uña">Nail Art Exclusivo (Desde 5€ / uña)</option>
+                <option value="Trenzas Africanas" data-price="Desde 40€">Trenzas Africanas (Desde 40€)</option>
+                <option value="Esculpido en Gel / Acrílico" data-price="Desde 35€">Esculpido en Gel / Acrílico (Desde 35€)</option>
+                <option value="Tratamiento Queratina / IBX" data-price="Desde 18€">Tratamiento Queratina / IBX (Desde 18€)</option>
+                <option value="Pack Manicura + Pedicura Completa" data-price="Especial 38€">Pack Manicura + Pedicura Completa (38€)</option>
+              </select>
+            </div>
+
+            <!-- Date Picker -->
+            <div>
+              <label class="form-label" for="bookingDate">Fecha Preferida</label>
+              <input type="date" class="form-control" id="bookingDate" required />
+            </div>
+
+            <!-- Time Slot Buttons -->
+            <div class="form-group-full">
+              <label class="form-label">Horario Preferido</label>
+              <div class="time-slots-container" id="timeSlotsGroup">
+                <button type="button" class="time-slot-btn selected" onclick="selectTimeSlot(this, '09:30')">09:30</button>
+                <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '11:00')">11:00</button>
+                <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '12:30')">12:30</button>
+                <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '16:00')">16:00</button>
+                <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '17:30')">17:30</button>
+                <button type="button" class="time-slot-btn" onclick="selectTimeSlot(this, '18:45')">18:45</button>
+              </div>
+            </div>
+
+            <!-- Client Name -->
+            <div>
+              <label class="form-label" for="clientName">Tu Nombre Completo</label>
+              <input type="text" class="form-control" id="clientName" placeholder="Ej: Laura Gómez" required />
+            </div>
+
+            <!-- Client Phone / WhatsApp -->
+            <div>
+              <label class="form-label" for="clientPhone">Teléfono Móvil (WhatsApp)</label>
+              <input type="tel" class="form-control" id="clientPhone" placeholder="Ej: 614 15 48 81" required />
+            </div>
+
+            <!-- Notes -->
+            <div class="form-group-full">
+              <label class="form-label" for="clientNotes">Notas o Preferencias (Opcional)</label>
+              <textarea class="form-control" id="clientNotes" rows="2" placeholder="¿Deseas retirada previa de gel, diseño específico o longitud de trenzas?"></textarea>
+            </div>
+
+            <!-- Price Summary Box -->
+            <div class="form-group-full">
+              <div class="booking-summary-box">
+                <div>
+                  <span class="booking-summary-title">Servicio Seleccionado:</span>
+                  <div style="font-weight: 600; color: var(--color-primary);" id="summaryServiceName">Manicura Semipermanente / Rusa</div>
+                </div>
+                <div class="booking-summary-price" id="summaryServicePrice">Desde 15€</div>
+              </div>
+            </div>
+
+            <!-- Submit CTA -->
+            <div class="form-group-full">
+              <button type="submit" class="btn-submit-booking" id="submitBookingBtn">
+                <span class="material-symbols-outlined" style="font-size: 20px;">chat</span>
+                <span>Confirmar Reserva por WhatsApp Directo</span>
+              </button>
+              <p style="text-align: center; font-size: 12px; color: var(--color-outline); margin-top: 10px;">
+                Te redirigiremos a WhatsApp con todos los datos pre-rellenados para una confirmación inmediata.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Resolvemos Tus Dudas</span>
+          <h2 class="section-title">Preguntas Frecuentes</h2>
+          <p class="section-subtitle">
+            Todo lo que necesitas saber antes de tu primera visita a nuestro salón.
+          </p>
+        </div>
+
+        <div class="faq-wrapper" id="faqAccordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>¿Cuánto dura una manicura semipermanente o rusa?</span>
+              <span class="material-symbols-outlined faq-icon">expand_more</span>
+            </div>
+            <div class="faq-body">
+              Nuestras manicuras semipermanentes duran intactas entre 3 y 4 semanas, dependiendo del crecimiento natural de tu uña. Al realizar manicura rusa y nivelación de la placa, el esmaltado queda perfectamente alineado bajo la cutícula, lo que retrasa visiblemente el efecto de crecimiento.
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>¿Cómo debo llevar mi cabello para hacerme trenzas africanas?</span>
+              <span class="material-symbols-outlined faq-icon">expand_more</span>
+            </div>
+            <div class="faq-body">
+              Recomendamos venir con el cabello lavado, desenredado y completamente seco, sin aceites pesados. Si necesitas lavado o desenredado previo en el salón, puedes indicárnoslo al reservar para asignarte tiempo adicional.
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>¿Es necesario reservar con cita previa?</span>
+              <span class="material-symbols-outlined faq-icon">expand_more</span>
+            </div>
+            <div class="faq-body">
+              Sí, trabajamos prioritariamente con cita previa para garantizar a cada clienta la máxima atención sin prisas ni esperas. Puedes solicitar tu hueco a través del formulario web o escribiéndonos directamente a nuestro WhatsApp (+34 614 15 48 81).
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>¿Qué protocolos de desinfección utilizáis?</span>
+              <span class="material-symbols-outlined faq-icon">expand_more</span>
+            </div>
+            <div class="faq-body">
+              La higiene es innegociable en Soraya Nails. Empleamos limas y tacos desechables de un solo uso por clienta. Todas las fresas metálicas, tijerillas y alicates son esterilizados meticulosamente en solución desinfectante de grado médico y embolsados individualmente.
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>¿Qué medios de pago aceptáis?</span>
+              <span class="material-symbols-outlined faq-icon">expand_more</span>
+            </div>
+            <div class="faq-body">
+              Aceptamos pagos en efectivo, Bizum y tarjeta de crédito / débito (Visa, Mastercard).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section class="location-section" id="contacto">
+      <div class="container">
+        <div class="location-grid">
+          <!-- Information Card -->
+          <div class="location-info-card">
+            <span class="section-tag">Te Esperamos</span>
+            <h2 class="section-title">Dónde Encontrarnos</h2>
+            <p class="section-subtitle">
+              Situados en Carabanchel, Madrid, en un entorno tranquilo y acogedor para desconectar del ritmo diario.
+            </p>
+
+            <div class="info-badge-list">
+              <div class="info-item">
+                <div class="info-icon">
+                  <span class="material-symbols-outlined">pin_drop</span>
+                </div>
+                <div class="info-content">
+                  <h4>Dirección</h4>
+                  <p>Calle de Argüeso, 11, 28025 Carabanchel, Madrid.</p>
+                  <p style="font-size: 13px; color: var(--color-secondary-gold); margin-top: 2px;">
+                    Metro Vista Alegre (L5) o Metro Oporto (L5, L6) a solo 3 minutos a pie.
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <span class="material-symbols-outlined">call</span>
+                </div>
+                <div class="info-content">
+                  <h4>Contacto Directo</h4>
+                  <p>Tel / WhatsApp: <a href="https://wa.me/34614154881" target="_blank" style="font-weight: 600; color: var(--color-primary);">+34 614 15 48 81</a></p>
+                  <p>Instagram: <a href="https://instagram.com/sorayanails17" target="_blank" style="color: var(--color-secondary-gold);">@sorayanails17</a></p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <div class="info-content">
+                  <h4>Horario Ininterrumpido</h4>
+                  <p><strong>Lunes, Martes, Jueves, Domingo:</strong> 9:00 - 19:00</p>
+                  <p><strong>Miércoles y Viernes:</strong> 7:00 - 19:00</p>
+                  <p><strong>Sábado:</strong> 7:00 - 19:30</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embedded Map -->
+          <div class="map-container">
+            <iframe 
+              src="https://maps.google.com/maps?q=Calle%20de%20Arg%C3%BCeso,%2011,%20Carabanchel,%20Madrid&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+              title="Ubicación de Soraya Nails en Google Maps" 
+              loading="lazy" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3 class="font-headline">Soraya Nails</h3>
+          <p>
+            Elegancia, serenidad y arte en cada detalle en Madrid. Cuidado de uñas de alta gama y trenzado africano profesional.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#nosotros">Sobre Soraya</a></li>
+            <li><a href="#reservar">Reservar Cita</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Especialidades</h4>
+          <ul class="footer-links">
+            <li><a href="#servicios">Manicura Rusa</a></li>
+            <li><a href="#servicios">Pedicura Spa</a></li>
+            <li><a href="#servicios">Nail Art con Oro</a></li>
+            <li><a href="#servicios">Box & Knotless Braids</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto Rápido</h4>
+          <p style="font-size: 14px; color: #d3c3c0; margin-bottom: 8px;">C. de Argüeso 11, Madrid</p>
+          <p style="font-size: 14px; color: #d3c3c0; margin-bottom: 12px;">+34 614 15 48 81</p>
+          <a href="https://wa.me/34614154881" class="btn-pill-primary" style="padding: 8px 18px; font-size: 13px;">
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Soraya Nails & Braids. Todos los derechos reservados.</p>
+        <p>Madrid • C. de Argüeso 11, Carabanchel</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <a href="https://wa.me/34614154881?text=Hola%20Soraya,%20me%20gustar%C3%ADa%20solicitar%20informaci%C3%B3n%20para%20una%20cita." 
+     target="_blank" 
+     rel="noopener" 
+     class="floating-whatsapp" 
+     id="floatingWhatsApp" 
+     aria-label="Abrir chat de WhatsApp">
+    <div class="ping-ring"></div>
+    <span class="material-symbols-outlined">chat</span>
+  </a>
+
+  <!-- Sticky Mobile Bar -->
+  <div class="sticky-mobile-bar" id="stickyMobileBar">
+    <div>
+      <span style="font-size: 11px; text-transform: uppercase; color: var(--color-outline); letter-spacing: 0.05em;">Soraya Nails</span>
+      <div style="font-weight: 700; font-size: 14px; color: var(--color-primary);">Cita Previa en Madrid</div>
+    </div>
+    <a href="#reservar" class="btn-pill-primary" style="padding: 9px 18px; font-size: 13px;">
+      Reservar
+    </a>
+  </div>
+
+  <!-- Toast Notice Element -->
+  <div class="toast-notice" id="toastNotice">
+    <span class="material-symbols-outlined" style="color: #25D366; font-size: 28px;">check_circle</span>
+    <div>
+      <strong style="display: block; font-size: 14px;">¡Solicitud Lista!</strong>
+      <span style="font-size: 13px; color: var(--color-on-surface-variant);">Redirigiéndote a WhatsApp para confirmar...</span>
+    </div>
+  </div>
+
+  <!-- Javascript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

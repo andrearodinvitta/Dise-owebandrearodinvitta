@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurante Asador Unión Latina | Sabores de Colombia, Perú y Ecuador en Madrid</title>
+  <meta name="description" content="Auténtica cocina tradicional y asador al carbón de Colombia, Perú y Ecuador en Madrid. Pollo al carbón, churrasco, lomo saltado, encebollado, chicharrón y más.">
+  <meta name="keywords" content="restaurante latino madrid, asador union latina, comida colombiana madrid, comida peruana madrid, comida ecuatoriana carabanchel, pollo al carbon madrid">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo_union_latina_transparent.png">
+  <link rel="apple-touch-icon" href="assets/images/logo_union_latina_transparent.png">
+  
+  <!-- Google Fonts: Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Material Symbols & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#131313",
+            "surface-dim": "#0e0e0e",
+            "surface-container-low": "#1a1a1a",
+            "surface-container": "#201f1f",
+            "surface-container-high": "#282828",
+            "on-surface": "#e5e2e1",
+            "on-surface-variant": "#d0c5af",
+            "primary": "#f2ca50",
+            "primary-container": "#3c2f00",
+            "secondary": "#fe6b00",
+            "secondary-hover": "#ff7d1a",
+            "outline": "rgba(242, 202, 80, 0.2)",
+            "outline-subtle": "rgba(255, 255, 255, 0.08)"
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'Georgia', 'serif'],
+            body: ['"Inter"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-[#131313] text-[#e5e2e1] font-body antialiased selection:bg-secondary selection:text-white">
+
+  <!-- TOP HEADER / NAVBAR -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 glass-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group text-decoration-none">
+        <img src="assets/images/logo_union_latina_transparent.png" alt="Restaurante Asador Unión Latina" class="h-12 sm:h-14 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_2px_12px_rgba(254,107,0,0.3)]">
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="hidden lg:flex items-center gap-7">
+        <a href="#inicio" class="text-sm font-semibold text-primary border-b-2 border-primary pb-0.5 transition-colors">Inicio</a>
+        <a href="#populares" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Populares</a>
+        <a href="#menu" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Nuestra Carta</a>
+        <a href="#nosotros" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Nosotros</a>
+        <a href="#contacto" class="text-sm font-medium text-on-surface-variant hover:text-primary transition-colors">Contacto</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="flex items-center gap-3">
+        <!-- Cart Trigger Button -->
+        <button class="open-cart-btn relative p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-outline hover:border-primary transition-all text-primary flex items-center justify-center cursor-pointer" aria-label="Ver Pedido">
+          <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+          <span class="cart-count-badge absolute -top-1.5 -right-1.5 bg-secondary text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-surface" style="display: none;">0</span>
+        </button>
+
+        <!-- Reserve Table CTA (Desktop) -->
+        <button class="open-reservation-btn hidden sm:inline-flex btn-primary text-sm py-2.5 px-5">
+          <span class="material-symbols-outlined text-lg">calendar_month</span>
+          Reservar Mesa
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-primary hover:bg-surface-container transition-colors" aria-label="Abrir Menú">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-surface-container-high border-b border-outline px-6 py-4 space-y-3">
+      <a href="#inicio" class="block text-sm font-semibold text-primary py-2">Inicio</a>
+      <a href="#populares" class="block text-sm font-medium text-on-surface-variant hover:text-primary py-2">Platos Populares</a>
+      <a href="#menu" class="block text-sm font-medium text-on-surface-variant hover:text-primary py-2">Carta Completa</a>
+      <a href="#nosotros" class="block text-sm font-medium text-on-surface-variant hover:text-primary py-2">Sobre Nosotros</a>
+      <a href="#contacto" class="block text-sm font-medium text-on-surface-variant hover:text-primary py-2">Contacto & Ubicación</a>
+      <div class="pt-2">
+        <button class="open-reservation-btn w-full btn-primary py-2.5 justify-center">
+          <span class="material-symbols-outlined text-lg">calendar_month</span>
+          Reservar Mesa
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <!-- Background Image with Gradient Overlay -->
+      <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: linear-gradient(180deg, rgba(19, 19, 19, 0.78) 0%, rgba(19, 19, 19, 0.92) 75%, #131313 100%), url('assets/images/pollo_al_carbon.jpg');"></div>
+      
+      <!-- Decorative Warm Flame Glows -->
+      <div class="hero-glow top-1/4 left-1/2 -translate-x-1/2"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <!-- Logo Emblem in Hero -->
+        <div class="flex justify-center mb-6">
+          <img src="assets/images/logo_union_latina_transparent.png" alt="Restaurante Asador Unión Latina Logo" class="h-28 sm:h-36 md:h-40 w-auto object-contain filter drop-shadow-[0_4px_30px_rgba(242,202,80,0.35)] hover:scale-105 transition-transform duration-500">
+        </div>
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container/90 border border-primary/40 backdrop-blur-md mb-6 shadow-lg shadow-black/40">
+          <span class="text-secondary text-sm">🔥</span>
+          <span class="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary">Auténtico Asador a la Leña y Carbón</span>
+          <span class="text-xs font-semibold text-on-surface-muted hidden sm:inline">| 🇨🇴 Colombia · 🇵🇪 Perú · 🇪🇨 Ecuador</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-display font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight text-inverse-surface leading-[1.1] mb-6 drop-shadow-2xl">
+          SABORES QUE UNEN A <span class="text-gold-gradient block sm:inline">LATINOAMÉRICA</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="font-body text-base sm:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow-md">
+          La mejor gastronomía tradicional de Colombia, Perú y Ecuador en Madrid. Carnes a la brasa, pollo al carbón, ceviches, encebollados y recetas criollas preparadas con pasión.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#menu" class="w-full sm:w-auto btn-outline px-8 py-3.5 text-base">
+            <span class="material-symbols-outlined text-lg">restaurant_menu</span>
+            Ver Carta Completa
+          </a>
+          <button class="open-reservation-btn w-full sm:w-auto btn-primary px-8 py-3.5 text-base">
+            <span class="material-symbols-outlined text-lg">table_restaurant</span>
+            Reservar Mesa
+          </button>
+        </div>
+
+        <!-- Value Proposition Highlights -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-10 border-t border-outline-subtle">
+          <div class="text-center p-3 rounded-lg bg-surface-container/40 backdrop-blur-sm border border-outline-subtle">
+            <span class="font-display text-2xl font-bold text-primary block">+30</span>
+            <span class="text-xs text-on-surface-muted uppercase tracking-wider font-semibold">Platos Típicos</span>
+          </div>
+          <div class="text-center p-3 rounded-lg bg-surface-container/40 backdrop-blur-sm border border-outline-subtle">
+            <span class="font-display text-2xl font-bold text-secondary block">100%</span>
+            <span class="text-xs text-on-surface-muted uppercase tracking-wider font-semibold">Carbón de Leña</span>
+          </div>
+          <div class="text-center p-3 rounded-lg bg-surface-container/40 backdrop-blur-sm border border-outline-subtle">
+            <span class="font-display text-2xl font-bold text-primary block">3 Países</span>
+            <span class="text-xs text-on-surface-muted uppercase tracking-wider font-semibold">🇨🇴 🇵🇪 🇪🇨 Hermanados</span>
+          </div>
+          <div class="text-center p-3 rounded-lg bg-surface-container/40 backdrop-blur-sm border border-outline-subtle">
+            <span class="font-display text-2xl font-bold text-secondary block">Takeaway</span>
+            <span class="text-xs text-on-surface-muted uppercase tracking-wider font-semibold">Pedidos por WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORÍAS PRINCIPALES (Nuestra Carta) -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" id="categorias">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Explora Nuestra Cocina</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-gradient mt-1">Categorías de la Carta</h2>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <!-- Entrantes -->
+        <div class="category-feature-card" data-category="entrantes">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline mx-auto flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+            🌽
+          </div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-inverse-surface mb-1">Entrantes</h3>
+          <p class="text-xs text-on-surface-muted">Humitas, papas rellenas, patacones y yucas</p>
+        </div>
+
+        <!-- Platos Perú -->
+        <div class="category-feature-card" data-category="peru">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline mx-auto flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+            🍗
+          </div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-inverse-surface mb-1">Platos Perú</h3>
+          <p class="text-xs text-on-surface-muted">Pollo al carbón, chaufa, lomo saltado, caldo</p>
+        </div>
+
+        <!-- Platos Ecuador & Colombia -->
+        <div class="category-feature-card" data-category="ecuador">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline mx-auto flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+            🍖
+          </div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-inverse-surface mb-1">Platos Ecuador</h3>
+          <p class="text-xs text-on-surface-muted">Encebollado, fritada, guatita, churrasco</p>
+        </div>
+
+        <!-- Postres y Bebidas -->
+        <div class="category-feature-card" data-category="bebidas">
+          <div class="w-16 h-16 rounded-full bg-surface-container-high border border-outline mx-auto flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform">
+            🍰
+          </div>
+          <h3 class="font-display text-lg sm:text-xl font-bold text-inverse-surface mb-1">Postres y Bebidas</h3>
+          <p class="text-xs text-on-surface-muted">Batidos, colada morada, tres leches, inca kola</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATOS POPULARES -->
+    <section id="populares" class="py-20 bg-surface-container-low border-y border-outline-subtle">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Los Favoritos de la Casa</span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-gold-gradient mt-1">Platos Populares</h2>
+            <p class="text-sm text-on-surface-variant mt-2 max-w-xl">Las especialidades más aclamadas de nuestro asador, preparadas diariamente con ingredientes frescos y el toque maestro de la brasa.</p>
+          </div>
+          <div class="mt-4 md:mt-0 flex gap-2">
+            <a href="#menu" class="btn-outline text-xs py-2 px-4">
+              Ver todos los platos <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Popular Dishes Grid / Scroll -->
+        <div id="popular-dishes-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Renderizado dinámicamente con JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CARTA COMPLETA -->
+    <section id="menu" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Catálogo Gastronómico 100% Fotográfico</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-gradient mt-1 mb-4">Carta Completa</h2>
+        <p class="text-sm sm:text-base text-on-surface-variant">Cada plato de nuestra carta cuenta con su fotografía real para que disfrutes de una experiencia visual antes de probarlo.</p>
+      </div>
+
+      <!-- Live Search & Filter Controls -->
+      <div class="mb-10 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        <!-- Category Filter Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar flex-nowrap">
+          <button class="filter-tab active" data-category="all">
+            <span>✨</span> Todos
+          </button>
+          <button class="filter-tab" data-category="entrantes">
+            <span>🌽</span> Entrantes
+          </button>
+          <button class="filter-tab" data-category="peru">
+            <span>🇵🇪</span> Platos Perú
+          </button>
+          <button class="filter-tab" data-category="ecuador">
+            <span>🇪🇨</span> Platos Ecuador
+          </button>
+          <button class="filter-tab" data-category="colombia">
+            <span>🇨🇴</span> Colombia
+          </button>
+          <button class="filter-tab" data-category="bebidas">
+            <span>🥤</span> Bebidas
+          </button>
+          <button class="filter-tab" data-category="postres">
+            <span>🍰</span> Postres
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="w-full md:w-80">
+          <div class="search-container">
+            <span class="material-symbols-outlined text-primary text-xl">search</span>
+            <input type="text" id="menu-search" class="search-input" placeholder="Buscar plato, ingrediente..." autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <!-- Result Counter -->
+      <div class="flex items-center justify-between mb-6 px-1">
+        <span id="search-result-count" class="text-xs font-semibold text-on-surface-muted uppercase tracking-wider">Cargando platos...</span>
+        <span class="text-xs text-on-surface-muted">Precios con IVA incluido</span>
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div id="menu-items-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Renderizado dinámicamente desde js/menu-data.js -->
+      </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS & EL ASADOR -->
+    <section id="nosotros" class="py-24 bg-surface-container-dim border-t border-outline-subtle relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          <!-- Text Story -->
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Nuestra Tradición</span>
+            <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-gradient mt-2 mb-6">
+              El Fuego que Une a Nuestras Familias
+            </h2>
+            <div class="space-y-4 text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              <p>
+                En <strong class="text-primary font-semibold">Restaurante Asador Unión Latina</strong>, encendemos el carbón cada mañana con el mismo amor y dedicación que nuestros abuelos en los andes y costas de Colombia, Perú y Ecuador.
+              </p>
+              <p>
+                Nuestro propósito es ser el hogar gastronómico en Madrid donde convergen las mejores tradiciones: el inconfundible ahumado del pollo al carbón peruano, la abundancia y calor de un sancocho colombiano de ternera, y la frescura marina de un encebollado o churrasco ecuatoriano a la brasa.
+              </p>
+              <p>
+                Utilizamos ingredientes auténticos importados directamente, cortes seleccionados de primera calidad y marinados artesanales reposados pacientemente para que cada bocado te transporte a casa.
+              </p>
+            </div>
+
+            <!-- Badges list -->
+            <div class="grid grid-cols-2 gap-4 mt-8 pt-6 border-t border-outline-subtle">
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary text-2xl">outdoor_grill</span>
+                <div>
+                  <h4 class="font-display text-sm font-bold text-inverse-surface">Brasa y Leña</h4>
+                  <p class="text-xs text-on-surface-muted">Sabor 100% ahumado natural</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">favorite</span>
+                <div>
+                  <h4 class="font-display text-sm font-bold text-inverse-surface">Recetas Caseras</h4>
+                  <p class="text-xs text-on-surface-muted">Herencia gastronómica viva</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Showcase Collage -->
+          <div class="relative">
+            <div class="rounded-2xl overflow-hidden border border-outline shadow-2xl relative">
+              <img src="assets/images/chicharron_mixto.jpg" alt="Asador Unión Latina" class="w-full h-[440px] object-cover hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                <span class="text-secondary text-xs uppercase tracking-widest font-bold">Experiencia Única</span>
+                <h3 class="font-display text-2xl font-bold text-white mt-1">C. de la Laguna, 32 · Madrid</h3>
+                <p class="text-xs text-on-surface-variant mt-1">Ambiente acogedor, familiar y con la mejor atención</p>
+              </div>
+            </div>
+            <!-- Small floating card overlay -->
+            <div class="absolute -bottom-6 -left-6 bg-surface-container-high border border-primary/40 rounded-xl p-4 shadow-xl hidden sm:flex items-center gap-4 max-w-xs backdrop-blur-md">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl">
+                ⭐
+              </div>
+              <div>
+                <span class="font-display font-bold text-sm text-primary block">Sabor 100% Auténtico</span>
+                <span class="text-[11px] text-on-surface-muted">Valorado por nuestra comunidad latina en Madrid</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- RESERVAS Y CONTACTO -->
+    <section id="contacto" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary">Planifica tu Visita</span>
+        <h2 class="font-display text-3xl sm:text-5xl font-bold text-gold-gradient mt-1 mb-4">Reservas y Ubicación</h2>
+        <p class="text-sm sm:text-base text-on-surface-variant">Reserva tu mesa para disfrutar en familia o amigos, o ponte en contacto con nosotros para pedidos para llevar.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Formulario de Reserva -->
+        <div class="lg:col-span-6 bg-surface-container p-6 sm:p-8 rounded-2xl border border-outline shadow-xl">
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-outline-subtle">
+            <span class="material-symbols-outlined text-secondary text-2xl">event_seat</span>
+            <div>
+              <h3 class="font-display text-2xl font-bold text-inverse-surface">Reserva tu Mesa Online</h3>
+              <p class="text-xs text-on-surface-muted">Confirmación directa por WhatsApp</p>
+            </div>
+          </div>
+
+          <form id="reservation-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="form-group mb-0">
+                <label class="form-label" for="res-name">Nombre Completo *</label>
+                <input type="text" id="res-name" class="form-control" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group mb-0">
+                <label class="form-label" for="res-phone">Teléfono / WhatsApp *</label>
+                <input type="tel" id="res-phone" class="form-control" placeholder="600 000 000" required>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="form-group mb-0">
+                <label class="form-label" for="res-date">Fecha *</label>
+                <input type="date" id="res-date" class="form-control" required>
+              </div>
+              <div class="form-group mb-0">
+                <label class="form-label" for="res-time">Hora *</label>
+                <select id="res-time" class="form-control" required>
+                  <option value="13:00">13:00</option>
+                  <option value="13:30">13:30</option>
+                  <option value="14:00">14:00</option>
+                  <option value="14:30">14:30</option>
+                  <option value="15:00">15:00</option>
+                  <option value="15:30">15:30</option>
+                  <option value="20:00">20:00</option>
+                  <option value="20:30">20:30</option>
+                  <option value="21:00">21:00</option>
+                  <option value="21:30">21:30</option>
+                  <option value="22:00">22:00</option>
+                </select>
+              </div>
+              <div class="form-group mb-0">
+                <label class="form-label" for="res-guests">Personas *</label>
+                <select id="res-guests" class="form-control" required>
+                  <option value="1">1 Persona</option>
+                  <option value="2" selected>2 Personas</option>
+                  <option value="3">3 Personas</option>
+                  <option value="4">4 Personas</option>
+                  <option value="5">5 Personas</option>
+                  <option value="6">6 Personas</option>
+                  <option value="7">7 Personas</option>
+                  <option value="8+">8 o más personas</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-notes">Comentarios Especiales (Opcional)</label>
+              <textarea id="res-notes" rows="2" class="form-control" placeholder="Cumpleaños, aniversario, trona de bebé..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-primary py-3 justify-center text-base">
+              <span class="material-symbols-outlined">send</span>
+              Solicitar Reserva por WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <!-- Información de Contacto & Mapa -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="bg-surface-container p-6 sm:p-8 rounded-2xl border border-outline shadow-xl">
+            <h3 class="font-display text-2xl font-bold text-gold-gradient mb-6">Información y Contacto</h3>
+            
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline flex items-center justify-center text-primary flex-shrink-0">
+                  <span class="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-inverse-surface block">Dirección:</span>
+                  <p class="text-on-surface-variant">Calle de la Laguna, 32, Carabanchel, 28025 Madrid, España</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline flex items-center justify-center text-primary flex-shrink-0">
+                  <span class="material-symbols-outlined">chat</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-inverse-surface block">WhatsApp & Pedidos:</span>
+                  <a href="https://wa.me/34603330575" target="_blank" class="text-secondary hover:underline font-bold">603 33 05 75 (+34 603 33 05 75)</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline flex items-center justify-center text-primary flex-shrink-0">
+                  <span class="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-inverse-surface block">Correo Electrónico:</span>
+                  <a href="mailto:restauranteunionlatina@gmail.com" class="text-on-surface-variant hover:text-primary transition-colors">restauranteunionlatina@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface-container-high border border-outline flex items-center justify-center text-primary flex-shrink-0">
+                  <span class="material-symbols-outlined">schedule</span>
+                </div>
+                <div>
+                  <span class="font-semibold text-inverse-surface block">Horario de Apertura:</span>
+                  <p class="text-on-surface-variant">Lunes a Domingo: 12:00h - 23:30h (Cocina ininterrumpida)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mapa Embebido de Google Maps -->
+          <div class="rounded-2xl overflow-hidden border border-outline h-64 bg-surface-container-high shadow-xl relative">
+            <iframe 
+              title="Ubicación Restaurante Asador Unión Latina"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.5678453489816!2d-3.743118923485078!3d40.3852077575456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42278dd9eec011%3A0x6b87b7a151b72e18!2sC.%20de%20la%20Laguna%2C%2032%2C%20Carabanchel%2C%2028025%20Madrid!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses" 
+              width="100%" 
+              height="100%" 
+              style="border:0; filter: contrast(1.1) brightness(0.9);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-surface-dim border-t border-outline py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+      
+      <!-- Brand column -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo_union_latina_transparent.png" alt="Restaurante Asador Unión Latina" class="h-16 w-auto object-contain">
+        </div>
+        <p class="text-xs text-on-surface-muted leading-relaxed">
+          Restaurante Asador especializado en la gastronomía tradicional de Colombia, Perú y Ecuador. Auténtica comida criolla y a las brasas en Madrid.
+        </p>
+        <p class="text-xs text-on-surface-muted">
+          © 2026 Restaurante Asador Unión Latina. Todos los derechos reservados.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-display text-sm font-bold text-primary uppercase tracking-wider mb-4">Navegación</h4>
+        <ul class="space-y-2 text-xs text-on-surface-variant">
+          <li><a href="#inicio" class="hover:text-primary transition-colors">Inicio</a></li>
+          <li><a href="#populares" class="hover:text-primary transition-colors">Platos Populares</a></li>
+          <li><a href="#menu" class="hover:text-primary transition-colors">Carta Completa con Fotos</a></li>
+          <li><a href="#nosotros" class="hover:text-primary transition-colors">Nuestra Historia</a></li>
+          <li><a href="#contacto" class="hover:text-primary transition-colors">Reservas y Ubicación</a></li>
+        </ul>
+      </div>
+
+      <!-- Categorías de Comida -->
+      <div>
+        <h4 class="font-display text-sm font-bold text-primary uppercase tracking-wider mb-4">Especialidades</h4>
+        <ul class="space-y-2 text-xs text-on-surface-variant">
+          <li><a href="#menu" class="hover:text-primary transition-colors">🇨🇴 Sancocho y Salchipapas</a></li>
+          <li><a href="#menu" class="hover:text-primary transition-colors">🇵🇪 Pollo al Carbón y Chaufa</a></li>
+          <li><a href="#menu" class="hover:text-primary transition-colors">🇪🇨 Encebollado y Fritada</a></li>
+          <li><a href="#menu" class="hover:text-primary transition-colors">🥤 Batidos y Colada Morada</a></li>
+          <li><a href="#menu" class="hover:text-primary transition-colors">🍰 Tarta Tres Leches Casera</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div>
+        <h4 class="font-display text-sm font-bold text-primary uppercase tracking-wider mb-4">Síguenos & Contacto</h4>
+        <div class="space-y-2 text-xs text-on-surface-variant mb-4">
+          <p>📍 C. de la Laguna, 32, 28025 Madrid</p>
+          <p>📞 WhatsApp: <a href="https://wa.me/34603330575" target="_blank" class="text-secondary font-bold hover:underline">603 33 05 75</a></p>
+          <p>✉️ <a href="mailto:restauranteunionlatina@gmail.com" class="hover:text-primary">restauranteunionlatina@gmail.com</a></p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://instagram.com/restauranteunionlatina" target="_blank" class="w-9 h-9 rounded-lg bg-surface-container border border-outline flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all" title="Instagram @restauranteunionlatina">
+            <span class="text-sm font-bold">IG</span>
+          </a>
+          <a href="https://facebook.com/restauranteunionlatina" target="_blank" class="w-9 h-9 rounded-lg bg-surface-container border border-outline flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all" title="Facebook @restauranteunionlatina">
+            <span class="text-sm font-bold">FB</span>
+          </a>
+          <a href="https://tiktok.com/@restauranteunionlatina" target="_blank" class="w-9 h-9 rounded-lg bg-surface-container border border-outline flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all" title="TikTok @restauranteunionlatina">
+            <span class="text-sm font-bold">TK</span>
+          </a>
+          <a href="https://wa.me/34603330575" target="_blank" class="w-9 h-9 rounded-lg bg-[#25d366]/20 border border-[#25d366]/40 flex items-center justify-center text-[#25d366] hover:bg-[#25d366] hover:text-white transition-all" title="WhatsApp">
+            <span class="material-symbols-outlined text-lg">chat</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTIONS (WhatsApp & Cart) -->
+  <div class="floating-actions">
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/34603330575?text=Hola%20Uni%C3%B3n%20Latina,%20quisiera%20hacer%20una%20consulta" target="_blank" class="floating-btn whatsapp" aria-label="Contactar por WhatsApp">
+      <span class="material-symbols-outlined text-2xl">chat</span>
+    </a>
+    
+    <!-- Floating Cart Trigger -->
+    <button class="floating-btn cart open-cart-btn" aria-label="Abrir Carrito">
+      <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+      <span class="floating-badge cart-count-badge" style="display: none;">0</span>
+    </button>
+  </div>
+
+  <!-- CART SIDEBAR / DRAWER -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer">
+    <!-- Cart Header -->
+    <div class="p-5 border-b border-outline flex items-center justify-between bg-surface-container-high">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/images/logo_union_latina_transparent.png" alt="Logo Unión Latina" class="h-9 w-auto object-contain">
+        <h3 class="font-display text-lg font-bold text-inverse-surface">Tu Pedido</h3>
+      </div>
+      <button id="close-cart-btn" class="p-1.5 rounded-lg text-on-surface-muted hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Cart Items List (Scrollable) -->
+    <div id="cart-items-list" class="flex-grow p-4 overflow-y-auto space-y-3">
+      <!-- Items renderizados dinámicamente -->
+    </div>
+
+    <!-- Cart Footer & Checkout Form -->
+    <div class="p-5 border-t border-outline bg-surface-container-high space-y-4">
+      <div class="space-y-2">
+        <div class="flex items-center justify-between text-xs text-on-surface-muted">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal" class="font-semibold text-on-surface">0.00€</span>
+        </div>
+        <div class="flex items-center justify-between text-base font-bold text-inverse-surface border-t border-outline-subtle pt-2">
+          <span>Total del Pedido:</span>
+          <span id="cart-total" class="text-primary text-xl font-display">0.00€</span>
+        </div>
+      </div>
+
+      <!-- Order Options -->
+      <div class="space-y-2">
+        <input type="text" id="order-customer-name" class="form-control text-xs py-2" placeholder="Tu nombre para el pedido">
+        <select id="order-type" class="form-control text-xs py-2">
+          <option value="Recogida en Restaurante (Takeaway)">Para Recoger en Restaurante (Takeaway)</option>
+          <option value="Consumo en Mesa (Restaurante)">Para Tomar en Mesa (Restaurante)</option>
+        </select>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="space-y-2">
+        <button id="send-whatsapp-order-btn" class="w-full btn-primary py-3 justify-center text-sm font-bold" disabled>
+          <span class="material-symbols-outlined text-base">send</span>
+          Pedir por WhatsApp (603 33 05 75)
+        </button>
+        <button id="clear-cart-btn" class="w-full btn-ghost py-1.5 justify-center text-xs text-on-surface-muted hover:text-error">
+          Vaciar Pedido
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- DISH DETAIL MODAL -->
+  <div id="dish-modal-overlay" class="modal-overlay"></div>
+  <div id="dish-detail-modal" class="modal-overlay">
+    <div class="modal-content relative" onclick="event.stopPropagation()">
+      <div class="relative">
+        <img id="modal-dish-img" src="" alt="" class="w-full h-64 object-cover">
+        <!-- Prominent Close Button Top Right -->
+        <button id="close-dish-modal-btn" type="button" onclick="closeDishModal()" class="absolute top-3 right-3 z-30 w-10 h-10 rounded-full bg-black/85 border border-white/30 text-white hover:text-primary hover:border-primary flex items-center justify-center transition-all shadow-xl cursor-pointer active:scale-95" aria-label="Cerrar ventana">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+        <span id="modal-dish-badge" class="card-badge"></span>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <div>
+          <span id="modal-dish-country" class="text-xs text-primary font-semibold uppercase tracking-wider block mb-1"></span>
+          <div class="flex items-center justify-between gap-4">
+            <h3 id="modal-dish-title" class="font-display text-2xl font-bold text-inverse-surface"></h3>
+            <span id="modal-dish-price" class="font-display text-2xl font-bold text-primary"></span>
+          </div>
+        </div>
+
+        <p id="modal-dish-desc" class="text-sm text-on-surface-variant leading-relaxed"></p>
+
+        <div id="modal-dish-allergens" class="hidden"></div>
+
+        <div class="pt-4 border-t border-outline-subtle flex flex-wrap items-center justify-between gap-3">
+          <!-- Quantity Counter -->
+          <div class="flex items-center border border-outline rounded-lg bg-surface-container-low p-1">
+            <button id="modal-qty-minus" type="button" class="w-8 h-8 rounded text-on-surface hover:text-primary flex items-center justify-center font-bold text-base">-</button>
+            <span id="modal-dish-qty" class="w-8 text-center font-bold text-sm text-inverse-surface">1</span>
+            <button id="modal-qty-plus" type="button" class="w-8 h-8 rounded text-on-surface hover:text-primary flex items-center justify-center font-bold text-base">+</button>
+          </div>
+
+          <!-- Add to Cart CTA -->
+          <button id="modal-add-to-cart-btn" type="button" class="flex-grow btn-primary py-2.5 justify-center text-sm font-semibold">
+            <span class="material-symbols-outlined text-base">shopping_cart</span>
+            Añadir al Pedido
+          </button>
+
+          <!-- Explicit Close Button at Bottom -->
+          <button type="button" onclick="closeDishModal()" class="btn-outline py-2.5 px-4 text-xs font-semibold hover:bg-surface-container-highest">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESERVATION POPUP MODAL -->
+  <div id="reservation-modal-overlay" class="modal-overlay"></div>
+  <div id="reservation-modal" class="modal-overlay">
+    <div class="modal-content p-6 sm:p-8 relative" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-4 mb-4 border-b border-outline">
+        <div class="flex items-center gap-3">
+          <img src="assets/images/logo_union_latina_transparent.png" alt="Logo Unión Latina" class="h-11 w-auto object-contain">
+          <div>
+            <h3 class="font-display text-xl font-bold text-inverse-surface">Reservar Mesa</h3>
+            <p class="text-xs text-on-surface-muted">Restaurante Asador Unión Latina</p>
+          </div>
+        </div>
+        <button id="close-reservation-btn" type="button" onclick="closeReservationModal()" class="w-9 h-9 rounded-full bg-surface-container-high border border-outline-subtle text-on-surface hover:text-primary flex items-center justify-center transition-all cursor-pointer" aria-label="Cerrar reserva">
+          <span class="material-symbols-outlined text-lg">close</span>
+        </button>
+      </div>
+
+      <form id="reservation-modal-form" onsubmit="event.preventDefault(); document.getElementById('reservation-form').dispatchEvent(new Event('submit')); closeReservationModal();" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="form-group mb-0">
+            <label class="form-label">Nombre Completo *</label>
+            <input type="text" id="modal-res-name" class="form-control" placeholder="Tu nombre" required oninput="document.getElementById('res-name').value = this.value">
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label">Teléfono / WhatsApp *</label>
+            <input type="tel" id="modal-res-phone" class="form-control" placeholder="600 000 000" required oninput="document.getElementById('res-phone').value = this.value">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="form-group mb-0">
+            <label class="form-label">Fecha *</label>
+            <input type="date" id="modal-res-date" class="form-control" required oninput="document.getElementById('res-date').value = this.value">
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label">Hora *</label>
+            <select id="modal-res-time" class="form-control" required onchange="document.getElementById('res-time').value = this.value">
+              <option value="13:00">13:00</option>
+              <option value="13:30">13:30</option>
+              <option value="14:00">14:00</option>
+              <option value="14:30">14:30</option>
+              <option value="15:00">15:00</option>
+              <option value="15:30">15:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+            </select>
+          </div>
+          <div class="form-group mb-0">
+            <label class="form-label">Comensales *</label>
+            <select id="modal-res-guests" class="form-control" required onchange="document.getElementById('res-guests').value = this.value">
+              <option value="1">1 Persona</option>
+              <option value="2" selected>2 Personas</option>
+              <option value="3">3 Personas</option>
+              <option value="4">4 Personas</option>
+              <option value="5">5 Personas</option>
+              <option value="6">6 Personas</option>
+              <option value="7">7 Personas</option>
+              <option value="8+">8 o más</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Comentarios u Ocasión (Opcional)</label>
+          <textarea id="modal-res-notes" rows="2" class="form-control" placeholder="Cumpleaños, aniversario, trona..." oninput="document.getElementById('res-notes').value = this.value"></textarea>
+        </div>
+
+        <button type="submit" class="w-full btn-primary py-3 justify-center text-sm font-bold">
+          <span class="material-symbols-outlined">send</span>
+          Confirmar y Enviar Reserva a WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- SCRIPTS -->
+  <script src="js/menu-data.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

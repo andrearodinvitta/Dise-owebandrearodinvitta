@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DUMORE Chocolate | Alta Repostería, Fresas con Chocolate & Regalos Exclusivos</title>
+  <meta name="description" content="DUMORE Chocolate: Seleccionamos las mejores fresas y las convertimos en detalles únicos que enamoran. Cajas de regalo, ramos gourmet, chocobombas y mini donas personalizadas en Colombia.">
+  <meta name="keywords" content="Dumore Chocolate, fresas con chocolate, chocobombas, mini donas, regalos personalizados, anchetas dulces, fresas bogota, detalles romanticos">
+  <meta property="og:title" content="DUMORE Chocolate | Detalles Únicos que Enamoran">
+  <meta property="og:description" content="Descubre nuestra selección premium de fresas cubiertas con fino chocolate, chocobombas y mini donas para ocasiones especiales.">
+  <meta property="og:image" content="screen.png">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand-logo-link" id="brand-logo">
+        <img src="logo_dumore.png" alt="DUMORE Chocolate" class="brand-logo-img">
+        <div class="brand-text">
+          DUMORE
+          <span>CHOCOLATE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+          <li><a href="#productos" class="nav-link">Catálogo</a></li>
+          <li><a href="#calculadora" class="nav-link">Cotizador</a></li>
+          <li><a href="#reservar" class="nav-link">Reservar</a></li>
+          <li><a href="#galeria" class="nav-link">Galería</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20hacer%20una%20consulta." target="_blank" class="btn btn-whatsapp btn-sm header-wa-btn" style="text-decoration: none; padding: 6px 14px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 6px;">
+          <span class="material-symbols-outlined" style="font-size: 1.1rem;">chat</span>
+          <span>+57 310 8239392</span>
+        </a>
+        <button class="cart-toggle-btn" id="cart-btn" aria-label="Ver Carrito de Compras">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span class="cart-badge" id="cart-counter">0</span>
+        </button>
+        <button class="mobile-nav-toggle" id="mobile-toggle" aria-label="Abrir Menú">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+      <div class="hero-bg-shapes">
+        <div class="hero-shape-1"></div>
+        <div class="hero-shape-2"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="material-symbols-outlined star-icon" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            <span>ALTA REPOSTERÍA & REGALOS DE LUJO</span>
+          </div>
+
+          <h1 class="editorial-title hero-title">
+            Seleccionamos las mejores fresas y las convertimos en <span class="highlight">detalles únicos</span> que enamoran
+          </h1>
+
+          <p class="hero-desc">
+            Descubre nuestra selección premium de fresas cubiertas con el más fino chocolate, chocobombas artesanales y mini donas gourmet diseñadas para crear recuerdos memorables.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#calculadora" class="btn btn-primary" id="hero-calc-btn">
+              <span class="material-symbols-outlined">calculate</span>
+              Cotizar Mi Pedido
+            </a>
+            <a href="#productos" class="btn btn-secondary" id="hero-catalog-btn">
+              Ver Catálogo Completo
+            </a>
+            <a href="https://wa.me/573108239392?text=Hola%20DUMORE%2C%20quisiera%20recibir%20informaci%C3%B3n%20sobre%20sus%20productos%20y%20precios." target="_blank" class="btn btn-whatsapp" id="hero-wa-btn">
+              <span class="material-symbols-outlined">chat</span>
+              WhatsApp
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat-item">
+              <h4>100%</h4>
+              <p>Chocolate Artesanal</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>+2.500</h4>
+              <p>Sonrisas Regaladas</p>
+            </div>
+            <div class="hero-stat-item">
+              <h4>A Medida</h4>
+              <p>Personalización Total</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-wrapper">
+            <img src="screen.png" alt="Caja de Fresas con Hojas de Oro DUMORE" class="hero-main-img">
+            
+            <!-- Floating Decorative Card -->
+            <div class="hero-floating-card hero-card-bottom">
+              <div class="icon-box" style="background: rgba(37, 211, 102, 0.15); color: #1ea952;">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">moped</span>
+              </div>
+              <div>
+                <h5>¡Envío Gratis!</h5>
+                <p>Hasta 2 km a la redonda de nuestra sede</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features / La Experiencia DUMORE -->
+    <section class="features-section" id="experiencia">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="editorial-subtitle">Excelencia y Sentimiento</span>
+          <h2 class="editorial-title">La Experiencia DUMORE</h2>
+          <p>Más que un postre, creamos regalos personalizados. Cada detalle cuenta, desde la selección minuciosa de ingredientes hasta el momento mágico de la entrega.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            </div>
+            <h3>Personalización Única</h3>
+            <p>Mensajes dedicados, tonalidades de chocolate a elección, coberturas con hojas de oro y empaques de lujo con cintas de seda.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap" style="color: #1ea952;">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">moped</span>
+            </div>
+            <h3>Envío Gratis (&lt; 2 km)</h3>
+            <p>Calcula tu envío gratis: si tu entrega está a 2 kilómetros o menos a la redonda de nuestra sede, ¡el domicilio es 100% gratuito!</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrap">
+              <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+            </div>
+            <h3>Ubicación en Google Maps</h3>
+            <p>Encuéntranos fácilmente en Bogotá. <a href="https://www.google.com/maps/place/Dumore+Chocolate/@4.7333831,-74.0306103,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f8fd0a466826f:0x6f8530ffef2caf6!8m2!3d4.7333778!4d-74.0280354!16s%2Fg%2F11nvht3nq1" target="_blank" style="color: var(--secondary); font-weight: 700; text-decoration: underline;">Ver ubicación exacta</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section class="catalog-section" id="productos">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="editorial-subtitle">Nuestras Creaciones Artesanales</span>
+          <h2 class="editorial-title">Nuestro Catálogo Gourmet</h2>
+          <p>Explora nuestra carta de fresas premium, chocobombas, mini donas y delicias hechas a mano con ingredientes de origen seleccionado.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="catalog-filter-tabs">
+          <button class="filter-tab-btn active" data-filter="all">Todos los Productos</button>
+          <button class="filter-tab-btn" data-filter="fresas">Fresas Premium</button>
+          <button class="filter-tab-btn" data-filter="chocobombas">Chocobombas</button>
+          <button class="filter-tab-btn" data-filter="donas">Mini Donas</button>
+          <button class="filter-tab-btn" data-filter="delicias">Especiales & Postres</button>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="products-grid" id="products-grid">
+          
+          <!-- Product 1: Fresas en Caja -->
+          <div class="product-card" data-category="fresas">
+            <div class="product-img-wrap">
+              <img src="fresas_caja.png" alt="Fresas Gourmet en Caja de Lujo" loading="lazy">
+              <span class="product-badge">Top Ventas</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Fresas en Caja de Lujo</h4>
+              <p class="product-subtitle">Fresas seleccionadas de gran calibre bañadas en chocolate belga, blanco y con leche con lluvia de frutos secos y decoraciones especiales.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Caja x 6 unidades</span><span class="variant-price">$45.000</span></li>
+                <li><span class="variant-name">Caja x 9 unidades</span><span class="variant-price">$55.000</span></li>
+                <li><span class="variant-name">Caja x 12 unidades</span><span class="variant-price">$70.000</span></li>
+                <li><span class="variant-name">Caja x 15 unidades</span><span class="variant-price">$80.000</span></li>
+                <li><span class="variant-name">Caja x 20 unidades</span><span class="variant-price">$90.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Fresas en Caja de Lujo', 45000, 'Caja x 6', 'fresas_caja.png')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20ordenar%20una%20Caja%20de%20Fresas%20Premium." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: Ramo de Fresas -->
+          <div class="product-card" data-category="fresas">
+            <div class="product-img-wrap">
+              <img src="ramo.png" alt="Ramo de Fresas con Chocolate" loading="lazy">
+              <span class="product-badge">Romántico</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Ramo Floral de Fresas</h4>
+              <p class="product-subtitle">Presentación en elegante ramo envuelto en papel coreano rosado con lazo de satén, fresas temáticas y perlas comestibles.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Ramo x 4 fresas</span><span class="variant-price">$40.000</span></li>
+                <li><span class="variant-name">Ramo x 6 fresas</span><span class="variant-price">$50.000</span></li>
+                <li><span class="variant-name">Ramo x 9 fresas</span><span class="variant-price">$60.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Ramo Floral de Fresas', 40000, 'Ramo x 4', 'ramo.png')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20pedir%20un%20Ramo%20de%20Fresas." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: Fresas en Vaso / Mini Box -->
+          <div class="product-card" data-category="fresas">
+            <div class="product-img-wrap">
+              <img src="caja_roja_mini.png" alt="Fresas en Presentación Vaso o Estuche" loading="lazy">
+              <span class="product-badge">Individual</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Fresas en Vaso / Estuche</h4>
+              <p class="product-subtitle">Práctica y distinguida presentación ideal para meriendas, cumpleaños o un detalle dulce y espontáneo.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Vaso x 6 unidades</span><span class="variant-price">$45.000</span></li>
+                <li><span class="variant-name">Vaso x 8 unidades</span><span class="variant-price">$50.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Fresas en Vaso', 45000, 'Vaso x 6', 'caja_roja_mini.png')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20pedir%20Fresas%20en%20Vaso." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4: Chocobombas Clásicas -->
+          <div class="product-card" data-category="chocobombas">
+            <div class="product-img-wrap">
+              <img src="84cdc2a768ea343813567a09a430e747.jpg" alt="Chocobombas Clásicas con Cacao y Masmelos" loading="lazy">
+              <span class="product-badge">Sorpresa</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Chocobombas Clásicas</h4>
+              <p class="product-subtitle">Esferas de chocolate rellenas de cacao premium y mini malvaviscos. Se disuelven mágicamente al verter leche caliente. Adicionales de Milo y Klim disponibles.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Unidad individual</span><span class="variant-price">$10.000</span></li>
+                <li><span class="variant-name">Caja x 4 unidades</span><span class="variant-price">$40.000</span></li>
+                <li><span class="variant-name">Caja x 6 unidades</span><span class="variant-price">$60.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Chocobombas Clásicas', 10000, 'Unidad', '84cdc2a768ea343813567a09a430e747.jpg')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20ordenar%20Chocobombas%20Cl%C3%A1sicas." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5: Chocobombas Premium -->
+          <div class="product-card" data-category="chocobombas">
+            <div class="product-img-wrap">
+              <img src="premium_choco.png" alt="Chocobombas Gourmet con Toppings" loading="lazy">
+              <span class="product-badge">Especial</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Chocobombas Gourmet</h4>
+              <p class="product-subtitle">Recubiertas y decoradas con toppings especiales: galleta Oreo triturada, M&Ms, trozos de maní tostado, chips de chocolate y fresa deshidratada.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Unidad individual</span><span class="variant-price">$13.000</span></li>
+                <li><span class="variant-name">Caja x 4 unidades</span><span class="variant-price">$52.000</span></li>
+                <li><span class="variant-name">Caja x 6 unidades</span><span class="variant-price">$78.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Chocobombas Gourmet', 13000, 'Unidad', 'premium_choco.png')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20ordenar%20Chocobombas%20Gourmet." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6: Mini Donas -->
+          <div class="product-card" data-category="donas">
+            <div class="product-img-wrap">
+              <img src="minidonas_glaseadas_box.jpg" alt="Caja de Mini Donas Gourmet Glaseadas" loading="lazy">
+              <span class="product-badge">Personalizable</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Mini Donas Glaseadas</h4>
+              <p class="product-subtitle">Suaves y esponjosas mini donas horneadas a diario. Elige tus salsas (Nutella, arequipe, leche condensada, Hershey's) y toppings favoritos.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Caja x 8 unidades</span><span class="variant-price">$18.000</span></li>
+                <li><span class="variant-name">Caja x 16 unidades</span><span class="variant-price">$30.000</span></li>
+                <li><span class="variant-name">Caja x 27 unidades</span><span class="variant-price">$45.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Mini Donas Glaseadas', 18000, 'Caja x 8', 'minidonas_glaseadas_box.jpg')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20pedir%20Mini%20Donas." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 7: Brochetas de Mini Donas -->
+          <div class="product-card" data-category="donas">
+            <div class="product-img-wrap">
+              <img src="a3e3c230a869e778b0a91449f301b65b.jpg" alt="Brochetas de Mini Donas con Lazos" loading="lazy">
+              <span class="product-badge">Fiestas & Eventos</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Brochetas de Mini Donas</h4>
+              <p class="product-subtitle">Presentación festiva en brocheta individual con celofán y lazo de cinta satinada. Ideales para recordatorios de fiestas y mesas de postres.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Brocheta x 3 donas</span><span class="variant-price">$7.500</span></li>
+                <li><span class="variant-name">Pack x 6 brochetas</span><span class="variant-price">$40.000</span></li>
+                <li><span class="variant-name">Pack x 12 brochetas</span><span class="variant-price">$75.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Brochetas de Mini Donas', 40000, 'Pack x 6', 'a3e3c230a869e778b0a91449f301b65b.jpg')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20cotizar%20Brochetas%20de%20Mini%20Donas." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 8: Gelatinas 3D & Mini Cheesecakes -->
+          <div class="product-card" data-category="delicias">
+            <div class="product-img-wrap">
+              <img src="gelatina_3d.jpg" alt="Gelatinas 3D Florales Comestibles" loading="lazy">
+              <span class="product-badge">Arte Culinario</span>
+            </div>
+            <div class="product-content">
+              <h4 class="product-title">Gelatinas 3D & Cheesecakes</h4>
+              <p class="product-subtitle">Obras de arte comestibles con flores encapsuladas 3D (rosas, girasoles y margaritas) y mini cheesecakes artesanales de frutos rojos.</p>
+              
+              <ul class="price-variants-list">
+                <li><span class="variant-name">Gelatina 3D Floral</span><span class="variant-price">$18.000</span></li>
+                <li><span class="variant-name">Mini Cheesecake (100ml)</span><span class="variant-price">$14.000</span></li>
+                <li><span class="variant-name">Cheesecake Familiar (3-5 porciones)</span><span class="variant-price">$48.000</span></li>
+              </ul>
+
+              <div class="product-actions">
+                <button class="btn-add-cart" onclick="addToCart('Gelatina 3D Floral', 18000, 'Unidad', 'gelatina_3d.jpg')">
+                  <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span> Añadir
+                </button>
+                <a class="btn-order-wa" href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20consultar%20disponibilidad%20de%20Gelatinas%203D%20y%20Cheesecakes." target="_blank">
+                  <span class="material-symbols-outlined text-[18px]">chat</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Order Calculator Section -->
+    <section class="calculator-section" id="calculadora">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="editorial-subtitle">Tu Regalo, Tu Estilo</span>
+          <h2 class="editorial-title">Calculadora de Pedidos Personalizados</h2>
+          <p>Personaliza cada elemento de tu sorpresa y obtén una cotización instantánea con opción de envío directo a WhatsApp.</p>
+        </div>
+
+        <div class="calc-card">
+          <!-- Left: Form Controls -->
+          <div class="calc-form-side">
+            <!-- Step 1: Base Product -->
+            <div class="calc-group">
+              <h4 class="form-step-title"><span class="step-num">1</span> Selecciona el Producto Base</h4>
+              <div class="calc-options-grid" id="calc-base-options">
+                <label class="calc-radio-label selected">
+                  <input type="radio" name="calc-base" value="fresas-caja" checked>
+                  <span class="material-symbols-outlined option-icon">inventory_2</span>
+                  <span class="option-title">Fresas en Caja</span>
+                  <span class="option-desc">Elegancia tradicional</span>
+                </label>
+                <label class="calc-radio-label">
+                  <input type="radio" name="calc-base" value="fresas-ramo">
+                  <span class="material-symbols-outlined option-icon">local_florist</span>
+                  <span class="option-title">Ramo Floral</span>
+                  <span class="option-desc">Impacto romántico</span>
+                </label>
+                <label class="calc-radio-label">
+                  <input type="radio" name="calc-base" value="chocobombas">
+                  <span class="material-symbols-outlined option-icon">egg</span>
+                  <span class="option-title">Chocobombas</span>
+                  <span class="option-desc">Magia de chocolate</span>
+                </label>
+                <label class="calc-radio-label">
+                  <input type="radio" name="calc-base" value="donas">
+                  <span class="material-symbols-outlined option-icon">cookie</span>
+                  <span class="option-title">Mini Donas</span>
+                  <span class="option-desc">Bocados gourmet</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 2: Size / Quantity -->
+            <div class="calc-group">
+              <h4 class="form-step-title"><span class="step-num">2</span> Elige la Cantidad / Tamaño</h4>
+              <select class="calc-input" id="calc-size-select">
+                <!-- Populated dynamically via app.js -->
+              </select>
+            </div>
+
+            <!-- Step 3: Chocolate / Flavor Option -->
+            <div class="calc-group">
+              <h4 class="form-step-title"><span class="step-num">3</span> Tipo de Chocolate o Cobertura</h4>
+              <div class="calc-options-grid" id="calc-choco-options">
+                <label class="calc-radio-label selected">
+                  <input type="radio" name="calc-choco" value="Combinado (Leche y Blanco)" checked>
+                  <span class="option-title">Combinado</span>
+                  <span class="option-desc">Chocolate Blanco & Con Leche</span>
+                </label>
+                <label class="calc-radio-label">
+                  <input type="radio" name="calc-choco" value="Chocolate Semiamargo 58%">
+                  <span class="option-title">Semiamargo</span>
+                  <span class="option-desc">Cacao intenso 58%</span>
+                </label>
+                <label class="calc-radio-label">
+                  <input type="radio" name="calc-choco" value="Chocolate Rosado Ruby">
+                  <span class="option-title">Rose Ruby</span>
+                  <span class="option-desc">Notas afrutadas rosadas</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 4: Addons & Extras -->
+            <div class="calc-group">
+              <h4 class="form-step-title"><span class="step-num">4</span> Adicionales de Regalo</h4>
+              <div class="calc-checkbox-list">
+                <label class="calc-check-label" style="background: rgba(37, 211, 102, 0.08); border-color: rgba(37, 211, 102, 0.4);">
+                  <input type="checkbox" id="addon-free-shipping" checked disabled>
+                  <span style="color: #1ea952; font-weight: 600;">🛵 Envío Gratis (&lt; 2 km a la redonda)</span>
+                </label>
+                <label class="calc-check-label">
+                  <input type="checkbox" id="addon-gold" data-price="8000">
+                  <span>Toques con Hojas de Oro (+ $8.000)</span>
+                </label>
+                <label class="calc-check-label">
+                  <input type="checkbox" id="addon-toppings" data-price="5000">
+                  <span>Toppings Premium (Ferrero/Oreo) (+ $5.000)</span>
+                </label>
+                <label class="calc-check-label">
+                  <input type="checkbox" id="addon-ribbon" data-price="6000">
+                  <span>Lazo Satinado Deluxe (+ $6.000)</span>
+                </label>
+                <label class="calc-check-label">
+                  <input type="checkbox" id="addon-card" data-price="0" checked>
+                  <span>Tarjeta Dedicatoria (Gratis)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Step 5: Dedication note -->
+            <div class="calc-group">
+              <h4 class="form-step-title"><span class="step-num">5</span> Mensaje para la Tarjeta (Opcional)</h4>
+              <input type="text" class="calc-input" id="calc-note" placeholder="Ej: 'Feliz aniversario mi amor, te amo con toda mi alma'">
+            </div>
+          </div>
+
+          <!-- Right: Interactive Summary -->
+          <div class="calc-summary-side">
+            <div>
+              <div class="summary-header">
+                <h4>Resumen del Pedido</h4>
+              </div>
+              <ul class="summary-breakdown" id="calc-summary-breakdown">
+                <li><span>Producto:</span> <strong id="sum-product">Fresas en Caja</strong></li>
+                <li><span>Presentación:</span> <strong id="sum-size">Caja x 6 unidades</strong></li>
+                <li><span>Cobertura:</span> <strong id="sum-choco">Combinado</strong></li>
+                <li><span>Adicionales:</span> <strong id="sum-addons">Tarjeta Dedicatoria</strong></li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="summary-total-wrap">
+                <p>Total Estimado</p>
+                <div class="total-price" id="calc-total-display">$45.000</div>
+              </div>
+
+              <button class="btn btn-primary w-full" id="calc-order-whatsapp-btn" style="width: 100%; padding: 14px 20px;">
+                <span class="material-symbols-outlined">send</span>
+                Enviar Pedido por WhatsApp
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation & Delivery Section -->
+    <section class="reserve-section" id="reservar">
+      <div class="container reserve-grid">
+        <div class="reserve-info">
+          <span class="editorial-subtitle">Agenda con Anticipación</span>
+          <h2 class="editorial-title">Reserva tu Sorpresa</h2>
+          <p>Para garantizar la frescura absoluta de la fruta y la disponibilidad de flores y empaques especiales, recomendamos agendar con al menos 24 a 48 horas de antelación.</p>
+
+          <ul class="reserve-perks">
+            <li>
+              <span class="material-symbols-outlined" style="color: #1ea952;">moped</span>
+              <span><strong>Calcula tu Envío Gratis:</strong> ¡Solamente a 2 kilómetros a la redonda de nuestra sede es 100% GRATIS!</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">schedule</span>
+              <span>Horarios de entrega matutinos y vespertinos a tu elección</span>
+            </li>
+            <li>
+              <span class="material-symbols-outlined">lock</span>
+              <span>Entrega sorpresa 100% confidencial</span>
+            </li>
+          </ul>
+
+          <!-- Google Maps Location & Free Shipping Info Card -->
+          <div class="delivery-calc-box" style="background: #ffffff; border-radius: var(--radius-lg); padding: 20px; border: 1px solid rgba(224, 145, 181, 0.35); box-shadow: var(--shadow-subtle); margin-top: 24px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span class="material-symbols-outlined" style="color: #1ea952; font-size: 1.5rem;">location_on</span>
+                <span style="font-weight: 700; color: var(--secondary); font-size: 0.95rem;">Sede DUMORE Chocolate</span>
+              </div>
+              <a href="https://www.google.com/maps/place/Dumore+Chocolate/@4.7333831,-74.0306103,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f8fd0a466826f:0x6f8530ffef2caf6!8m2!3d4.7333778!4d-74.0280354!16s%2Fg%2F11nvht3nq1?entry=ttu" target="_blank" class="btn btn-secondary btn-sm" style="padding: 4px 12px; font-size: 0.75rem; text-decoration: none;">
+                <span class="material-symbols-outlined" style="font-size: 1rem;">open_in_new</span> Abrir en Google Maps
+              </a>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--on-surface-variant); margin-bottom: 12px;">
+              📍 Consulta tu distancia: si tu entrega se encuentra a <strong>2 km o menos a la redonda</strong>, el envío es totalmente <strong>GRATIS</strong>. Para distancias mayores, calculamos la tarifa más económica.
+            </p>
+
+            <div style="border-radius: var(--radius-sm); overflow: hidden; border: 1px solid rgba(224, 145, 181, 0.25);">
+              <iframe src="https://maps.google.com/maps?q=4.7333778,-74.0280354&hl=es&z=15&output=embed" width="100%" height="180" style="border:0; display:block;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="reserve-form-card">
+          <form id="reserve-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-name">Tu Nombre</label>
+                <input type="text" id="res-name" class="calc-input" placeholder="Nombre completo" required>
+              </div>
+              <div class="form-group">
+                <label for="res-phone">Tu Teléfono / WhatsApp</label>
+                <input type="tel" id="res-phone" class="calc-input" placeholder="+57 300 000 0000" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-date">Fecha de Entrega</label>
+                <input type="date" id="res-date" class="calc-input" required>
+              </div>
+              <div class="form-group">
+                <label for="res-time">Franja Horaria</label>
+                <select id="res-time" class="calc-input">
+                  <option value="Mañana (8:00 AM - 12:00 PM)">Mañana (8:00 AM - 12:00 PM)</option>
+                  <option value="Tarde (1:00 PM - 5:00 PM)">Tarde (1:00 PM - 5:00 PM)</option>
+                  <option value="Hora específica (coordinar por WhatsApp)">Hora específica (a coordinar)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="res-address">Dirección de Entrega</label>
+              <input type="text" id="res-address" class="calc-input" placeholder="Calle, Barrio, Conjunto / Apto" required>
+              <small style="font-size: 0.78rem; color: #1ea952; display: block; margin-top: 4px; font-weight: 500;">
+                ✓ Envío 100% GRATIS a menos de 2 km a la redonda de nuestra sede
+              </small>
+            </div>
+
+            <div class="form-group">
+              <label for="res-product">Producto de Interés</label>
+              <select id="res-product" class="calc-input">
+                <option value="Fresas en Caja de Lujo">Fresas en Caja de Lujo</option>
+                <option value="Ramo Floral de Fresas">Ramo Floral de Fresas</option>
+                <option value="Chocobombas Gourmet">Chocobombas Gourmet</option>
+                <option value="Mini Donas Glaseadas">Mini Donas Glaseadas</option>
+                <option value="Detalle Personalizado a Medida">Detalle Personalizado a Medida</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">
+              <span class="material-symbols-outlined">event_available</span>
+              Programar Reserva por WhatsApp
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Gallery Section -->
+    <section class="gallery-section" id="galeria">
+      <div class="container">
+        <div class="section-title-wrap">
+          <span class="editorial-subtitle">Momentos DUMORE</span>
+          <h2 class="editorial-title">Galería de Creaciones</h2>
+          <p>Inspírate con algunos de los detalles y arreglos personalizados que han hecho suspirar a nuestros clientes.</p>
+        </div>
+
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="2b2de1d8f459c9a1169d22e8fd67491a.jpg" alt="Fresas con Hojas de Oro y Corazones" loading="lazy">
+            <div class="photo-overlay"><p>Caja Rose & Gold</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="801ebb495d358a77237fa5c06c1af532.jpg" alt="Fresas de Lujo en Estuche Blanco" loading="lazy">
+            <div class="photo-overlay"><p>Estuche Clásico Bicolor</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="b949ea3ed8853d23786fc2d441a06271.jpg" alt="Fresas con Coco y Frutos Secos" loading="lazy">
+            <div class="photo-overlay"><p>Toppings Exclusivos</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="de3179203c52c822411b1b3bed42221a.jpg" alt="Gran Caja de Fresas Gourmet" loading="lazy">
+            <div class="photo-overlay"><p>Gran Caja Celebración</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="gelatina_3d.jpg" alt="Gelatina 3D Floral Comestible" loading="lazy">
+            <div class="photo-overlay"><p>Gelatina 3D Floral</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="chocobombas.png" alt="Chocobombas con Malvaviscos" loading="lazy">
+            <div class="photo-overlay"><p>Chocobombas Festivas</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="ramo.png" alt="Ramo de Fresas con Celofán Rosado" loading="lazy">
+            <div class="photo-overlay"><p>Bouquet Sensorial</p></div>
+          </div>
+          <div class="photo-item">
+            <img src="screen.png" alt="Fresas con Baño Dorado" loading="lazy">
+            <div class="photo-overlay"><p>Edición Colección de Lujo</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="logo_dumore.png" alt="DUMORE Logo" style="height: 60px; margin-bottom: 16px; border-radius: 8px;">
+        <h4>DUMORE Chocolate</h4>
+        <p>Editorial Elegance in Every Bite. Transformamos el chocolate artesanal y las fresas seleccionadas en obsequios inolvidables para celebrar la vida y el amor.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Catálogo</h5>
+        <ul>
+          <li><a href="#productos">Fresas Premium</a></li>
+          <li><a href="#productos">Ramos de Fresas</a></li>
+          <li><a href="#productos">Chocobombas</a></li>
+          <li><a href="#productos">Mini Donas</a></li>
+          <li><a href="#productos">Gelatinas 3D</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Enlaces Rápidos</h5>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#experiencia">Nuestra Experiencia</a></li>
+          <li><a href="#calculadora">Calculadora de Pedidos</a></li>
+          <li><a href="#reservar">Reservar con Anticipación</a></li>
+          <li><a href="#galeria">Galería de Fotos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contacto & Pedidos</h5>
+        <ul class="contact-info-list">
+          <li>
+            <span class="material-symbols-outlined">chat</span>
+            <a href="https://wa.me/573108239392" target="_blank" style="color: var(--primary-light); font-weight: 600; text-decoration: none;">WhatsApp: +57 310 8239392</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">photo_camera</span>
+            <span>Instagram: @dumorechocolat</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">schedule</span>
+            <span>Lunes a Sábado: 8:00 AM - 7:00 PM</span>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">location_on</span>
+            <a href="https://www.google.com/maps/place/Dumore+Chocolate/@4.7333831,-74.0306103,17z/data=!3m1!4b1!4m6!3m5!1s0x8e3f8fd0a466826f:0x6f8530ffef2caf6!8m2!3d4.7333778!4d-74.0280354!16s%2Fg%2F11nvht3nq1?entry=ttu" target="_blank" style="color: var(--primary-light); text-decoration: underline;">Ubicación: Ver en Google Maps (Bogotá)</a>
+          </li>
+          <li>
+            <span class="material-symbols-outlined">moped</span>
+            <span>Envío Gratis hasta 2 km a la redonda</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 DUMORE Chocolate. Todos los derechos reservados. Diseñado con Editorial Elegance.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Off-Canvas Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="cart-header">
+      <h3>Tu Pedido DUMORE</h3>
+      <button class="cart-close-btn" id="cart-close-btn">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <div class="cart-items-body" id="cart-items-body">
+      <!-- Injected by app.js -->
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total:</span>
+        <strong id="cart-total-price">$0</strong>
+      </div>
+      <button class="btn btn-primary" id="cart-checkout-btn" style="width: 100%; padding: 14px 20px;">
+        <span class="material-symbols-outlined">send</span>
+        Completar Pedido por WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/573108239392?text=Hola%20DUMORE,%20quisiera%20hacer%20un%20pedido." target="_blank" class="floating-whatsapp" aria-label="Escribir a WhatsApp" id="floating-whatsapp-btn">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Notification Toast -->
+  <div class="toast-notice" id="toast-notice">
+    <span class="material-symbols-outlined">check_circle</span>
+    <span id="toast-text">Producto añadido al carrito</span>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

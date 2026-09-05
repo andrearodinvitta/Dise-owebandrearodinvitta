@@ -320,37 +320,87 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
 
   const portfolioData = [
-    // --- CATEGORÍA: COMERCIO ---
+    // --- CATEGORÍA: COMERCIO & NEGOCIOS LOCALES ---
     {
-      id: 'tech-gamer',
-      name: 'Tech Gamer',
+      id: 'soraya-nails',
+      name: 'Soraya Nails & Braids',
       type: 'comercio',
-      categoryLabel: 'Reparación de Ordenadores & PC Gaming • Madrid',
-      desc: 'Plataforma con estética dark & cyber para taller de reparación y montaje de ordenadores en Madrid. Diagnóstico rápido, catálogo de servicios y solicitud de presupuestos.',
-      previewImg: 'assets/portfolio/tech_gamer.jpg',
-      urlDemo: 'https://reparacion-de-ordenadores.vercel.app/',
+      categoryLabel: 'Salón Boutique & Manicura • Madrid Carabanchel',
+      desc: 'Plataforma web moderna para salón de uñas, pedicura y trenzas en Madrid. Catálogo interactivo de servicios, lista de precios detallada, galería de acabados y reserva rápida vía WhatsApp.',
+      previewImg: 'assets/portfolio/soraya_nails.jpg',
+      urlDemo: '/demos/soraya_nails/index.html',
+      status: 'active'
+    },
+    {
+      id: 'union-latina',
+      name: 'Restaurante Asador Unión Latina',
+      type: 'comercio',
+      categoryLabel: 'Gastronomía Latina & Asador a la Brasa • Madrid',
+      desc: 'Página web interactiva con carta digital de platos típicos de Colombia, Perú y Ecuador. Menú del día, especialidades a la brasa, reservas directas de mesa y geolocalización en Madrid.',
+      previewImg: 'assets/portfolio/union_latina.jpg',
+      urlDemo: '/demos/union_latina/index.html',
       status: 'active'
     },
     {
       id: 'dumore-chocolate',
       name: 'DUMORE Chocolate',
       type: 'comercio',
-      categoryLabel: 'Fresas con Chocolate & Postres • Colombia / España',
-      desc: 'Catálogo dulce de alta gama: cajas de fresas decoradas, chocobombas y ramos gourmet con selector interactivo de pedidos para ocasiones especiales.',
+      categoryLabel: 'Fresas con Chocolate & Regalos Gourmet • Alta Repostería',
+      desc: 'Catálogo dulce de alta gama con selector interactivo de cajas de fresas personalizadas, chocobombas y ramos artesanales para celebraciones y fechas especiales.',
       previewImg: 'assets/portfolio/dumore_chocolate.png',
-      urlDemo: 'https://dumore.vercel.app/',
+      urlDemo: '/demos/dumore_chocolate/index.html',
+      status: 'active'
+    },
+    {
+      id: 'viajes-sol-y-arena',
+      name: 'Viajes Sol y Arena',
+      type: 'comercio',
+      categoryLabel: 'Agencia de Viajes Oficial • Carabanchel (Madrid)',
+      desc: 'Web corporativa y comercial con buscador de paquetes vacacionales al Caribe, vuelos a Latinoamérica, circuitos por Europa, financiación a medida y contacto directo con agentes.',
+      previewImg: 'assets/portfolio/viajes_sol_y_arena.png',
+      urlDemo: '/demos/viajes_sol_y_arena/index.html',
+      status: 'active'
+    },
+    {
+      id: 'zafiro-travel',
+      name: 'Zafiro Carpetana Travel',
+      type: 'comercio',
+      categoryLabel: 'Viajes, Circuitos Europeos & Visados • Madrid',
+      desc: 'Diseño editorial para agencia especializada en circuitos europeos 100% en español, cruceros internacionales, vuelos y asesoría experta para trámites y visados Schengen y USA.',
+      previewImg: 'assets/portfolio/zafiro_travel.png',
+      urlDemo: '/demos/zafiro_travel/index.html',
       status: 'active'
     },
 
-    // --- CATEGORÍA: CELEBRACIONES ---
+    // --- CATEGORÍA: CELEBRACIONES & EVENTOS ---
     {
       id: 'boda-marta-jeronimo',
       name: 'Boda Marta & Jerónimo',
       type: 'celebraciones',
-      categoryLabel: 'Invitación de Boda • Burdeos, Dorado & Sello de Cera',
-      desc: 'Invitación web de lujo con apertura interactiva de sobre y sello de cera dorado ("OPEN THIS"), confirmación RSVP con selector de alérgenos y cronograma.',
+      categoryLabel: 'Invitación Editorial de Boda • Burdeos & Sello de Cera',
+      desc: 'Invitación web de lujo con apertura interactiva de sobre y sello de cera dorado ("OPEN THIS"), confirmación RSVP con selector de alérgenos, playlist y cronograma del evento.',
       previewImg: 'assets/portfolio/boda_marta_jeronimo.png',
       urlDemo: '/demos/boda_marta_jeronimo/index.html',
+      status: 'active'
+    },
+    {
+      id: 'boda-valentina-mateo',
+      name: 'Boda Valentina & Mateo',
+      type: 'celebraciones',
+      categoryLabel: 'Invitación Romántica & Floral • Música & RSVP Inteligente',
+      desc: 'Experiencia nupcial interactiva con reproductor musical, cuenta regresiva en vivo, formulario inteligente de confirmación de invitados, código de vestimenta e indicaciones en mapa.',
+      previewImg: 'assets/portfolio/boda_valentina_mateo.png',
+      urlDemo: '/demos/boda_valentina_mateo/index.html',
+      status: 'active'
+    },
+    {
+      id: 'invitaciones-zoe',
+      name: 'Zoe Subligraft & Eventos',
+      type: 'celebraciones',
+      categoryLabel: 'Recuerdos de Fiesta, 15 Años & Detalles Mágicos',
+      desc: 'Landing experiencial con atmósfera de cuento para detalles de fiestas de 15 años, bautizos, papelería fina y recuerdos personalizados para eventos inolvidables.',
+      previewImg: 'assets/portfolio/invitaciones_zoe.png',
+      urlDemo: '/demos/invitaciones_zoe/index.html',
       status: 'active'
     }
   ];
@@ -358,6 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // DOM Elements for Portfolio
   const portfolioGrid = document.getElementById('portfolioGrid');
   const portfolioTabs = document.querySelectorAll('.portfolio-tab');
+  const countTodos = document.getElementById('countTodos');
   const countComercio = document.getElementById('countComercio');
   const countCelebraciones = document.getElementById('countCelebraciones');
 
@@ -369,21 +420,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioExternalBtn = document.getElementById('portfolioExternalBtn');
   const portfolioModalCloseBtn = document.getElementById('portfolioModalCloseBtn');
   const portfolioIframe = document.getElementById('portfolioIframe');
+  const portfolioIframeWrapper = document.querySelector('.portfolio-iframe-wrapper');
   const portfolioLoader = document.getElementById('portfolioLoader');
+  const btnDeviceDesktop = document.getElementById('btnDeviceDesktop');
+  const btnDeviceMobile = document.getElementById('btnDeviceMobile');
 
   // Update counter badges
-  if (countComercio && countCelebraciones) {
-    const totalComercio = portfolioData.filter(item => item.type === 'comercio').length;
-    const totalCelebraciones = portfolioData.filter(item => item.type === 'celebraciones').length;
-    countComercio.textContent = totalComercio;
-    countCelebraciones.textContent = totalCelebraciones;
+  function updatePortfolioCounters() {
+    if (countTodos) countTodos.textContent = portfolioData.length;
+    if (countComercio) {
+      const totalComercio = portfolioData.filter(item => item.type === 'comercio').length;
+      countComercio.textContent = totalComercio;
+    }
+    if (countCelebraciones) {
+      const totalCelebraciones = portfolioData.filter(item => item.type === 'celebraciones').length;
+      countCelebraciones.textContent = totalCelebraciones;
+    }
   }
+  updatePortfolioCounters();
 
   // Render cards based on current category
   function renderPortfolio(category = 'comercio') {
     if (!portfolioGrid) return;
 
-    const filtered = portfolioData.filter(item => item.type === category);
+    const filtered = category === 'todos'
+      ? portfolioData
+      : portfolioData.filter(item => item.type === category);
 
     portfolioGrid.innerHTML = filtered.map(item => {
       const isLive = item.status === 'active' && item.urlDemo;
@@ -444,6 +506,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Device switcher handlers
+  if (btnDeviceDesktop && btnDeviceMobile && portfolioIframeWrapper) {
+    btnDeviceDesktop.addEventListener('click', () => {
+      btnDeviceDesktop.classList.add('active');
+      btnDeviceMobile.classList.remove('active');
+      portfolioIframeWrapper.classList.remove('mobile-view');
+    });
+
+    btnDeviceMobile.addEventListener('click', () => {
+      btnDeviceMobile.classList.add('active');
+      btnDeviceDesktop.classList.remove('active');
+      portfolioIframeWrapper.classList.add('mobile-view');
+    });
+  }
+
   // Open Lightbox with Safe Iframe
   function openPortfolioLightbox(projectId) {
     const project = portfolioData.find(p => p.id === projectId);
@@ -453,6 +530,13 @@ document.addEventListener('DOMContentLoaded', () => {
     portfolioModalTitle.textContent = project.name;
     portfolioModalCategory.textContent = project.categoryLabel;
     portfolioExternalBtn.href = project.urlDemo;
+
+    // Default to desktop view
+    if (btnDeviceDesktop && btnDeviceMobile && portfolioIframeWrapper) {
+      btnDeviceDesktop.classList.add('active');
+      btnDeviceMobile.classList.remove('active');
+      portfolioIframeWrapper.classList.remove('mobile-view');
+    }
 
     // Show loading spinner while iframe connects
     if (portfolioLoader) {
