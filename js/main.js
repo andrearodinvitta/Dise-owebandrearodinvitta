@@ -322,33 +322,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioData = [
     // --- CATEGORÍA: COMERCIO & NEGOCIOS LOCALES ---
     {
-      id: 'soraya-nails',
-      name: 'Soraya Nails & Braids',
-      type: 'comercio',
-      categoryLabel: 'Salón Boutique & Manicura • Madrid Carabanchel',
-      desc: 'Plataforma web moderna para salón de uñas, pedicura y trenzas en Madrid. Catálogo interactivo de servicios, lista de precios detallada, galería de acabados y reserva rápida vía WhatsApp.',
-      previewImg: 'assets/portfolio/soraya_nails.jpg',
-      urlDemo: '/demos/soraya_nails/index.html',
-      status: 'active'
-    },
-    {
-      id: 'union-latina',
-      name: 'Restaurante Asador Unión Latina',
-      type: 'comercio',
-      categoryLabel: 'Gastronomía Latina & Asador a la Brasa • Madrid',
-      desc: 'Página web interactiva con carta digital de platos típicos de Colombia, Perú y Ecuador. Menú del día, especialidades a la brasa, reservas directas de mesa y geolocalización en Madrid.',
-      previewImg: 'assets/portfolio/union_latina.jpg',
-      urlDemo: '/demos/union_latina/index.html',
-      status: 'active'
-    },
-    {
       id: 'dumore-chocolate',
       name: 'DUMORE Chocolate',
       type: 'comercio',
       categoryLabel: 'Fresas con Chocolate & Regalos Gourmet • Alta Repostería',
       desc: 'Catálogo dulce de alta gama con selector interactivo de cajas de fresas personalizadas, chocobombas y ramos artesanales para celebraciones y fechas especiales.',
       previewImg: 'assets/portfolio/dumore_chocolate.png',
-      urlDemo: '/demos/dumore_chocolate/index.html',
+      urlDemo: 'demos/dumore_chocolate/index.html',
       status: 'active'
     },
     {
@@ -358,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Agencia de Viajes Oficial • Carabanchel (Madrid)',
       desc: 'Web corporativa y comercial con buscador de paquetes vacacionales al Caribe, vuelos a Latinoamérica, circuitos por Europa, financiación a medida y contacto directo con agentes.',
       previewImg: 'assets/portfolio/viajes_sol_y_arena.png',
-      urlDemo: '/demos/viajes_sol_y_arena/index.html',
+      urlDemo: 'demos/viajes_sol_y_arena/index.html',
       status: 'active'
     },
     {
@@ -368,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Viajes, Circuitos Europeos & Visados • Madrid',
       desc: 'Diseño editorial para agencia especializada en circuitos europeos 100% en español, cruceros internacionales, vuelos y asesoría experta para trámites y visados Schengen y USA.',
       previewImg: 'assets/portfolio/zafiro_travel.png',
-      urlDemo: '/demos/zafiro_travel/index.html',
+      urlDemo: 'demos/zafiro_travel/index.html',
       status: 'active'
     },
 
@@ -380,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Editorial de Boda • Burdeos & Sello de Cera',
       desc: 'Invitación web de lujo con apertura interactiva de sobre y sello de cera dorado ("OPEN THIS"), confirmación RSVP con selector de alérgenos, playlist y cronograma del evento.',
       previewImg: 'assets/portfolio/boda_marta_jeronimo.png',
-      urlDemo: '/demos/boda_marta_jeronimo/index.html',
+      urlDemo: 'demos/boda_marta_jeronimo/index.html',
       status: 'active'
     },
     {
@@ -390,17 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Romántica & Floral • Música & RSVP Inteligente',
       desc: 'Experiencia nupcial interactiva con reproductor musical, cuenta regresiva en vivo, formulario inteligente de confirmación de invitados, código de vestimenta e indicaciones en mapa.',
       previewImg: 'assets/portfolio/boda_valentina_mateo.png',
-      urlDemo: '/demos/boda_valentina_mateo/index.html',
-      status: 'active'
-    },
-    {
-      id: 'invitaciones-zoe',
-      name: 'Zoe Subligraft & Eventos',
-      type: 'celebraciones',
-      categoryLabel: 'Recuerdos de Fiesta, 15 Años & Detalles Mágicos',
-      desc: 'Landing experiencial con atmósfera de cuento para detalles de fiestas de 15 años, bautizos, papelería fina y recuerdos personalizados para eventos inolvidables.',
-      previewImg: 'assets/portfolio/invitaciones_zoe.png',
-      urlDemo: '/demos/invitaciones_zoe/index.html',
+      urlDemo: 'demos/boda_valentina_mateo/index.html',
       status: 'active'
     }
   ];

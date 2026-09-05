@@ -1387,7 +1387,16 @@
       }
 
       if (introEnvelopeBox) {
-        introEnvelopeBox.addEventListener('click', triggerOpeningSequence);
+        introEnvelopeBox.addEventListener('click', (e) => {
+          e.stopPropagation();
+          triggerOpeningSequence();
+        });
+      }
+
+      if (introOverlay) {
+        introOverlay.addEventListener('click', () => {
+          triggerOpeningSequence();
+        });
       }
 
       // 4. CUENTA REGRESIVA HASTA EL 3 DE JULIO DE 2027
