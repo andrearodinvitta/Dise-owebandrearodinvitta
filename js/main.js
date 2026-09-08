@@ -384,6 +384,16 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'active'
     },
     {
+      id: 'boda-otonal',
+      name: 'Boda Camila & Cristóbal',
+      type: 'celebraciones',
+      categoryLabel: 'Invitación Editorial Otoñal • Terracota & Romance Botánico',
+      desc: 'Invitación nupcial con estética editorial cálida, monograma artesanal C|C, apertura de sobre virtual con sello de cera, música ambiental, cuenta regresiva, itinerario del día, código de vestimenta con paleta de color, mesa de regalos con copiado rápido y confirmación RSVP por WhatsApp.',
+      previewImg: 'assets/portfolio/boda_otonal.png',
+      urlDemo: '/portafolio/celebraciones/bodaotonal',
+      status: 'active'
+    },
+    {
       id: 'luciana-xv',
       name: 'Luciana Villarreal XV',
       type: 'celebraciones',
