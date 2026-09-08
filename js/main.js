@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Fresas con Chocolate & Regalos Gourmet • Alta Repostería',
       desc: 'Catálogo dulce de alta gama con selector interactivo de cajas de fresas personalizadas, chocobombas y ramos artesanales para celebraciones y fechas especiales.',
       previewImg: 'assets/portfolio/dumore_chocolate.png',
-      urlDemo: '/portafolio/comercio/dumorechocolate/',
+      urlDemo: '/portafolio/comercio/dumorechocolate',
       status: 'active'
     },
     {
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Viajes, Circuitos Europeos & Visados • Madrid',
       desc: 'Diseño editorial para agencia especializada en circuitos europeos 100% en español, cruceros internacionales, vuelos y asesoría experta para trámites y visados Schengen y USA.',
       previewImg: 'assets/portfolio/zafiro_travel.png',
-      urlDemo: '/portafolio/comercio/zafirotravel/',
+      urlDemo: '/portafolio/comercio/zafirotravel',
       status: 'active'
     },
     {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Salón de Uñas & Estética Boutique • Madrid',
       desc: 'Salón de belleza boutique especializado en manicura rusa, nail art de tendencia, pedicura spa y trenzas africanas exclusivas con agenda de reservas directa.',
       previewImg: 'assets/portfolio/soraya_nails.jpg',
-      urlDemo: '/portafolio/comercio/sorayanails/',
+      urlDemo: '/portafolio/comercio/sorayanails',
       status: 'active'
     },
     {
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Editorial de Boda • Burdeos & Sello de Cera',
       desc: 'Invitación web de lujo con apertura interactiva de sobre y sello de cera dorado ("OPEN THIS"), confirmación RSVP con selector de alérgenos, playlist y cronograma del evento.',
       previewImg: 'assets/portfolio/boda_marta_jeronimo.png',
-      urlDemo: '/portafolio/celebraciones/bodamartayjeronimo/',
+      urlDemo: '/portafolio/celebraciones/bodamartayjeronimo',
       status: 'active'
     },
     {
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Romántica & Floral • Música & RSVP Inteligente',
       desc: 'Experiencia nupcial interactiva con reproductor musical, cuenta regresiva en vivo, formulario inteligente de confirmación de invitados, código de vestimenta e indicaciones en mapa.',
       previewImg: 'assets/portfolio/boda_valentina_mateo.png',
-      urlDemo: '/portafolio/celebraciones/bodavalentinaymateo/',
+      urlDemo: '/portafolio/celebraciones/bodavalentinaymateo',
       status: 'active'
     },
     {
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Revista Digital de XV Años • Vogue XV & Alta Costura',
       desc: 'Revista digital interactiva estilo Vogue XV con pase de páginas, portada editorial, carta con cuenta regresiva, protocolo de gala, guía de ubicaciones, fashion spread fotográfico y confirmación RSVP con sello dorado.',
       previewImg: 'assets/portfolio/luciana_xv.png',
-      urlDemo: '/portafolio/celebraciones/lucianavillarreal/',
+      urlDemo: '/portafolio/celebraciones/lucianavillarreal',
       status: 'active'
     }
   ];
