@@ -332,16 +332,6 @@ document.addEventListener('DOMContentLoaded', () => {
       status: 'active'
     },
     {
-      id: 'viajes-sol-y-arena',
-      name: 'Viajes Sol y Arena',
-      type: 'comercio',
-      categoryLabel: 'Agencia de Viajes Oficial • Carabanchel (Madrid)',
-      desc: 'Web corporativa y comercial con buscador de paquetes vacacionales al Caribe, vuelos a Latinoamérica, circuitos por Europa, financiación a medida y contacto directo con agentes.',
-      previewImg: 'assets/portfolio/viajes_sol_y_arena.png',
-      urlDemo: '/portafolio/comercio/viajessolyarena/',
-      status: 'active'
-    },
-    {
       id: 'zafiro-travel',
       name: 'Zafiro Carpetana Travel',
       type: 'comercio',
@@ -359,16 +349,6 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: 'Salón de belleza boutique especializado en manicura rusa, nail art de tendencia, pedicura spa y trenzas africanas exclusivas con agenda de reservas directa.',
       previewImg: 'assets/portfolio/soraya_nails.jpg',
       urlDemo: '/portafolio/comercio/sorayanails/',
-      status: 'active'
-    },
-    {
-      id: 'union-latina',
-      name: 'Restaurante Asador Unión Latina',
-      type: 'comercio',
-      categoryLabel: 'Gastronomía & Asador al Carbón • Madrid',
-      desc: 'Auténtica cocina tradicional de Colombia, Perú y Ecuador. Menú digital interactivo, especialidades al carbón y reserva directa de mesa.',
-      previewImg: 'assets/portfolio/union_latina.jpg',
-      urlDemo: '/portafolio/comercio/unionlatina/',
       status: 'active'
     },
     {
@@ -411,16 +391,6 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: 'Revista digital interactiva estilo Vogue XV con pase de páginas, portada editorial, carta con cuenta regresiva, protocolo de gala, guía de ubicaciones, fashion spread fotográfico y confirmación RSVP con sello dorado.',
       previewImg: 'assets/portfolio/luciana_xv.png',
       urlDemo: '/portafolio/celebraciones/lucianavillarreal/',
-      status: 'active'
-    },
-    {
-      id: 'invitaciones-zoe',
-      name: 'Zoe Subligraft',
-      type: 'celebraciones',
-      categoryLabel: 'Regalos Personalizados & Sublimación Artística',
-      desc: 'Taller de sublimación de alta gama, regalos mágicos para eventos, cubos de cristal con luz, termos grabados y recuerdos para celebraciones especiales.',
-      previewImg: 'assets/portfolio/invitaciones_zoe.png',
-      urlDemo: '/portafolio/celebraciones/invitacioneszoe/',
       status: 'active'
     }
   ];
@@ -525,8 +495,11 @@ document.addEventListener('DOMContentLoaded', () => {
             VER DEMO INTERACTIVA <span aria-hidden="true">↗</span>
           </button>
           <div class="portfolio-card-links-row">
-            <button class="btn-copy-card-link trigger-copy-link" data-url="${fullProjectUrl}" title="Copiar enlace directo para compartir con clientes">
-              <span>📋</span> COPIAR LINK DIRECTO
+            <a href="${item.urlDemo}" target="_blank" rel="noopener noreferrer" class="btn-card-direct-link" title="Abrir página completa en pestaña nueva">
+              <span>🌐</span> ABRIR LINK ↗
+            </a>
+            <button type="button" class="btn-copy-card-link trigger-copy-link" data-url="${fullProjectUrl}" title="Copiar enlace directo para compartir con clientes">
+              <span>📋</span> COPIAR LINK
             </button>
           </div>
         `

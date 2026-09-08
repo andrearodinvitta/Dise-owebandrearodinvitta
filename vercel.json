@@ -17,18 +17,10 @@
     { "source": "/portafolio/celebraciones/lucianaxv/?", "destination": "/portafolio/celebraciones/lucianavillarreal/index.html" },
     { "source": "/portafolio/celebraciones/lucianavillarreal/?", "destination": "/portafolio/celebraciones/lucianavillarreal/index.html" },
 
-    { "source": "/portafolio/celebraciones/invitaciones-zoe/(.*)", "destination": "/portafolio/celebraciones/invitacioneszoe/$1" },
-    { "source": "/portafolio/celebraciones/invitaciones-zoe/?", "destination": "/portafolio/celebraciones/invitacioneszoe/index.html" },
-    { "source": "/portafolio/celebraciones/invitacioneszoe/?", "destination": "/portafolio/celebraciones/invitacioneszoe/index.html" },
-
     { "source": "/portafolio/comercio/dumore-chocolate/(.*)", "destination": "/portafolio/comercio/dumorechocolate/$1" },
     { "source": "/portafolio/comercio/dumore-chocolate/?", "destination": "/portafolio/comercio/dumorechocolate/index.html" },
     { "source": "/portafolio/comercio/dumore/?", "destination": "/portafolio/comercio/dumorechocolate/index.html" },
     { "source": "/portafolio/comercio/dumorechocolate/?", "destination": "/portafolio/comercio/dumorechocolate/index.html" },
-
-    { "source": "/portafolio/comercio/viajes-sol-y-arena/(.*)", "destination": "/portafolio/comercio/viajessolyarena/$1" },
-    { "source": "/portafolio/comercio/viajes-sol-y-arena/?", "destination": "/portafolio/comercio/viajessolyarena/index.html" },
-    { "source": "/portafolio/comercio/viajessolyarena/?", "destination": "/portafolio/comercio/viajessolyarena/index.html" },
 
     { "source": "/portafolio/comercio/zafiro-travel/(.*)", "destination": "/portafolio/comercio/zafirotravel/$1" },
     { "source": "/portafolio/comercio/zafiro-travel/?", "destination": "/portafolio/comercio/zafirotravel/index.html" },
@@ -38,10 +30,6 @@
     { "source": "/portafolio/comercio/soraya-nails/?", "destination": "/portafolio/comercio/sorayanails/index.html" },
     { "source": "/portafolio/comercio/sorayanails/?", "destination": "/portafolio/comercio/sorayanails/index.html" },
 
-    { "source": "/portafolio/comercio/union-latina/(.*)", "destination": "/portafolio/comercio/unionlatina/$1" },
-    { "source": "/portafolio/comercio/union-latina/?", "destination": "/portafolio/comercio/unionlatina/index.html" },
-    { "source": "/portafolio/comercio/unionlatina/?", "destination": "/portafolio/comercio/unionlatina/index.html" },
-
     { "source": "/demos/boda_marta_jeronimo/(.*)", "destination": "/portafolio/celebraciones/bodamartayjeronimo/$1" },
     { "source": "/demos/boda_marta_jeronimo/?", "destination": "/portafolio/celebraciones/bodamartayjeronimo/index.html" },
     { "source": "/demos/boda_valentina_mateo/(.*)", "destination": "/portafolio/celebraciones/bodavalentinaymateo/$1" },
@@ -50,15 +38,9 @@
     { "source": "/demos/luciana_xv/?", "destination": "/portafolio/celebraciones/lucianavillarreal/index.html" },
     { "source": "/demos/dumore_chocolate/(.*)", "destination": "/portafolio/comercio/dumorechocolate/$1" },
     { "source": "/demos/dumore_chocolate/?", "destination": "/portafolio/comercio/dumorechocolate/index.html" },
-    { "source": "/demos/viajes_sol_y_arena/(.*)", "destination": "/portafolio/comercio/viajessolyarena/$1" },
-    { "source": "/demos/viajes_sol_y_arena/?", "destination": "/portafolio/comercio/viajessolyarena/index.html" },
     { "source": "/demos/zafiro_travel/(.*)", "destination": "/portafolio/comercio/zafirotravel/$1" },
     { "source": "/demos/zafiro_travel/?", "destination": "/portafolio/comercio/zafirotravel/index.html" },
     { "source": "/demos/soraya_nails/(.*)", "destination": "/portafolio/comercio/sorayanails/$1" },
-    { "source": "/demos/soraya_nails/?", "destination": "/portafolio/comercio/sorayanails/index.html" },
-    { "source": "/demos/union_latina/(.*)", "destination": "/portafolio/comercio/unionlatina/$1" },
-    { "source": "/demos/union_latina/?", "destination": "/portafolio/comercio/unionlatina/index.html" },
-    { "source": "/demos/invitaciones_zoe/(.*)", "destination": "/portafolio/celebraciones/invitacioneszoe/$1" },
-    { "source": "/demos/invitaciones_zoe/?", "destination": "/portafolio/celebraciones/invitacioneszoe/index.html" }
+    { "source": "/demos/soraya_nails/?", "destination": "/portafolio/comercio/sorayanails/index.html" }
   ]
 }

@@ -1549,6 +1549,29 @@ body {
   width: 100%;
 }
 
+.btn-card-direct-link {
+  flex: 1;
+  background: var(--color-background);
+  border: 1px solid var(--color-outline);
+  color: var(--color-on-background);
+  padding: 0.4rem 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  transition: all var(--transition-fast);
+}
+
+.btn-card-direct-link:hover {
+  background-color: var(--color-on-background);
+  color: var(--color-background);
+  border-color: var(--color-on-background);
+}
+
 .btn-copy-card-link {
   flex: 1;
   background: transparent;
