@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140" fill="none">
+  <defs>
+    <radialGradient id="waxGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFE898"/>
+      <stop offset="35%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#A2781A"/>
+      <stop offset="100%" stop-color="#67490A"/>
+    </radialGradient>
+    <linearGradient id="ringLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D6"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#553A04"/>
+    </linearGradient>
+    <filter id="sealShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Organic wax edge perimeter -->
+  <path d="M70 6 C82 5, 95 10, 107 18 C118 25, 128 36, 132 49 C136 62, 134 76, 129 89 C123 101, 114 112, 103 120 C91 128, 77 132, 63 131 C49 130, 36 124, 25 115 C15 106, 8 94, 6 81 C4 67, 8 53, 16 41 C24 30, 35 20, 48 13 C55 9, 62 6, 70 6 Z" fill="url(#waxGrad)" filter="url(#sealShadow)"/>
+  <!-- Inner circular ring frame -->
+  <circle cx="70" cy="69" r="48" stroke="url(#ringLight)" stroke-width="2.5" fill="none"/>
+  <circle cx="70" cy="69" r="44" stroke="#FFF5D6" stroke-width="0.75" stroke-dasharray="2,2" fill="none" opacity="0.8"/>
+  <!-- Circular text path simulation -->
+  <path id="textArcTop" d="M36 65 A34 34 0 0 1 104 65" fill="none"/>
+  <text font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="700" fill="#FFF8E0" letter-spacing="2.5">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      LUCIANA XV • GALA
+    </textPath>
+  </text>
+  <path id="textArcBottom" d="M104 74 A34 34 0 0 1 36 74" fill="none"/>
+  <text font-family="'Montserrat', sans-serif" font-size="6.5" font-weight="700" fill="#FFF8E0" letter-spacing="2">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+      EDICIÓN OFICIAL
+    </textPath>
+  </text>
+  <!-- Center Monogram "L" & Crown -->
+  <path d="M60 52 L65 44 L70 49 L75 44 L80 52 Z" fill="#FFF8E0" opacity="0.9"/>
+  <circle cx="70" cy="42" r="1.5" fill="#FFFFFF"/>
+  <text x="70" y="86" font-family="'Playfair Display', serif" font-size="34" font-weight="900" font-style="italic" fill="#FFFDF5" text-anchor="middle">
+    L
+  </text>
+</svg>

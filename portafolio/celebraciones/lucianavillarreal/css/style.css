@@ -1,0 +1,1264 @@
+/* ==========================================================================
+   THE QUINCEAÑERA TIMES / VOGUE XV — HAUTE COUTURE DIGITAL MAGAZINE
+   Sleek, Fluid, Photo-Centric & Luxurious Editorial Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&family=Petit+Formal+Script&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,900&display=swap');
+
+:root {
+  /* Editorial Luxury Colors */
+  --ink: #0d0d0d;
+  --charcoal: #181818;
+  --parchment: #FAF7F2;
+  --parchment-warm: #F4EFEA;
+  --parchment-pure: #FFFFFF;
+  
+  /* Romantic Haute Rose */
+  --rose-blush: #FCE7EB;
+  --rose-soft: #F7D6DC;
+  --rose-petal: #E8A598;
+  --burgundy: #6B1D2F;
+  --burgundy-dark: #420D1A;
+  --burgundy-light: #932B42;
+
+  /* Champagne Gold */
+  --gold-light: #FFF2C6;
+  --gold-primary: #D4AF37;
+  --gold-muted: #C5A059;
+  --gold-deep: #8E6E1E;
+  --gold-gradient: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 50%, #997A15 100%);
+  --rose-gradient: linear-gradient(135deg, #FFF0F2 0%, #F7D6DC 50%, #E8A598 100%);
+
+  /* Typography */
+  --font-masthead: 'Playfair Display', Georgia, serif;
+  --font-headline: 'Playfair Display', Georgia, serif;
+  --font-script: 'Petit Formal Script', 'Great Vibes', cursive;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Cinzel', serif;
+
+  /* Elevation Shadows */
+  --shadow-magazine: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 1px rgba(255, 255, 255, 0.2);
+  --shadow-photo: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* --- RESETS --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #0d0d0d;
+  background-image: radial-gradient(circle at center top, #1e1e1e 0%, #0a0a0a 100%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+::selection {
+  background: var(--rose-soft);
+  color: var(--burgundy);
+}
+
+/* Custom Scrollbar for inner content */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.35);
+  border-radius: 2px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ==========================================================================
+   APP CONTAINER & MAGAZINE STAGE
+   ========================================================================== */
+.magazine-app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top Editorial Bar */
+.mag-header-bar {
+  width: 100%;
+  background-color: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  flex-shrink: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.mag-dateline-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 1.25rem;
+  background: #050505;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.mag-controls-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+}
+
+.mag-btn-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.25s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.mag-btn-tool:hover {
+  background-color: var(--burgundy);
+  border-color: var(--gold-primary);
+}
+
+.mag-title-center {
+  text-align: center;
+}
+
+.mag-title-center h1 {
+  font-family: var(--font-masthead);
+  font-size: clamp(0.9375rem, 2.8vw, 1.25rem);
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.mag-title-center p {
+  font-size: 0.5rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+  margin-top: 2px;
+}
+
+.mag-music-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--gold-gradient);
+  color: #000;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mag-vinyl {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #000 30%, #444 35%, #000 40%, #666 60%, #000 70%);
+  border: 1px solid #FFE898;
+  display: inline-block;
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.mag-music-btn.playing .mag-vinyl {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   MAGAZINE BOOK VIEWPORT (PAGE STAGE)
+   ========================================================================== */
+.magazine-viewport-stage {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  max-width: 1020px;
+  height: calc(100% - 110px);
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-magazine);
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .magazine-viewport-stage {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* Individual Magazine Page */
+.magazine-page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--parchment);
+  color: var(--ink);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: none;
+  opacity: 0;
+  transform: scale(0.97) translateX(35px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  backface-visibility: hidden;
+}
+
+.magazine-page.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 20;
+}
+
+.magazine-page.slide-prev {
+  transform: scale(0.97) translateX(-35px);
+}
+
+/* Paper Sheen & Spine Shadow */
+.magazine-page-body {
+  padding: clamp(1.25rem, 3.5vw, 2.5rem);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.magazine-page-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.08) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Folio Headers & Footers */
+.mag-folio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid rgba(13, 13, 13, 0.15);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.mag-folio-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 0.5px solid rgba(13, 13, 13, 0.15);
+  font-size: 0.5rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #999;
+  margin-top: 1rem;
+}
+
+/* Rules & Dividers */
+.double-rule-thick {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.double-rule-thick::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--ink);
+}
+.double-rule-thick::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0.5px;
+  background-color: var(--ink);
+}
+
+.double-rule-gold {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.double-rule-gold::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--gold-muted);
+}
+.double-rule-gold::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 0.5px;
+  background-color: var(--gold-muted);
+}
+
+.kicker-tag {
+  font-size: 0.5625rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--burgundy);
+  display: inline-block;
+  margin-bottom: 0.25rem;
+}
+
+.page-heading-serif {
+  font-family: var(--font-headline);
+  font-size: clamp(1.35rem, 3.5vw, 2rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+/* ==========================================================================
+   PAGE 1: PORTADA OFICIAL (VOGUE COVER)
+   ========================================================================== */
+.page-cover-exclusive {
+  background-color: #050505;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+#confettiCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.cover-photo-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cover-full-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: contrast(1.08) brightness(0.95);
+  transform: scale(1.02);
+  transition: transform 6s ease-out;
+}
+
+.cover-gradient-tint {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(5, 5, 5, 0.88) 0%, rgba(5, 5, 5, 0.15) 30%, rgba(107, 29, 47, 0.3) 65%, rgba(5, 5, 5, 0.96) 100%),
+    radial-gradient(ellipse at center, transparent 40%, rgba(5, 5, 5, 0.65) 100%);
+}
+
+.cover-layout-content {
+  position: relative;
+  z-index: 15;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1rem, 3.5vw, 2.25rem);
+  text-align: center;
+}
+
+.cover-masthead-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover-dateline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  font-size: 0.5625rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 4px;
+}
+
+.cover-big-title {
+  font-family: var(--font-masthead);
+  font-size: clamp(2.5rem, 8vw, 4.75rem);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin: 0.35rem 0 0.1rem;
+  line-height: 0.95;
+  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.85);
+}
+
+.cover-center-namebox {
+  margin: 1rem 0;
+}
+
+.cover-gold-crown {
+  width: 76px;
+  height: 42px;
+  margin: 0 auto 0.35rem;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.7));
+  animation: floatCrown 4s ease-in-out infinite;
+}
+
+.cover-script-luciana {
+  font-family: var(--font-script);
+  font-size: clamp(4rem, 13vw, 8rem);
+  color: var(--rose-soft);
+  line-height: 0.85;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9), 0 0 25px rgba(247, 214, 220, 0.5);
+  display: block;
+}
+
+.cover-slogan-italic {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(0.9375rem, 2.5vw, 1.45rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  margin-top: 0.5rem;
+}
+
+.cover-open-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold-gradient);
+  color: #000;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.4rem;
+  border-radius: 2px;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.55);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: pulseOpen 2.5s infinite;
+}
+
+@keyframes pulseOpen {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* ==========================================================================
+   PAGE 2: CARTA EDITORIAL (PHOTO SPLIT + WELCOME + COUNTDOWN)
+   ========================================================================== */
+.editorial-split-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 700px) {
+  .editorial-split-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.editorial-photo-card {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(13, 13, 13, 0.15);
+  overflow: hidden;
+  box-shadow: var(--shadow-photo);
+  background: #000;
+}
+
+.editorial-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.editorial-photo-caption {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
+  color: #fff;
+  padding: 0.85rem;
+  font-size: 0.625rem;
+  font-style: italic;
+}
+
+.editorial-text-box {
+  background: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgba(13, 13, 13, 0.12);
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+.editorial-text-box::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 0.5px solid rgba(212, 175, 55, 0.35);
+  pointer-events: none;
+}
+
+.drop-cap-burgundy {
+  float: left;
+  font-family: var(--font-headline);
+  font-size: 3.5rem;
+  line-height: 0.8;
+  padding-top: 2px;
+  padding-right: 8px;
+  color: var(--burgundy);
+  font-weight: 900;
+}
+
+.editorial-text-p {
+  font-size: clamp(0.75rem, 1.6vw, 0.8125rem);
+  line-height: 1.7;
+  color: #333;
+  text-align: justify;
+}
+
+.editorial-signature {
+  font-family: var(--font-script);
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  color: var(--burgundy);
+  text-align: right;
+  margin-top: 0.75rem;
+}
+
+/* Countdown Bar */
+.countdown-mag-strip {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 0.55rem 0.85rem;
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+  text-align: center;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+
+.cd-val {
+  font-family: var(--font-headline);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.cd-lbl {
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+/* ==========================================================================
+   PAGE 3: PROTOCOLO & ITINERARIO (SOCIETY COLUMN)
+   ========================================================================== */
+.itinerary-magazine-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 1.25rem;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 720px) {
+  .itinerary-magazine-grid {
+    grid-template-columns: 1fr;
+  }
+  .itinerary-side-photo {
+    display: none;
+  }
+}
+
+.itinerary-side-photo {
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(13, 13, 13, 0.15);
+  overflow: hidden;
+  box-shadow: var(--shadow-photo);
+}
+
+.itinerary-side-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itinerary-timeline-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.itinerary-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  padding: 0.55rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+}
+
+.itinerary-card:hover {
+  transform: translateX(4px);
+  border-color: var(--gold-primary);
+}
+
+.itinerary-card.highlight {
+  border-left: 3px solid var(--burgundy);
+  background: #FFFDFB;
+}
+
+.itin-time-badge {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.35rem 0.5rem;
+  text-align: center;
+  min-width: 54px;
+}
+
+.itinerary-card.highlight .itin-time-badge {
+  background: var(--burgundy);
+  border: 1px solid var(--gold-primary);
+}
+
+.time-num {
+  font-family: var(--font-headline);
+  font-size: 0.875rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.time-hrs {
+  font-size: 0.45rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold-light);
+}
+
+.itin-info h4 {
+  font-family: var(--font-headline);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.itin-info p {
+  font-size: 0.65rem;
+  color: #666;
+}
+
+/* ==========================================================================
+   PAGE 4: COORDENADAS & UBICACIONES
+   ========================================================================== */
+.locations-magazine-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 650px) {
+  .locations-magazine-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loc-mag-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 13, 13, 0.12);
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-card);
+}
+
+.loc-mag-card.featured {
+  border-color: rgba(212, 175, 55, 0.5);
+  background: #FFFDF9;
+}
+
+.loc-photo-banner {
+  width: 100%;
+  height: 110px;
+  background-size: cover;
+  background-position: center;
+  margin: 0.6rem 0;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.loc-photo-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loc-badge {
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  border: 1px solid var(--gold-primary);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  padding: 0.25rem 0.6rem;
+  text-transform: uppercase;
+}
+
+.loc-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.6rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.loc-btn:hover {
+  background: var(--burgundy);
+}
+
+/* ==========================================================================
+   PAGE 5: FASHION SPREAD (PHOTO SHOWCASE)
+   ========================================================================== */
+.spread-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  gap: 0.85rem;
+  margin: 0.75rem 0;
+}
+
+@media (max-width: 720px) {
+  .spread-showcase-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .spread-item-hero {
+    grid-column: span 2;
+  }
+}
+
+.spread-photo-item {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 13, 13, 0.15);
+  padding: 0.35rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-photo);
+  transition: all 0.3s ease;
+}
+
+.spread-photo-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.spread-img-holder {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+}
+
+.spread-img-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.spread-photo-item:hover .spread-img-holder img {
+  transform: scale(1.06);
+}
+
+.tag-35mm {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 0.45rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  padding: 0.2rem 0.45rem;
+  text-transform: uppercase;
+  border: 0.5px solid #fff;
+}
+
+.spread-item-meta {
+  padding: 0.4rem 0.2rem 0.1rem;
+}
+
+.spread-item-meta h5 {
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.spread-item-meta p {
+  font-size: 0.5625rem;
+  color: #777;
+  font-style: italic;
+}
+
+.quote-spread-banner {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.quote-spread-banner blockquote {
+  font-family: var(--font-headline);
+  font-style: italic;
+  font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+  color: var(--parchment);
+}
+
+/* ==========================================================================
+   PAGE 6: GUÍA DE ESTILO & VESTIMENTA (DRESS CODE)
+   ========================================================================== */
+.dresscode-page-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(13, 13, 13, 0.12);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  margin: 0.75rem 0;
+}
+
+.swatches-grid-editorial {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  text-align: center;
+  margin: 1.25rem 0;
+}
+
+.swatch-circle-lg {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin: 0 auto 0.4rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.swatches-grid-editorial > div:hover .swatch-circle-lg {
+  transform: scale(1.1);
+}
+
+.swatch-color-1 { background: #F7D6DC; }
+.swatch-color-2 { background: var(--gold-gradient); }
+.swatch-color-3 { background: #FAF8F5; }
+.swatch-color-4 { background: #111111; }
+
+.swatch-name-lg {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+}
+
+.swatch-note-lg {
+  font-size: 0.5625rem;
+  color: #777;
+}
+
+.etiquette-box-mag {
+  background: var(--rose-blush);
+  border: 1px solid rgba(107, 29, 47, 0.25);
+  padding: 0.85rem 1.25rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.etiquette-title {
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 0.25rem;
+}
+
+.etiquette-desc {
+  font-size: 0.75rem;
+  color: var(--burgundy-dark);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   PAGE 7: RSVP & CONTRAPORTADA (BACK COVER)
+   ========================================================================== */
+.rsvp-slip-form-box {
+  background: #FFFFFF;
+  border: 1px solid rgba(107, 29, 47, 0.3);
+  padding: clamp(1rem, 3vw, 1.75rem);
+  position: relative;
+  box-shadow: var(--shadow-card);
+  margin: 0.5rem 0;
+}
+
+.rsvp-slip-form-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  inset-x: 0;
+  height: 4px;
+  background: var(--burgundy);
+}
+
+.rsvp-input-row {
+  margin-bottom: 0.75rem;
+}
+
+.rsvp-label-editorial {
+  font-size: 0.5625rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.rsvp-field-line {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid rgba(13, 13, 13, 0.3);
+  padding: 0.4rem 0;
+  font-size: 0.8125rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.rsvp-field-line:focus {
+  border-color: var(--burgundy);
+}
+
+.attendance-chips-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.att-chip-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: var(--parchment-warm);
+  border: 1px solid rgba(13, 13, 13, 0.1);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.wax-seal-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--ink);
+  color: #fff;
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-muted);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.wax-seal-submit-btn:hover {
+  background: var(--burgundy);
+}
+
+.backcover-closing-banner {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 0.75rem;
+}
+
+.disco-accents-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.disco-ball-img {
+  width: 34px;
+  height: 46px;
+  animation: swingDisco 4s ease-in-out infinite alternate;
+}
+.disco-ball-img:nth-child(2) {
+  animation-delay: 2s;
+  width: 26px;
+  height: 36px;
+}
+
+@keyframes swingDisco {
+  0% { transform: rotate(-6deg); }
+  100% { transform: rotate(6deg); }
+}
+
+/* ==========================================================================
+   BOTTOM FLOATING MAGAZINE DOCK
+   ========================================================================== */
+.mag-dock-footer {
+  width: 100%;
+  background-color: var(--ink);
+  color: #FFFFFF;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.65rem 1.5rem;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.mag-dock-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mag-dock-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mag-dock-nav-btn:hover:not(:disabled) {
+  background-color: var(--burgundy);
+  border-color: var(--gold-primary);
+}
+
+.mag-dock-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.mag-dock-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mag-dot {
+  width: 8px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mag-dot.active {
+  width: 24px;
+  background: var(--gold-gradient);
+}
+
+/* ==========================================================================
+   MODALS (TOC & LIGHTBOX)
+   ========================================================================== */
+.toc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 1500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(6px);
+}
+
+.toc-modal-overlay.active { display: flex; }
+
+.toc-modal-card {
+  background: var(--parchment);
+  width: 100%;
+  max-width: 420px;
+  padding: 1.75rem;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.toc-jump-link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.65rem 0;
+  border-bottom: 0.5px solid rgba(13, 13, 13, 0.1);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.toc-jump-link:hover {
+  color: var(--burgundy);
+}
+
+.lightbox-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox-modal-overlay.active { display: flex; }
+
+.lightbox-modal-overlay img {
+  max-width: 90vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border: 1px solid var(--gold-primary);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}

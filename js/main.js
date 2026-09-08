@@ -322,23 +322,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioData = [
     // --- CATEGORÍA: COMERCIO & NEGOCIOS LOCALES ---
     {
-      id: 'tech-gamer',
-      name: 'Tech Gamer',
-      type: 'comercio',
-      categoryLabel: 'Reparación de Ordenadores & PC Gaming • Madrid',
-      desc: 'Plataforma con estética dark & cyber para taller de reparación y montaje de ordenadores en Madrid. Diagnóstico rápido, catálogo de servicios y solicitud de presupuestos.',
-      previewImg: 'assets/portfolio/tech_gamer.jpg',
-      urlDemo: 'https://reparacion-de-ordenadores.vercel.app/',
-      status: 'active'
-    },
-    {
       id: 'dumore-chocolate',
       name: 'DUMORE Chocolate',
       type: 'comercio',
       categoryLabel: 'Fresas con Chocolate & Regalos Gourmet • Alta Repostería',
       desc: 'Catálogo dulce de alta gama con selector interactivo de cajas de fresas personalizadas, chocobombas y ramos artesanales para celebraciones y fechas especiales.',
       previewImg: 'assets/portfolio/dumore_chocolate.png',
-      urlDemo: '/demos/dumore_chocolate/index.html',
+      urlDemo: '/portafolio/comercio/dumorechocolate',
       status: 'active'
     },
     {
@@ -348,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Agencia de Viajes Oficial • Carabanchel (Madrid)',
       desc: 'Web corporativa y comercial con buscador de paquetes vacacionales al Caribe, vuelos a Latinoamérica, circuitos por Europa, financiación a medida y contacto directo con agentes.',
       previewImg: 'assets/portfolio/viajes_sol_y_arena.png',
-      urlDemo: '/demos/viajes_sol_y_arena/index.html',
+      urlDemo: '/portafolio/comercio/viajessolyarena',
       status: 'active'
     },
     {
@@ -358,7 +348,37 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Viajes, Circuitos Europeos & Visados • Madrid',
       desc: 'Diseño editorial para agencia especializada en circuitos europeos 100% en español, cruceros internacionales, vuelos y asesoría experta para trámites y visados Schengen y USA.',
       previewImg: 'assets/portfolio/zafiro_travel.png',
-      urlDemo: '/demos/zafiro_travel/index.html',
+      urlDemo: '/portafolio/comercio/zafirotravel',
+      status: 'active'
+    },
+    {
+      id: 'soraya-nails',
+      name: 'Soraya Nails & Braids',
+      type: 'comercio',
+      categoryLabel: 'Salón de Uñas & Estética Boutique • Madrid',
+      desc: 'Salón de belleza boutique especializado en manicura rusa, nail art de tendencia, pedicura spa y trenzas africanas exclusivas con agenda de reservas directa.',
+      previewImg: 'assets/portfolio/soraya_nails.jpg',
+      urlDemo: '/portafolio/comercio/sorayanails',
+      status: 'active'
+    },
+    {
+      id: 'union-latina',
+      name: 'Restaurante Asador Unión Latina',
+      type: 'comercio',
+      categoryLabel: 'Gastronomía & Asador al Carbón • Madrid',
+      desc: 'Auténtica cocina tradicional de Colombia, Perú y Ecuador. Menú digital interactivo, especialidades al carbón y reserva directa de mesa.',
+      previewImg: 'assets/portfolio/union_latina.jpg',
+      urlDemo: '/portafolio/comercio/unionlatina',
+      status: 'active'
+    },
+    {
+      id: 'tech-gamer',
+      name: 'Tech Gamer',
+      type: 'comercio',
+      categoryLabel: 'Reparación de Ordenadores & PC Gaming • Madrid',
+      desc: 'Plataforma con estética dark & cyber para taller de reparación y montaje de ordenadores en Madrid. Diagnóstico rápido, catálogo de servicios y solicitud de presupuestos.',
+      previewImg: 'assets/portfolio/tech_gamer.jpg',
+      urlDemo: 'https://reparacion-de-ordenadores.vercel.app/',
       status: 'active'
     },
 
@@ -370,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Editorial de Boda • Burdeos & Sello de Cera',
       desc: 'Invitación web de lujo con apertura interactiva de sobre y sello de cera dorado ("OPEN THIS"), confirmación RSVP con selector de alérgenos, playlist y cronograma del evento.',
       previewImg: 'assets/portfolio/boda_marta_jeronimo.png',
-      urlDemo: '/demos/boda_marta_jeronimo/index.html',
+      urlDemo: '/portafolio/celebraciones/bodamartayjeronimo',
       status: 'active'
     },
     {
@@ -380,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Invitación Romántica & Floral • Música & RSVP Inteligente',
       desc: 'Experiencia nupcial interactiva con reproductor musical, cuenta regresiva en vivo, formulario inteligente de confirmación de invitados, código de vestimenta e indicaciones en mapa.',
       previewImg: 'assets/portfolio/boda_valentina_mateo.png',
-      urlDemo: '/demos/boda_valentina_mateo/index.html',
+      urlDemo: '/portafolio/celebraciones/bodavalentinaymateo',
       status: 'active'
     },
     {
@@ -390,10 +410,54 @@ document.addEventListener('DOMContentLoaded', () => {
       categoryLabel: 'Revista Digital de XV Años • Vogue XV & Alta Costura',
       desc: 'Revista digital interactiva estilo Vogue XV con pase de páginas, portada editorial, carta con cuenta regresiva, protocolo de gala, guía de ubicaciones, fashion spread fotográfico y confirmación RSVP con sello dorado.',
       previewImg: 'assets/portfolio/luciana_xv.png',
-      urlDemo: '/demos/luciana_xv/index.html',
+      urlDemo: '/portafolio/celebraciones/lucianavillarreal',
+      status: 'active'
+    },
+    {
+      id: 'invitaciones-zoe',
+      name: 'Zoe Subligraft',
+      type: 'celebraciones',
+      categoryLabel: 'Regalos Personalizados & Sublimación Artística',
+      desc: 'Taller de sublimación de alta gama, regalos mágicos para eventos, cubos de cristal con luz, termos grabados y recuerdos para celebraciones especiales.',
+      previewImg: 'assets/portfolio/invitaciones_zoe.png',
+      urlDemo: '/portafolio/celebraciones/invitacioneszoe',
       status: 'active'
     }
   ];
+
+  // Helper for Copying to Clipboard
+  function copyTextToClipboard(text, buttonEl, successText = '¡COPIADO!') {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).catch(() => {
+        fallbackCopyText(text);
+      });
+    } else {
+      fallbackCopyText(text);
+    }
+
+    if (buttonEl) {
+      const originalHtml = buttonEl.innerHTML;
+      buttonEl.classList.add('copied');
+      buttonEl.innerHTML = `<span>✓</span> ${successText}`;
+      setTimeout(() => {
+        buttonEl.classList.remove('copied');
+        buttonEl.innerHTML = originalHtml;
+      }, 2500);
+    }
+  }
+
+  function fallbackCopyText(text) {
+    const tempInput = document.createElement('input');
+    tempInput.value = text;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    try {
+      document.execCommand('copy');
+    } catch (err) {
+      console.warn('No se pudo copiar el texto', err);
+    }
+    document.body.removeChild(tempInput);
+  }
 
   // DOM Elements for Portfolio
   const portfolioGrid = document.getElementById('portfolioGrid');
@@ -414,6 +478,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const portfolioLoader = document.getElementById('portfolioLoader');
   const btnDeviceDesktop = document.getElementById('btnDeviceDesktop');
   const btnDeviceMobile = document.getElementById('btnDeviceMobile');
+  const portfolioDirectUrlInput = document.getElementById('portfolioDirectUrlInput');
+  const btnCopyDemoUrl = document.getElementById('btnCopyDemoUrl');
 
   // Update counter badges
   function updatePortfolioCounters() {
@@ -429,6 +495,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   updatePortfolioCounters();
 
+  // Copy URL from modal button
+  if (btnCopyDemoUrl && portfolioDirectUrlInput) {
+    btnCopyDemoUrl.addEventListener('click', () => {
+      copyTextToClipboard(portfolioDirectUrlInput.value, btnCopyDemoUrl, '¡ENLACE COPIADO!');
+    });
+  }
+
   // Render cards based on current category
   function renderPortfolio(category = 'comercio') {
     if (!portfolioGrid) return;
@@ -442,13 +515,26 @@ document.addEventListener('DOMContentLoaded', () => {
       const badgeClass = isLive ? 'badge-live' : 'badge-pending';
       const badgeText = isLive ? '● DEMO ACTIVA' : '◌ PRÓXIMAMENTE';
 
+      const fullProjectUrl = item.urlDemo.startsWith('http')
+        ? item.urlDemo
+        : `${window.location.origin}${item.urlDemo}`;
+
       const actionButtonHtml = isLive
-        ? `<button class="btn-brutalist btn-portfolio-action trigger-portfolio-demo" data-id="${item.id}" aria-label="Abrir demo interactiva de ${item.name}">
+        ? `
+          <button class="btn-brutalist btn-portfolio-action trigger-portfolio-demo" data-id="${item.id}" aria-label="Abrir demo interactiva de ${item.name}">
             VER DEMO INTERACTIVA <span aria-hidden="true">↗</span>
-           </button>`
-        : `<button class="btn-portfolio-action btn-portfolio-disabled" disabled title="Proyecto en maquetación final. Muy pronto disponible.">
+          </button>
+          <div class="portfolio-card-links-row">
+            <button class="btn-copy-card-link trigger-copy-link" data-url="${fullProjectUrl}" title="Copiar enlace directo para compartir con clientes">
+              <span>📋</span> COPIAR LINK DIRECTO
+            </button>
+          </div>
+        `
+        : `
+          <button class="btn-portfolio-action btn-portfolio-disabled" disabled title="Proyecto en maquetación final. Muy pronto disponible.">
             PRÓXIMAMENTE
-           </button>`;
+          </button>
+        `;
 
       return `
         <article class="portfolio-card fade-in" id="card-${item.id}">
@@ -475,6 +561,16 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const projectId = btn.getAttribute('data-id');
         openPortfolioLightbox(projectId);
+      });
+    });
+
+    // Attach click listeners to all copy link buttons on cards
+    const copyButtons = portfolioGrid.querySelectorAll('.trigger-copy-link');
+    copyButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const urlToCopy = btn.getAttribute('data-url');
+        copyTextToClipboard(urlToCopy, btn, '¡COPIADO!');
       });
     });
   }
@@ -516,10 +612,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const project = portfolioData.find(p => p.id === projectId);
     if (!project || !project.urlDemo || !portfolioModal) return;
 
+    const fullUrl = project.urlDemo.startsWith('http')
+      ? project.urlDemo
+      : `${window.location.origin}${project.urlDemo}`;
+
     // Fill metadata
     portfolioModalTitle.textContent = project.name;
     portfolioModalCategory.textContent = project.categoryLabel;
     portfolioExternalBtn.href = project.urlDemo;
+
+    if (portfolioDirectUrlInput) {
+      portfolioDirectUrlInput.value = fullUrl;
+    }
 
     // Default to desktop view
     if (btnDeviceDesktop && btnDeviceMobile && portfolioIframeWrapper) {
