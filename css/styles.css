@@ -50,6 +50,9 @@ html {
   font-size: 16px;
   background-color: var(--color-background);
   color: var(--color-on-background);
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -60,6 +63,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 ::selection {
@@ -83,7 +89,13 @@ body {
 }
 
 .section-pad {
-  padding: 5rem 2rem;
+  padding: 3.5rem 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .section-pad {
+    padding: 5rem 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -156,13 +168,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.85rem 1.25rem;
   transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+@media (min-width: 600px) {
+  .top-nav {
+    padding: 1rem 2rem;
+  }
 }
 
 @media (min-width: 768px) {
   .top-nav {
     padding: 1.2rem 4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  #navTalkBtn {
+    display: none;
+  }
+  .logo-text {
+    font-size: 1.05rem;
   }
 }
 
@@ -411,16 +438,16 @@ body {
 
 .hero-portrait-wrapper {
   position: relative;
-  display: inline-block;
-  max-width: 420px;
-  width: 100%;
+  display: block;
+  max-width: 400px;
+  width: calc(100% - 16px);
   margin: 0 auto;
 }
 
 .hero-portrait-shadow {
   position: absolute;
-  top: 16px;
-  left: 16px;
+  top: 10px;
+  left: 10px;
   width: 100%;
   height: 100%;
   background-color: var(--color-primary-container);
@@ -445,8 +472,8 @@ body {
 
 .hero-portrait-caption {
   position: absolute;
-  bottom: -15px;
-  right: -10px;
+  bottom: -8px;
+  right: 0px;
   z-index: 3;
   background-color: var(--color-on-background);
   color: var(--color-background);
@@ -1096,7 +1123,17 @@ body {
   border: var(--border-main);
   padding: 0.5rem;
   box-shadow: var(--shadow-hard-black);
-  width: fit-content;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .portfolio-tabs-container {
+    display: flex;
+    width: 100%;
+    gap: 0.35rem;
+    padding: 0.35rem;
+    box-shadow: 3px 3px 0px 0px var(--color-on-background);
+  }
 }
 
 .portfolio-tab {
@@ -1114,6 +1151,26 @@ body {
   align-items: center;
   gap: 0.6rem;
   transition: all var(--transition-fast);
+}
+
+@media (max-width: 640px) {
+  .portfolio-tab {
+    flex: 1;
+    padding: 0.6rem 0.35rem;
+    font-size: 0.76rem;
+    justify-content: center;
+    gap: 0.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  .portfolio-tab .tab-icon {
+    display: none;
+  }
+
+  .portfolio-tab .tab-badge {
+    padding: 0.05rem 0.3rem;
+    font-size: 0.7rem;
+  }
 }
 
 .portfolio-tab .tab-icon {
@@ -1547,6 +1604,12 @@ body {
   display: flex;
   gap: 0.5rem;
   width: 100%;
+}
+
+@media (max-width: 400px) {
+  .portfolio-card-links-row {
+    flex-direction: column;
+  }
 }
 
 .btn-card-direct-link {
