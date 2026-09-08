@@ -1,105 +1,232 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="h-full bg-[#FAF4F0]">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Boda Camila & Cristóbal — 18 de Octubre, 2025</title>
-  <meta name="description" content="Invitación de boda de Camila & Cristóbal. Sábado, 18 de Octubre de 2025 en Hacienda Los Encinos. Acompáñanos a celebrar el amor.">
-  <meta name="theme-color" content="#38241A">
+  <script>
+    // Detector dinámico de base URL para funcionamiento transparente en Localhost y Vercel
+    (function() {
+      var p = window.location.pathname;
+      if (p.indexOf('portafolio') !== -1 || p.indexOf('celebraciones') !== -1) {
+        var base = document.createElement('base');
+        var dir = p.substring(0, p.lastIndexOf('/') + 1);
+        if (!dir) dir = p + '/';
+        base.href = dir;
+        document.head.prepend(base);
+      }
+    })();
+  </script>
 
-  <!-- Google Fonts: Playfair Display & EB Garamond -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"/>
+  <title>Camila & Cristóbal — Nuestra Boda • 18 de Octubre, 2025</title>
+  <meta name="description" content="Invitación de boda de Camila & Cristóbal. Sábado, 18 de Octubre de 2025 en Hacienda Los Encinos. Acompáñanos a celebrar el amor."/>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Tipografías Editoriales Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#FFF8F6",
+            "surface-dim": "#F6D3C2",
+            "surface-lowest": "#FFFFFF",
+            "surface-container-low": "#FFF1EB",
+            "surface-container": "#FFEAE0",
+            "surface-container-high": "#FFE2D5",
+            "surface-container-highest": "#FFDBCA",
+            "primary": "#924625",
+            "primary-container": "#B15E3B",
+            "primary-fixed": "#FFDBCE",
+            "primary-fixed-dim": "#FFB598",
+            "on-primary": "#FFFFFF",
+            "on-primary-container": "#FFFCFF",
+            "secondary": "#745A2F",
+            "secondary-container": "#FFDAA4",
+            "on-secondary-container": "#795E33",
+            "gold": "#C9A876",
+            "tertiary": "#506051",
+            "eucalyptus": "#768776",
+            "tertiary-container": "#687968",
+            "on-surface": "#29170D",
+            "on-surface-variant": "#54433C",
+            "outline": "#87736B",
+            "outline-variant": "#DAC1B8"
+          },
+          fontFamily: {
+            "display": ["Playfair Display", "Georgia", "serif"],
+            "body": ["EB Garamond", "Garamond", "serif"]
+          },
+          spacing: {
+            "story-max": "460px"
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #F5EDE6;
+        color: #29170D;
+        font-family: 'EB Garamond', Georgia, serif;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+    }
+
+    /* Partículas de Hojas en Fondo */
+    #leavesCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Floating Audio Player Widget */
+    .audio-floating-pill {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      background: rgba(255, 248, 246, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid #C9A876;
+      box-shadow: 0 10px 25px rgba(74, 52, 40, 0.2);
+      border-radius: 9999px;
+      padding: 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .audio-floating-pill:hover {
+      transform: scale(1.05);
+      background: #B15E3B;
+      color: #FFF;
+      border-color: #B15E3B;
+    }
+    .audio-floating-pill:hover span {
+      color: #FFF !important;
+    }
+
+    .equalizer-bar {
+      display: inline-block;
+      width: 3px;
+      height: 12px;
+      background-color: #B15E3B;
+      border-radius: 2px;
+      transition: height 0.2s ease;
+    }
+    .playing .equalizer-bar:nth-child(1) { animation: soundWave 0.8s ease infinite alternate; }
+    .playing .equalizer-bar:nth-child(2) { animation: soundWave 0.5s ease infinite alternate 0.2s; }
+    .playing .equalizer-bar:nth-child(3) { animation: soundWave 0.7s ease infinite alternate 0.4s; }
+
+    @keyframes soundWave {
+      0% { height: 4px; }
+      100% { height: 16px; }
+    }
+
+    /* Toast Notification */
+    .toast-box {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: rgba(41, 23, 13, 0.95);
+      color: #FFF8F6;
+      border: 1px solid #C9A876;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .toast-box.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col items-center justify-start antialiased selection:bg-secondary-container selection:text-on-secondary-container">
 
-  <!-- Floating Falling Leaves Canvas -->
+  <!-- Canvas de Hojas Otoñales -->
   <canvas id="leavesCanvas"></canvas>
 
-  <!-- =========================================================================
-       1. VIRTUAL WAX SEAL COVER / SOBRE DE BIENVENIDA
-       ========================================================================= -->
-  <div class="wax-seal-cover-overlay" id="waxSealOverlay">
-    <div class="envelope-card">
-      <div class="monogram-badge" style="width: 80px; height: 80px; margin-bottom: 0.5rem;">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
-          <circle cx="100" cy="100" r="88" fill="none" stroke="#C9A876" stroke-width="1.5" stroke-dasharray="4 2"/>
-          <circle cx="100" cy="100" r="82" fill="none" stroke="#B15E3B" stroke-width="1"/>
-          <path d="M 100 25 Q 105 38 118 42 Q 105 46 100 60 Q 95 46 82 42 Q 95 38 100 25 Z" fill="#C9A876" opacity="0.85"/>
-          <path d="M 100 140 Q 105 154 118 158 Q 105 162 100 175 Q 95 162 82 158 Q 95 154 100 140 Z" fill="#C9A876" opacity="0.85"/>
-          <text x="68" y="116" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#4A3428" text-anchor="middle">C</text>
-          <line x1="100" y1="70" x2="100" y2="130" stroke="#C9A876" stroke-width="1.5" stroke-linecap="round"/>
-          <text x="132" y="116" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#B15E3B" text-anchor="middle">C</text>
-        </svg>
-      </div>
-
-      <span class="label-caps" style="color: var(--color-primary-container); font-size: 0.85rem; letter-spacing: 0.25em;">NUESTRA BODA</span>
-      <h2 class="section-title" style="font-size: 2.1rem; margin: 0.35rem 0;">Camila & Cristóbal</h2>
-      <p class="quote-text" style="margin-bottom: 0.75rem;">18 de Octubre, 2025 • Hacienda Los Encinos</p>
+  <!-- Contenedor Principal de la Tarjeta Editorial (Mobile & Desktop Viewports) -->
+  <div class="w-full flex justify-center py-4 sm:py-8 px-2 sm:px-4 relative z-10">
+    <main class="w-full max-w-[480px] bg-surface rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-[#DAC1B8]/60 relative pb-12">
       
-      <div class="gold-line-divider" style="margin: 1rem auto;">
-        <span class="line"></span>
-        <span class="dot"></span>
-        <span class="line"></span>
-      </div>
+      <!-- Fondos de brillo ambiental cálido -->
+      <div class="absolute top-0 right-0 w-48 h-48 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none -mr-16 -mt-16"></div>
+      <div class="absolute top-96 left-0 w-48 h-48 bg-primary-fixed-dim/20 rounded-full blur-3xl pointer-events-none -ml-20"></div>
 
-      <p style="font-size: 0.95rem; color: var(--color-text-muted);">Toca el sello para abrir la invitación y descubrir todos los detalles.</p>
-
-      <button type="button" class="wax-seal-stamp-btn" id="openInvitationBtn" aria-label="Abrir invitación de boda">
-        <span class="material-symbols-outlined" style="font-size: 24px; margin-bottom: 2px;">favorite</span>
-        <span>ABRIR</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       2. MAIN STATIONERY CONTAINER
-       ========================================================================= -->
-  <div class="wedding-viewport-wrapper">
-    <main class="stationery-card-container">
-      
-      <div class="ambient-glow-top-right"></div>
-      <div class="ambient-glow-mid-left"></div>
-
-      <!-- ================= HERO & QUOTE ================= -->
-      <section class="text-center">
-        <p class="quote-text">
+      <!-- ================= 1. CABECERA & MONOGRAMA ================= -->
+      <section class="relative flex flex-col items-center pt-8 px-6 text-center">
+        <!-- Versículo Bíblico / Cita de Amor -->
+        <p class="text-[15px] text-secondary italic max-w-xs mb-5 tracking-wide leading-relaxed">
           “El amor todo lo sufre, todo lo cree, todo lo espera, todo lo soporta.”
-          <span class="label-subtext" style="display: block; margin-top: 0.35rem; color: var(--color-text-subtle);">— 1 Corintios 13:7</span>
+          <span class="block mt-1 text-[11px] tracking-[0.2em] text-outline uppercase not-italic font-semibold">— 1 Corintios 13:7</span>
         </p>
 
-        <!-- Monogram Badge -->
-        <div class="monogram-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
-            <circle cx="100" cy="100" r="88" fill="none" stroke="#C9A876" stroke-width="1.5" stroke-dasharray="4 2"/>
-            <circle cx="100" cy="100" r="82" fill="none" stroke="#B15E3B" stroke-width="1"/>
-            <path d="M 100 25 Q 105 38 118 42 Q 105 46 100 60 Q 95 46 82 42 Q 95 38 100 25 Z" fill="#C9A876" opacity="0.85"/>
-            <path d="M 100 140 Q 105 154 118 158 Q 105 162 100 175 Q 95 162 82 158 Q 95 154 100 140 Z" fill="#C9A876" opacity="0.85"/>
-            <text x="68" y="116" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#4A3428" text-anchor="middle">C</text>
-            <line x1="100" y1="70" x2="100" y2="130" stroke="#C9A876" stroke-width="1.5" stroke-linecap="round"/>
-            <text x="132" y="116" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#B15E3B" text-anchor="middle">C</text>
-          </svg>
+        <!-- Monograma Emblemático C | C -->
+        <div class="relative flex items-center justify-center w-24 h-24 my-2">
+          <div class="absolute inset-0 rounded-full bg-secondary-container/30 blur-md"></div>
+          <div class="relative w-20 h-20 rounded-full bg-surface-lowest flex flex-col items-center justify-center shadow-md border border-[#C9A876]/40">
+            <svg class="absolute inset-1 w-[72px] h-[72px]" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="46" fill="none" stroke="#C9A876" stroke-dasharray="3 3" stroke-width="1" opacity="0.7"></circle>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="#B15E3B" stroke-width="0.75" opacity="0.6"></circle>
+            </svg>
+            <div class="flex items-center space-x-1.5 z-10">
+              <span class="font-display text-2xl text-on-surface">C</span>
+              <div class="w-[1px] h-6 bg-gold"></div>
+              <span class="font-display text-2xl text-primary-container">C</span>
+            </div>
+            <span class="material-symbols-outlined absolute top-1.5 text-[9px] text-gold">star</span>
+            <span class="material-symbols-outlined absolute bottom-1.5 text-[9px] text-gold">star</span>
+          </div>
         </div>
 
-        <span class="label-caps label-caps-primary" style="letter-spacing: 0.3em; font-size: 0.85rem;">N O S &nbsp; C A S A M O S</span>
+        <!-- Encabezado Espaciado -->
+        <div class="mt-3 mb-2">
+          <span class="text-[12px] font-semibold text-primary tracking-[0.3em] uppercase">N O S &nbsp; C A S A M O S</span>
+        </div>
 
-        <!-- Hero Photo with Deckle Mask -->
-        <div class="deckle-photo-wrap">
-          <img src="assets/hero_couple.png" alt="Camila & Cristóbal en el atardecer otoñal" loading="eager">
+        <!-- Foto Hero con Corte Troquelado (Deckle Cut) -->
+        <div class="relative w-full mt-4 rounded-t-2xl overflow-hidden shadow-md">
+          <img src="assets/hero_couple.png" alt="Camila y Cristóbal" class="w-full h-72 object-cover object-center" onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuAIs6bnVWEktqnFGx0ce6KSpB0pL7_mUIvwRVzA1hLAeLNJyiZrwOSQZ8wXfQrqqxF3nvUfzBixLZCeUx9vH7M-hi3c8Jc5Uug1x4zZ_e7YpAogOiqFGmuSPG8HfhuIsOdlznKj2RMnH5wvYEgdH3sm8AdmpFNpsCguO3HnTmlHXaPF0rbQv6UyK4j7vnmDxlJjRzN3qABrhu9aj1-zUvJOwf49l-ooze7AzgxvLda90DgpkJSR1cth'"/>
           
-          <div class="deckle-cut-bottom">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <!-- Máscara de papel troquelado inferior -->
+          <div class="absolute -bottom-1 left-0 right-0 w-full overflow-hidden leading-none text-surface pointer-events-none">
+            <svg class="relative block w-full h-8 fill-surface" viewBox="0 0 1200 120" preserveAspectRatio="none">
               <path d="M0,0 Q120,45 240,20 T480,38 T720,15 T960,35 T1200,8 L1200,120 L0,120 Z"></path>
             </svg>
           </div>
 
-          <div class="botanical-corner bottom-left">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%" fill="none">
+          <!-- Acuarela botánica en la esquina -->
+          <div class="absolute -bottom-3 -left-3 w-24 h-16 pointer-events-none opacity-90 rotate-[-12deg]">
+            <svg viewBox="0 0 300 200" width="100%" height="100%" fill="none">
               <path d="M 10 190 Q 90 150 160 110 T 280 30" stroke="#8C6747" stroke-width="2.5" stroke-linecap="round"/>
               <ellipse cx="60" cy="170" rx="16" ry="10" transform="rotate(-30 60 170)" fill="#78866B" opacity="0.8"/>
               <ellipse cx="95" cy="140" rx="18" ry="11" transform="rotate(-40 95 140)" fill="#8A9A7B" opacity="0.85"/>
@@ -111,335 +238,325 @@
         </div>
       </section>
 
-      <!-- ================= PARENTS BLESSING ================= -->
-      <section class="text-center" style="padding-top: 0.5rem;">
-        <div class="gold-line-divider">
-          <span class="line"></span>
-          <span class="dot"></span>
-          <span class="line"></span>
-        </div>
-
-        <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 420px; margin: 0 auto;">
+      <!-- ================= 2. MENSAJE & PADRES ================= -->
+      <section class="flex flex-col items-center px-6 pt-7 text-center">
+        <div class="w-12 h-[1px] bg-gold/60 mb-5"></div>
+        <p class="text-[16px] text-on-surface-variant leading-relaxed max-w-sm">
           Damos infinitas gracias a Dios por concedernos el don de encontrarnos y a nuestras queridas familias por su amor incondicional, ejemplo y bendición a cada paso de nuestro camino.
         </p>
 
-        <div class="parents-grid">
-          <div class="parent-card">
-            <span class="label-caps label-caps-primary" style="display: block; margin-bottom: 0.25rem;">Padres de la Novia</span>
-            <p style="font-weight: 500; font-size: 1.05rem;">Roberto Castillo M. & Mariana Herrera S.</p>
+        <!-- Cuadrícula de Padres -->
+        <div class="w-full mt-6 grid grid-cols-1 gap-3.5 text-center">
+          <div class="bg-surface-container-low rounded-xl py-3 px-4 shadow-sm border border-[#DAC1B8]/40">
+            <span class="text-[12px] font-semibold text-primary uppercase block mb-0.5 tracking-wider">Padres de la Novia</span>
+            <p class="text-[16px] text-on-surface font-medium">Roberto Castillo M. & Mariana Herrera S.</p>
           </div>
-          <div class="parent-card">
-            <span class="label-caps label-caps-primary" style="display: block; margin-bottom: 0.25rem;">Padres del Novio</span>
-            <p style="font-weight: 500; font-size: 1.05rem;">Carlos Cabrera V. & Elena Morales G.</p>
+          <div class="bg-surface-container-low rounded-xl py-3 px-4 shadow-sm border border-[#DAC1B8]/40">
+            <span class="text-[12px] font-semibold text-primary uppercase block mb-0.5 tracking-wider">Padres del Novio</span>
+            <p class="text-[16px] text-on-surface font-medium">Carlos Cabrera V. & Elena Morales G.</p>
           </div>
         </div>
       </section>
 
-      <!-- ================= MAIN NAMES & INVITATION ================= -->
-      <section class="text-center">
-        <span class="label-caps" style="color: var(--color-eucalyptus); letter-spacing: 0.2em; display: block; margin-bottom: 0.5rem;">
+      <!-- ================= 3. NOMBRES PRINCIPALES ================= -->
+      <section class="flex flex-col items-center px-6 pt-9 text-center relative">
+        <div class="text-tertiary text-[12px] font-semibold tracking-[0.2em] uppercase mb-2">
           Con la bendición de Dios y nuestras familias
-        </span>
-        <span style="font-style: italic; color: var(--color-secondary); font-size: 1rem;">Nosotros</span>
+        </div>
+        <span class="text-[15px] text-secondary italic mb-2">Nosotros</span>
 
-        <div class="couple-names-wrap">
-          <h1 class="couple-first-name">Camila</h1>
-          <div class="couple-ampersand">&</div>
-          <h1 class="couple-first-name">Cristóbal</h1>
+        <!-- Nombres en Escala Editorial -->
+        <div class="flex flex-col items-center my-1">
+          <h1 class="font-display text-4xl sm:text-5xl text-on-surface tracking-tight font-normal">
+            Camila
+          </h1>
+          <div class="font-display text-3xl text-primary-container -my-2.5 italic">
+            &
+          </div>
+          <h1 class="font-display text-4xl sm:text-5xl text-on-surface tracking-tight font-normal">
+            Cristóbal
+          </h1>
         </div>
 
-        <p style="font-size: 1.1rem; color: var(--color-text-muted); max-width: 380px; margin: 0 auto;">
+        <p class="text-[16px] text-on-surface-variant max-w-xs mt-4 leading-relaxed">
           Tenemos el honor y la alegría de invitarte a celebrar la unión de nuestras vidas en sagrado matrimonio.
         </p>
       </section>
 
-      <!-- ================= DATE & LIVE COUNTDOWN ================= -->
-      <section class="text-center" style="background-color: var(--color-surface-low); border-top: 1px solid rgba(218, 193, 184, 0.4); border-bottom: 1px solid rgba(218, 193, 184, 0.4);">
-        <div class="gold-line-divider" style="margin-top: 0;">
-          <span class="line"></span>
-          <span class="label-caps" style="font-size: 0.85rem; letter-spacing: 0.25em;">S Á B A D O</span>
-          <span class="line"></span>
+      <!-- ================= 4. FECHA & CONTADOR REGRESIVO ================= -->
+      <section class="flex flex-col items-center px-6 pt-9 text-center w-full">
+        <!-- Anuncio de Calendario -->
+        <div class="flex items-center justify-center space-x-3 mb-3">
+          <div class="w-10 h-[1px] bg-gold/60"></div>
+          <span class="text-[13px] font-semibold text-secondary tracking-[0.25em] uppercase">S Á B A D O</span>
+          <div class="w-10 h-[1px] bg-gold/60"></div>
         </div>
 
-        <div style="font-family: var(--font-serif-display); font-size: 3.8rem; font-weight: 400; color: var(--color-primary-container); line-height: 1; margin: 0.5rem 0;">
+        <div class="font-display text-6xl text-primary leading-none my-1 font-normal">
           18
         </div>
 
-        <span class="label-caps" style="color: var(--color-text-main); letter-spacing: 0.25em; font-size: 0.95rem; font-weight: 600;">
+        <span class="text-[13px] font-bold text-on-surface tracking-[0.25em] uppercase mt-2">
           OCTUBRE • 2025
         </span>
 
-        <!-- Live Countdown Timer -->
-        <div class="countdown-container" id="countdown-timer">
-          <div class="countdown-box">
-            <span class="countdown-number" id="cdDays">00</span>
-            <span class="countdown-label">Días</span>
+        <!-- Tarjetas del Contador Regresivo en Vivo -->
+        <div class="grid grid-cols-4 gap-2 w-full mt-6" id="countdown-timer">
+          <div class="bg-surface-container-low rounded-xl py-3 px-1 flex flex-col items-center shadow-sm border border-[#DAC1B8]/40">
+            <span class="font-display text-2xl text-primary font-semibold" id="cdDays">00</span>
+            <span class="text-[11px] font-semibold text-secondary uppercase tracking-widest mt-1">Días</span>
           </div>
-          <div class="countdown-box">
-            <span class="countdown-number" id="cdHours">00</span>
-            <span class="countdown-label">Horas</span>
+          <div class="bg-surface-container-low rounded-xl py-3 px-1 flex flex-col items-center shadow-sm border border-[#DAC1B8]/40">
+            <span class="font-display text-2xl text-primary font-semibold" id="cdHours">00</span>
+            <span class="text-[11px] font-semibold text-secondary uppercase tracking-widest mt-1">Horas</span>
           </div>
-          <div class="countdown-box">
-            <span class="countdown-number" id="cdMinutes">00</span>
-            <span class="countdown-label">Min</span>
+          <div class="bg-surface-container-low rounded-xl py-3 px-1 flex flex-col items-center shadow-sm border border-[#DAC1B8]/40">
+            <span class="font-display text-2xl text-primary font-semibold" id="cdMinutes">00</span>
+            <span class="text-[11px] font-semibold text-secondary uppercase tracking-widest mt-1">Min</span>
           </div>
-          <div class="countdown-box">
-            <span class="countdown-number" id="cdSeconds">00</span>
-            <span class="countdown-label">Seg</span>
+          <div class="bg-surface-container-low rounded-xl py-3 px-1 flex flex-col items-center shadow-sm border border-[#DAC1B8]/40">
+            <span class="font-display text-2xl text-primary font-semibold" id="cdSeconds">00</span>
+            <span class="text-[11px] font-semibold text-secondary uppercase tracking-widest mt-1">Seg</span>
           </div>
         </div>
 
-        <!-- Add to Calendar Buttons -->
-        <div style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
-          <a href="#" class="btn-pill-outline" id="btnGoogleCal" target="_blank" rel="noopener noreferrer">
-            <span class="material-symbols-outlined" style="font-size: 18px;">event</span>
+        <!-- Botones Añadir al Calendario -->
+        <div class="flex flex-wrap justify-center gap-2.5 mt-5">
+          <a href="#" id="btnGoogleCal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gold/70 text-[12px] font-semibold tracking-wider uppercase text-on-surface hover:bg-gold/15 transition-all">
+            <span class="material-symbols-outlined text-[16px]">event</span>
             <span>Google Calendar</span>
           </a>
-          <button type="button" class="btn-pill-outline" id="btnIcsCal">
-            <span class="material-symbols-outlined" style="font-size: 18px;">download</span>
-            <span>Apple / Outlook (.ics)</span>
+          <button type="button" id="btnIcsCal" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-gold/70 text-[12px] font-semibold tracking-wider uppercase text-on-surface hover:bg-gold/15 transition-all">
+            <span class="material-symbols-outlined text-[16px]">download</span>
+            <span>Apple / Outlook</span>
           </button>
         </div>
       </section>
 
-      <!-- ================= TRANSITION PHOTO ================= -->
-      <section style="padding: 0;">
-        <div style="position: relative; overflow: hidden; width: 100%;">
-          <div class="deckle-cut-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
-            </svg>
-          </div>
+      <!-- ================= 5. FOTO DE TRANSICIÓN ================= -->
+      <section class="relative w-full mt-10 overflow-hidden p-0">
+        <!-- Borde Troquelado Superior -->
+        <div class="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none text-surface">
+          <svg class="relative block w-full h-7 fill-surface rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
+          </svg>
+        </div>
 
-          <img src="assets/photo_golden_tree.png" alt="Camila & Cristóbal bajo los robles dorados" style="width: 100%; height: 360px; object-fit: cover; object-position: center; display: block;">
+        <img src="assets/photo_golden_tree.png" alt="Camila y Cristóbal en otoño" class="w-full h-80 object-cover object-center" onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuAQaDM3YG2dOhHf10MU6up8epJiX98dqO3kp0eiPR7hxPwJu8ZPTUtFsFqF3pNldKUJqJa-Gu_Ms831KAwkxYTXWk4P4GGPip-MYdX9babhniSBHDCMaCkAx8urD7gQK0waQYDX5U1UGNHSHdOHkMinKpYh2jYR1KIqnAvUGAJDAnfHPS9Mpc-kCISk2WrDkfiLQ9KLBAveVvSvSznq5sSaJfKltl_2q5oZMU0MtaBJ4-bAnYfdiuxv'"/>
 
-          <div class="deckle-cut-bottom">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
-            </svg>
-          </div>
+        <!-- Borde Troquelado Inferior -->
+        <div class="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none text-surface">
+          <svg class="relative block w-full h-7 fill-surface" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
+          </svg>
         </div>
       </section>
 
-      <!-- ================= RECEPTION & CEREMONY ================= -->
-      <section class="text-center">
-        <div style="display: inline-block; background-color: var(--color-surface-container); padding: 0.35rem 1.25rem; border-radius: var(--radius-pill); margin-bottom: 0.5rem; border: 1px solid var(--color-border-fine);">
-          <span class="label-caps" style="color: var(--color-primary-container); font-size: 0.8rem; letter-spacing: 0.2em;">17:00 HRS.</span>
+      <!-- ================= 6. RECEPCIÓN & CEREMONIA ================= -->
+      <section class="flex flex-col items-center px-6 pt-8 text-center w-full">
+        <div class="bg-secondary-container/50 px-4 py-1 rounded-full mb-2.5 border border-gold/30">
+          <span class="text-[12px] font-bold text-on-secondary-container tracking-widest uppercase">17:00 HRS.</span>
         </div>
 
-        <h2 class="section-title">RECEPCIÓN & CEREMONIA</h2>
-        
-        <div class="info-card-luxury">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined" style="font-size: 28px; color: var(--color-primary-container);">villa</span>
-          </div>
-          <h3 style="font-family: var(--font-serif-display); font-size: 1.45rem; color: var(--color-text-main);">Hacienda Los Encinos</h3>
-          <p style="color: var(--color-text-muted); font-size: 1rem; margin-top: 0.35rem;">
+        <h2 class="font-display text-2xl sm:text-3xl text-on-surface">
+          RECEPCIÓN & CEREMONIA
+        </h2>
+
+        <div class="bg-surface-container-low w-full rounded-2xl p-6 mt-4 shadow-sm border border-[#DAC1B8]/50 text-center flex flex-col items-center">
+          <span class="material-symbols-outlined text-primary text-4xl mb-2">villa</span>
+          <h3 class="font-display text-xl text-on-surface font-medium">Hacienda Los Encinos</h3>
+          <p class="text-[15px] text-on-surface-variant mt-1 max-w-xs">
             Carretera al Valle Km 14.5, Jardín del Castaño
           </p>
 
-          <div style="display: flex; justify-content: center; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
-            <a href="https://maps.google.com/?q=Hacienda+Los+Encinos" target="_blank" rel="noopener noreferrer" class="btn-pill-primary">
-              <span class="material-symbols-outlined" style="font-size: 18px;">location_on</span>
-              <span>Abrir en Google Maps</span>
+          <div class="flex flex-wrap justify-center gap-2.5 mt-5">
+            <a href="https://maps.google.com/?q=Hacienda+Los+Encinos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-2 px-5 py-2.5 bg-primary-container text-on-primary-container rounded-full shadow hover:bg-primary transition-all duration-200 text-[12px] font-semibold uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[18px]">location_on</span>
+              <span>Google Maps</span>
             </a>
-            <a href="https://waze.com/ul?q=Hacienda+Los+Encinos" target="_blank" rel="noopener noreferrer" class="btn-pill-outline">
-              <span class="material-symbols-outlined" style="font-size: 18px;">near_me</span>
+            <a href="https://waze.com/ul?q=Hacienda+Los+Encinos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center space-x-2 px-4 py-2.5 border border-gold rounded-full text-[12px] font-semibold uppercase tracking-wider text-on-surface hover:bg-gold/15 transition-all">
+              <span class="material-symbols-outlined text-[18px]">near_me</span>
               <span>Waze</span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ================= ITINERARY ================= -->
-      <section>
-        <div class="text-center">
-          <span class="label-caps" style="letter-spacing: 0.25em;">PROGRAMA</span>
-          <h2 class="section-title">Itinerario del Día</h2>
-        </div>
+      <!-- ================= 7. ITINERARIO ================= -->
+      <section class="flex flex-col items-center px-6 pt-10 w-full">
+        <span class="text-[12px] font-semibold text-secondary tracking-[0.25em] uppercase mb-1">PROGRAMA</span>
+        <h2 class="font-display text-2xl sm:text-3xl text-on-surface text-center mb-6">Itinerario del Día</h2>
 
-        <div class="timeline-list">
-          <div class="timeline-stem"></div>
+        <!-- Línea de tiempo vertical -->
+        <div class="relative w-full max-w-sm pl-4 pr-1">
+          <div class="absolute left-7 top-4 bottom-4 w-[2px] bg-gold/40"></div>
 
           <!-- 16:30 -->
-          <div class="timeline-item">
-            <div class="timeline-node">
-              <span class="material-symbols-outlined" style="font-size: 18px;">local_bar</span>
+          <div class="relative flex items-start space-x-4 mb-6">
+            <div class="relative z-10 w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm mt-0.5">
+              <span class="material-symbols-outlined text-sm">local_bar</span>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-time">16:30 HRS</span>
-              <p class="timeline-title">Bienvenida & Cóctel de Otoño</p>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.2rem;">Música acústica y bebidas de temporada en el jardín.</p>
+            <div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-sm border border-[#DAC1B8]/40">
+              <span class="text-[11px] font-bold text-primary block uppercase tracking-wider">16:30 HRS</span>
+              <p class="text-[15px] text-on-surface font-medium">Bienvenida y cóctel de otoño</p>
             </div>
           </div>
 
           <!-- 17:00 -->
-          <div class="timeline-item">
-            <div class="timeline-node gold-node">
-              <span class="material-symbols-outlined" style="font-size: 18px;">church</span>
+          <div class="relative flex items-start space-x-4 mb-6">
+            <div class="relative z-10 w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm mt-0.5">
+              <span class="material-symbols-outlined text-sm">church</span>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-time">17:00 HRS</span>
-              <p class="timeline-title">Ceremonia Religiosa & Votos</p>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.2rem;">Capilla de los Encinos con bendición nupcial.</p>
+            <div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-sm border border-[#DAC1B8]/40">
+              <span class="text-[11px] font-bold text-primary block uppercase tracking-wider">17:00 HRS</span>
+              <p class="text-[15px] text-on-surface font-medium">Ceremonia religiosa</p>
             </div>
           </div>
 
           <!-- 18:30 -->
-          <div class="timeline-item">
-            <div class="timeline-node green-node">
-              <span class="material-symbols-outlined" style="font-size: 18px;">photo_camera</span>
+          <div class="relative flex items-start space-x-4 mb-6">
+            <div class="relative z-10 w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-sm mt-0.5">
+              <span class="material-symbols-outlined text-sm">photo_camera</span>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-time">18:30 HRS</span>
-              <p class="timeline-title">Brindis de Honor & Sesión Fotográfica</p>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.2rem;">Momento para brindar con los novios durante la hora dorada.</p>
+            <div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-sm border border-[#DAC1B8]/40">
+              <span class="text-[11px] font-bold text-primary block uppercase tracking-wider">18:30 HRS</span>
+              <p class="text-[15px] text-on-surface font-medium">Brindis de honor & sesión fotográfica</p>
             </div>
           </div>
 
           <!-- 19:30 -->
-          <div class="timeline-item">
-            <div class="timeline-node">
-              <span class="material-symbols-outlined" style="font-size: 18px;">restaurant</span>
+          <div class="relative flex items-start space-x-4 mb-6">
+            <div class="relative z-10 w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm mt-0.5">
+              <span class="material-symbols-outlined text-sm">restaurant</span>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-time">19:30 HRS</span>
-              <p class="timeline-title">Banquete Nupcial</p>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.2rem;">Cena de 3 tiempos con maridaje especial.</p>
+            <div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-sm border border-[#DAC1B8]/40">
+              <span class="text-[11px] font-bold text-primary block uppercase tracking-wider">19:30 HRS</span>
+              <p class="text-[15px] text-on-surface font-medium">Banquete nupcial</p>
             </div>
           </div>
 
           <!-- 21:00 -->
-          <div class="timeline-item">
-            <div class="timeline-node gold-node">
-              <span class="material-symbols-outlined" style="font-size: 18px;">nightlife</span>
+          <div class="relative flex items-start space-x-4">
+            <div class="relative z-10 w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-sm mt-0.5">
+              <span class="material-symbols-outlined text-sm">nightlife</span>
             </div>
-            <div class="timeline-card">
-              <span class="timeline-time">21:00 HRS</span>
-              <p class="timeline-title">Apertura de Baile & Gran Fiesta</p>
-              <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.2rem;">Música en vivo, DJ y barra libre hasta el amanecer.</p>
+            <div class="flex-1 bg-surface-container-low p-3.5 rounded-xl shadow-sm border border-[#DAC1B8]/40">
+              <span class="text-[11px] font-bold text-primary block uppercase tracking-wider">21:00 HRS</span>
+              <p class="text-[15px] text-on-surface font-medium">Apertura de baile & fiesta</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ================= SUNSET CANDID PHOTO ================= -->
-      <section style="padding: 0;">
-        <div style="position: relative; overflow: hidden; width: 100%;">
-          <div class="deckle-cut-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
-            </svg>
-          </div>
+      <!-- ================= 8. FOTO DE ENLACE ================= -->
+      <section class="relative w-full mt-10 overflow-hidden p-0">
+        <!-- Deckle Top -->
+        <div class="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none text-surface">
+          <svg class="relative block w-full h-7 fill-surface rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
+          </svg>
+        </div>
 
-          <img src="assets/photo_candid_smile.png" alt="Camila y Cristóbal felices y sonrientes" style="width: 100%; height: 280px; object-fit: cover; object-position: center 20%; display: block;">
+        <img src="assets/photo_candid_smile.png" alt="Atardecer y romance otoñal" class="w-full h-64 object-cover object-top" onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuAQaDM3YG2dOhHf10MU6up8epJiX98dqO3kp0eiPR7hxPwJu8ZPTUtFsFqF3pNldKUJqJa-Gu_Ms831KAwkxYTXWk4P4GGPip-MYdX9babhniSBHDCMaCkAx8urD7gQK0waQYDX5U1UGNHSHdOHkMinKpYh2jYR1KIqnAvUGAJDAnfHPS9Mpc-kCISk2WrDkfiLQ9KLBAveVvSvSznq5sSaJfKltl_2q5oZMU0MtaBJ4-bAnYfdiuxv'"/>
 
-          <div class="botanical-corner bottom-right">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%" fill="none">
-              <path d="M 10 190 Q 90 150 160 110 T 280 30" stroke="#8C6747" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="60" cy="170" rx="16" ry="10" transform="rotate(-30 60 170)" fill="#78866B" opacity="0.8"/>
-              <ellipse cx="95" cy="140" rx="18" ry="11" transform="rotate(-40 95 140)" fill="#8A9A7B" opacity="0.85"/>
-              <path d="M 120 120 C 140 90 170 100 160 130 C 145 135 125 135 120 120 Z" fill="#D49B4B" opacity="0.8"/>
-              <circle cx="160" cy="105" r="14" fill="#D98A7A" opacity="0.75"/>
-              <circle cx="100" cy="120" r="4" fill="#8C4334"/>
-            </svg>
-          </div>
+        <div class="absolute -bottom-3 -right-3 w-24 h-16 pointer-events-none z-20 opacity-85 rotate-12">
+          <svg viewBox="0 0 300 200" width="100%" height="100%" fill="none">
+            <path d="M 10 190 Q 90 150 160 110 T 280 30" stroke="#8C6747" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="60" cy="170" rx="16" ry="10" transform="rotate(-30 60 170)" fill="#78866B" opacity="0.8"/>
+            <ellipse cx="95" cy="140" rx="18" ry="11" transform="rotate(-40 95 140)" fill="#8A9A7B" opacity="0.85"/>
+            <path d="M 120 120 C 140 90 170 100 160 130 C 145 135 125 135 120 120 Z" fill="#D49B4B" opacity="0.8"/>
+            <circle cx="160" cy="105" r="14" fill="#D98A7A" opacity="0.75"/>
+            <circle cx="100" cy="120" r="4" fill="#8C4334"/>
+          </svg>
         </div>
       </section>
 
-      <!-- ================= DRESS CODE ================= -->
-      <section class="text-center">
-        <span class="label-caps" style="letter-spacing: 0.25em;">CÓDIGO DE VESTIMENTA</span>
-        <h2 class="section-title">Elegante Semi-Formal</h2>
-        <p class="section-subtitle">Traje de Noche & Vestido de Gala</p>
+      <!-- ================= 9. DRESS CODE ================= -->
+      <section class="flex flex-col items-center px-6 pt-9 text-center w-full">
+        <span class="text-[12px] font-semibold text-secondary tracking-[0.25em] uppercase mb-1">CÓDIGO DE VESTIMENTA</span>
+        <h2 class="font-display text-2xl text-on-surface">Elegante Semi-Formal</h2>
+        <p class="text-[16px] text-primary italic mt-0.5">Traje de Noche</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; max-width: 420px; margin: 1rem auto 0 auto;">
-          <div class="info-card-luxury" style="margin-top: 0; padding: 1.25rem 0.75rem;">
-            <span class="material-symbols-outlined" style="font-size: 32px; color: var(--color-secondary);">dry_cleaning</span>
-            <span class="label-subtext" style="display: block; margin-top: 0.35rem;">Ellos</span>
-            <p style="font-size: 0.95rem; font-weight: 500;">Traje formal oscuro o smoking</p>
+        <!-- Siluetas / Fichas -->
+        <div class="flex items-center justify-center space-x-4 my-5">
+          <div class="flex flex-col items-center bg-surface-container-low px-5 py-3.5 rounded-2xl shadow-sm border border-[#DAC1B8]/40">
+            <span class="material-symbols-outlined text-3xl text-secondary mb-1">dry_cleaning</span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-on-surface">Ellos</span>
+            <span class="text-[14px] text-on-surface-variant">Traje formal</span>
           </div>
-
-          <div class="info-card-luxury" style="margin-top: 0; padding: 1.25rem 0.75rem;">
-            <span class="material-symbols-outlined" style="font-size: 32px; color: var(--color-primary-container);">styler</span>
-            <span class="label-subtext" style="display: block; margin-top: 0.35rem;">Ellas</span>
-            <p style="font-size: 0.95rem; font-weight: 500;">Vestido largo o midi elegante</p>
+          <div class="flex flex-col items-center bg-surface-container-low px-5 py-3.5 rounded-2xl shadow-sm border border-[#DAC1B8]/40">
+            <span class="material-symbols-outlined text-3xl text-primary mb-1">styler</span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-on-surface">Ellas</span>
+            <span class="text-[14px] text-on-surface-variant">Vestido largo</span>
           </div>
         </div>
 
-        <div style="background-color: var(--color-surface-container); border-radius: var(--radius-md); padding: 1.25rem 1rem; margin-top: 1.25rem; border: 1px solid var(--color-border-fine);">
-          <p style="font-size: 0.95rem; color: var(--color-text-muted);">
-            Agradecemos reservar los tonos <strong style="color: var(--color-text-main);">blanco, marfil y beige</strong> exclusivamente para la novia.
+        <!-- Sugerencia de Gama Otoñal -->
+        <div class="bg-surface-container-high rounded-xl p-4 text-center max-w-sm border border-[#DAC1B8]/50">
+          <p class="text-[14px] text-on-surface-variant leading-relaxed">
+            Agradecemos reservar los tonos <strong class="text-on-surface">blanco, marfil y beige</strong> exclusivamente para la novia.
           </p>
-
-          <span class="label-subtext" style="display: block; margin-top: 0.75rem; color: var(--color-secondary);">Gama de Colores Sugerida (Toca para ver):</span>
-          
-          <div class="dress-swatches">
-            <div class="swatch-chip" style="background-color: #B15E3B;" title="Terracota Cálido" data-name="Terracota Cálido"></div>
-            <div class="swatch-chip" style="background-color: #3B543F;" title="Verde Esmeralda / Bosque" data-name="Verde Esmeralda / Bosque"></div>
-            <div class="swatch-chip" style="background-color: #C9A876;" title="Mostaza & Dorado Antiguo" data-name="Mostaza & Dorado Antiguo"></div>
-            <div class="swatch-chip" style="background-color: #69292B;" title="Vino Tinto / Burdeos" data-name="Vino Tinto / Burdeos"></div>
-            <div class="swatch-chip" style="background-color: #4A3428;" title="Espresso Umber" data-name="Espresso Umber"></div>
+          <div class="flex items-center justify-center space-x-2.5 mt-3">
+            <button type="button" class="w-5 h-5 rounded-full bg-[#B15E3B] inline-block shadow-inner hover:scale-125 transition-transform" title="Terracota" onclick="showToast('Tono sugerido: Terracota Cálido')"></button>
+            <button type="button" class="w-5 h-5 rounded-full bg-[#3B543F] inline-block shadow-inner hover:scale-125 transition-transform" title="Verde Esmeralda" onclick="showToast('Tono sugerido: Verde Bosque')"></button>
+            <button type="button" class="w-5 h-5 rounded-full bg-[#C9A876] inline-block shadow-inner hover:scale-125 transition-transform" title="Mostaza / Dorado" onclick="showToast('Tono sugerido: Dorado Antiguo')"></button>
+            <button type="button" class="w-5 h-5 rounded-full bg-[#69292B] inline-block shadow-inner hover:scale-125 transition-transform" title="Vino Tinto" onclick="showToast('Tono sugerido: Vino Tinto')"></button>
           </div>
+          <span class="block text-[11px] font-semibold text-secondary mt-2 uppercase tracking-widest">Sugerencia gama otoñal</span>
         </div>
       </section>
 
-      <!-- ================= GIFT REGISTRY ================= -->
-      <section class="text-center" style="background-color: var(--color-surface-low); border-top: 1px solid rgba(218, 193, 184, 0.4); border-bottom: 1px solid rgba(218, 193, 184, 0.4);">
-        <span class="material-symbols-outlined" style="font-size: 34px; color: var(--color-secondary);">card_giftcard</span>
-        <h2 class="section-title">Mesa de Regalos</h2>
-        <p style="color: var(--color-text-muted); font-size: 1.05rem; max-width: 400px; margin: 0 auto;">
-          Tu presencia y cariño son nuestro mejor regalo. Si deseas tener un detalle adicional para nuestro nuevo hogar:
+      <!-- ================= 10. MESA DE REGALOS ================= -->
+      <section class="flex flex-col items-center px-6 pt-10 text-center w-full">
+        <span class="material-symbols-outlined text-secondary text-3xl mb-1">card_giftcard</span>
+        <h2 class="font-display text-2xl text-on-surface">Mesa de Regalos</h2>
+        <p class="text-[15px] text-on-surface-variant max-w-xs mt-1">
+          Tu presencia es nuestro mejor regalo. Si deseas tener un detalle con nosotros:
         </p>
 
-        <div style="max-width: 440px; margin: 1.5rem auto 0 auto; text-align: left;" class="space-y-3">
-          
-          <!-- Card 1: Lluvia de Sobres -->
-          <div class="info-card-luxury" style="margin-top: 0; text-align: left; display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem;">
-            <span class="material-symbols-outlined" style="font-size: 28px; color: var(--color-primary-container); margin-top: 0.15rem;">mail</span>
+        <div class="w-full space-y-3.5 mt-5 max-w-sm text-left">
+          <!-- Tarjeta 1: Lluvia de Sobres -->
+          <div class="bg-surface-container-low rounded-2xl p-4.5 shadow-sm flex items-start space-x-3.5 border border-[#DAC1B8]/40">
+            <span class="material-symbols-outlined text-primary text-2xl mt-0.5">mail</span>
             <div>
-              <h3 style="font-family: var(--font-serif-display); font-size: 1.15rem; color: var(--color-text-main);">Lluvia de Sobres</h3>
-              <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-top: 0.2rem;">
-                Dispondremos de un cofre especial en la recepción para recibir tus buenos deseos y bendiciones.
+              <h3 class="font-display text-[16px] text-on-surface font-semibold">Lluvia de Sobres</h3>
+              <p class="text-[13px] text-on-surface-variant mt-0.5">
+                Dispondremos de un buzón especial en la recepción para recibir tus buenos deseos y bendiciones.
               </p>
             </div>
           </div>
 
-          <!-- Card 2: Transferencia Bancaria con 1-Click Copy -->
-          <div style="background-color: var(--color-surface-lowest); border-radius: var(--radius-lg); padding: 1.5rem; border-left: 5px solid var(--color-primary-container); box-shadow: var(--shadow-paper);">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-              <span class="label-caps label-caps-primary" style="font-size: 0.85rem;">Transferencia Bancaria</span>
-              <span class="material-symbols-outlined" style="color: var(--color-secondary); font-size: 22px;">account_balance</span>
+          <!-- Tarjeta 2: Transferencia Bancaria con 1-Click Copy -->
+          <div class="bg-surface-lowest rounded-2xl p-4.5 shadow-sm border-l-4 border-primary border border-[#DAC1B8]/30">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="text-[11px] font-bold text-primary uppercase tracking-wider">Transferencia Bancaria</span>
+              <span class="material-symbols-outlined text-secondary text-lg">account_balance</span>
             </div>
-
-            <div style="font-size: 0.95rem; color: var(--color-text-main);" class="space-y-2">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="color: var(--color-text-muted);">Banco:</span>
-                <span style="font-weight: 600;">BBVA</span>
+            
+            <div class="space-y-1.5 text-on-surface text-[14px]">
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Banco:</span>
+                <span class="font-semibold">BBVA</span>
               </div>
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="color: var(--color-text-muted);">Titular:</span>
-                <span style="font-weight: 600;">Camila H. & Cristóbal C.</span>
+              <div class="flex justify-between">
+                <span class="text-on-surface-variant">Titular:</span>
+                <span class="font-semibold">Camila H. & Cristóbal C.</span>
               </div>
-              
-              <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.35rem; border-top: 1px dashed rgba(218, 193, 184, 0.6);">
-                <span style="color: var(--color-text-muted);">No. Cuenta:</span>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <code style="font-family: monospace; font-size: 0.95rem; font-weight: 600;">0123 4567 8901</code>
-                  <button type="button" class="btn-copy-chip" onclick="copyToClipboard('012345678901', this, '¡Número de Cuenta copiado!')">
-                    <span class="material-symbols-outlined" style="font-size: 14px;">content_copy</span>
-                    <span>Copiar</span>
+              <div class="flex justify-between items-center pt-1 border-t border-dashed border-[#DAC1B8]/60">
+                <span class="text-on-surface-variant">Cuenta:</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-mono text-on-surface font-semibold text-[13px]">0123 4567 8901</span>
+                  <button type="button" class="text-[11px] bg-surface-container px-2 py-0.5 rounded-full text-primary font-bold hover:bg-primary hover:text-white transition-colors" onclick="copyText('012345678901', '¡No. de Cuenta copiado!')">
+                    Copiar
                   </button>
                 </div>
               </div>
-
-              <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.35rem;">
-                <span style="color: var(--color-text-muted);">CLABE:</span>
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <code style="font-family: monospace; font-size: 0.95rem; font-weight: 600;">012180001234567890</code>
-                  <button type="button" class="btn-copy-chip" onclick="copyToClipboard('012180001234567890', this, '¡CLABE Interbancaria copiada!')">
-                    <span class="material-symbols-outlined" style="font-size: 14px;">content_copy</span>
-                    <span>Copiar</span>
+              <div class="flex justify-between items-center pt-1">
+                <span class="text-on-surface-variant">CLABE:</span>
+                <div class="flex items-center gap-1.5">
+                  <span class="font-mono text-on-surface text-[12px] font-semibold">012 180 001234567890</span>
+                  <button type="button" class="text-[11px] bg-surface-container px-2 py-0.5 rounded-full text-primary font-bold hover:bg-primary hover:text-white transition-colors" onclick="copyText('012180001234567890', '¡CLABE copiada!')">
+                    Copiar
                   </button>
                 </div>
               </div>
@@ -448,149 +565,337 @@
         </div>
       </section>
 
-      <!-- ================= RSVP FORM ================= -->
-      <section class="text-center" id="rsvp-section">
-        <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--color-surface-container); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem auto; border: 1px solid var(--color-border-fine);">
-          <span class="material-symbols-outlined" style="color: var(--color-primary-container); font-size: 26px;">event_available</span>
+      <!-- ================= 11. CONFIRMACIÓN (RSVP) ================= -->
+      <section class="flex flex-col items-center px-6 pt-10 text-center w-full" id="rsvp">
+        <div class="w-11 h-11 rounded-full bg-secondary-container/50 flex items-center justify-center mb-2.5 border border-gold/40">
+          <span class="material-symbols-outlined text-on-secondary-container text-2xl">event_available</span>
         </div>
 
-        <h2 class="section-title">Confirmar Asistencia</h2>
-        <p style="color: var(--color-primary-container); font-weight: 600; font-size: 1rem;">
+        <h2 class="font-display text-2xl text-on-surface">Confirmación</h2>
+        <p class="text-[15px] text-primary font-semibold mt-0.5">
           Favor de confirmar antes del 20 de Septiembre, 2025
         </p>
 
-        <form class="rsvp-form-container" id="rsvpForm">
-          <div class="form-group">
-            <label class="form-label" for="rsvpName">Nombre completo del invitado(a)</label>
-            <input type="text" id="rsvpName" class="form-input" placeholder="Ej. Familia Gómez / Ana García" required>
+        <!-- Formulario Inteligente RSVP -->
+        <form id="rsvpForm" class="w-full max-w-sm mt-5 bg-surface-container-low p-5 rounded-2xl border border-[#DAC1B8]/50 shadow-sm text-left">
+          <div class="mb-3.5">
+            <label class="block text-[12px] font-bold uppercase tracking-wider text-on-surface mb-1" for="guestName">Nombre del Invitado(a)</label>
+            <input type="text" id="guestName" required class="w-full bg-surface-lowest border border-[#DAC1B8] rounded-xl px-3 py-2 text-[14px] text-on-surface focus:outline-none focus:border-primary" placeholder="Ej. Familia Torres / María Gómez">
           </div>
 
-          <div class="form-group">
-            <label class="form-label">¿Nos acompañarás?</label>
-            <div class="radio-pill-group">
-              <div>
-                <input type="radio" id="attendingYes" name="attendance" value="confirm" class="radio-pill-input" checked>
-                <label for="attendingYes" class="radio-pill-label">
-                  <span class="material-symbols-outlined" style="font-size: 18px;">favorite</span>
-                  <span>¡Sí, asistiré!</span>
-                </label>
-              </div>
-              <div>
-                <input type="radio" id="attendingNo" name="attendance" value="decline" class="radio-pill-input">
-                <label for="attendingNo" class="radio-pill-label">
-                  <span class="material-symbols-outlined" style="font-size: 18px;">sentiment_dissatisfied</span>
-                  <span>No podré</span>
-                </label>
-              </div>
+          <div class="mb-3.5">
+            <label class="block text-[12px] font-bold uppercase tracking-wider text-on-surface mb-1">¿Nos acompañarás?</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center justify-center gap-1.5 bg-surface-lowest border border-[#DAC1B8] rounded-xl py-2 px-1 text-[13px] font-medium cursor-pointer has-[:checked]:bg-primary-container has-[:checked]:text-white has-[:checked]:border-primary-container transition-all">
+                <input type="radio" name="attending" value="confirm" checked class="hidden">
+                <span>¡Sí, asistiré!</span>
+              </label>
+              <label class="flex items-center justify-center gap-1.5 bg-surface-lowest border border-[#DAC1B8] rounded-xl py-2 px-1 text-[13px] font-medium cursor-pointer has-[:checked]:bg-primary-container has-[:checked]:text-white has-[:checked]:border-primary-container transition-all">
+                <input type="radio" name="attending" value="decline" class="hidden">
+                <span>No podré</span>
+              </label>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="rsvpPasses">Número de pases a confirmar</label>
-            <select id="rsvpPasses" class="form-select">
-              <option value="1 persona">1 persona (Pase individual)</option>
+          <div class="mb-3.5">
+            <label class="block text-[12px] font-bold uppercase tracking-wider text-on-surface mb-1" for="guestPasses">Pases</label>
+            <select id="guestPasses" class="w-full bg-surface-lowest border border-[#DAC1B8] rounded-xl px-3 py-2 text-[14px] text-on-surface focus:outline-none focus:border-primary">
+              <option value="1 persona">1 persona (Individual)</option>
               <option value="2 personas" selected>2 personas (Pareja)</option>
               <option value="3 personas">3 personas</option>
               <option value="4 personas">4 personas (Familia)</option>
             </select>
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="rsvpDiet">Restricciones alimentarias / Alergias</label>
-            <input type="text" id="rsvpDiet" class="form-input" placeholder="Ej. Vegetariano, sin gluten, alergia a mariscos (opcional)">
+          <div class="mb-3.5">
+            <label class="block text-[12px] font-bold uppercase tracking-wider text-on-surface mb-1" for="guestDiet">Alergias / Menú Especial (Opcional)</label>
+            <input type="text" id="guestDiet" class="w-full bg-surface-lowest border border-[#DAC1B8] rounded-xl px-3 py-2 text-[14px] text-on-surface focus:outline-none focus:border-primary" placeholder="Ej. Vegetariano, celíaco, etc.">
           </div>
 
-          <div class="form-group">
-            <label class="form-label" for="rsvpMessage">Mensaje para los novios</label>
-            <textarea id="rsvpMessage" class="form-textarea" rows="2" placeholder="Escribe un deseo o felicitación para Camila & Cristóbal..."></textarea>
-          </div>
-
-          <div class="text-center" style="margin-top: 1.5rem;">
-            <button type="submit" class="btn-pill-primary" style="width: 100%;">
-              <span class="material-symbols-outlined" style="font-size: 20px;">send</span>
-              <span>Enviar Confirmación</span>
-            </button>
-          </div>
+          <button type="submit" class="w-full mt-2 py-3 px-6 rounded-full bg-primary-container text-on-primary-container font-semibold text-[13px] uppercase tracking-wider shadow hover:bg-primary transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-[18px]">send</span>
+            <span>Confirmar por WhatsApp</span>
+          </button>
         </form>
 
-        <!-- Direct WhatsApp Actions -->
-        <div style="margin-top: 1.5rem;" class="space-y-3">
-          <span class="label-subtext" style="color: var(--color-secondary);">O confirma directamente por WhatsApp:</span>
-          
-          <div style="display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap;">
-            <a href="#" class="btn-pill-soft" id="btnWhatsAppBride">
-              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--color-primary-container);">chat</span>
-              <span>Contactar a la Novia</span>
-            </a>
-            <a href="#" class="btn-pill-soft" id="btnWhatsAppGroom">
-              <span class="material-symbols-outlined" style="font-size: 18px; color: var(--color-primary-container);">chat</span>
-              <span>Contactar al Novio</span>
-            </a>
-          </div>
+        <!-- Botones Directos WhatsApp -->
+        <div class="w-full flex flex-col space-y-2.5 mt-5 max-w-xs">
+          <a class="flex items-center justify-center space-x-2 py-2.5 px-5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all text-[12px] font-semibold uppercase tracking-wider border border-[#DAC1B8]/60" href="https://wa.me/?text=Hola%20Camila,%20confirmo%20con%20mucha%20alegr%C3%ADa%20mi%20asistencia%20a%20su%20boda." rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[18px] text-primary">chat</span>
+            <span>Contactar a la Novia</span>
+          </a>
+          <a class="flex items-center justify-center space-x-2 py-2.5 px-5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all text-[12px] font-semibold uppercase tracking-wider border border-[#DAC1B8]/60" href="https://wa.me/?text=Hola%20Crist%C3%B3bal,%20con%20gusto%20te%20confirmo%20mi%20asistencia%20a%20su%20boda." rel="noopener noreferrer" target="_blank">
+            <span class="material-symbols-outlined text-[18px] text-primary">chat</span>
+            <span>Contactar al Novio</span>
+          </a>
         </div>
 
-        <div style="margin-top: 2rem;">
-          <p style="font-size: 1.15rem; color: var(--color-text-muted);">Esperamos celebrar este día tan especial contigo</p>
-          <span style="font-family: var(--font-serif-display); font-size: 2.2rem; font-style: italic; color: var(--color-primary-container); display: block; margin-top: 0.25rem;">¡Gracias!</span>
+        <div class="mt-8">
+          <p class="text-[16px] text-on-surface-variant">Esperamos celebrar contigo</p>
+          <span class="font-display text-3xl text-primary block mt-1 italic font-normal">¡Gracias!</span>
         </div>
       </section>
 
-      <!-- ================= FINAL PREVIEW & SIGNATURE ================= -->
-      <section style="padding: 0;">
-        <div style="position: relative; overflow: hidden; width: 100%;">
-          <div class="deckle-cut-top">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
-            </svg>
-          </div>
-
-          <img src="assets/preview_card.png" alt="Camila & Cristóbal sonrientes" style="width: 100%; height: 320px; object-fit: cover; object-position: center 25%; display: block;">
-
-          <div class="botanical-corner bottom-left">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="100%" height="100%" fill="none">
-              <path d="M 10 190 Q 90 150 160 110 T 280 30" stroke="#8C6747" stroke-width="2.5" stroke-linecap="round"/>
-              <ellipse cx="60" cy="170" rx="16" ry="10" transform="rotate(-30 60 170)" fill="#78866B" opacity="0.8"/>
-              <ellipse cx="95" cy="140" rx="18" ry="11" transform="rotate(-40 95 140)" fill="#8A9A7B" opacity="0.85"/>
-              <path d="M 120 120 C 140 90 170 100 160 130 C 145 135 125 135 120 120 Z" fill="#D49B4B" opacity="0.8"/>
-              <circle cx="160" cy="105" r="14" fill="#D98A7A" opacity="0.75"/>
-              <circle cx="100" cy="120" r="4" fill="#8C4334"/>
-            </svg>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="text-center" style="padding: 2rem 1.5rem 1.5rem 1.5rem; background-color: var(--color-surface);">
-        <div class="monogram-badge" style="width: 55px; height: 55px; margin: 0 auto 0.5rem auto;">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
-            <circle cx="100" cy="100" r="88" fill="none" stroke="#C9A876" stroke-width="1.5" stroke-dasharray="4 2"/>
-            <text x="68" y="116" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#4A3428" text-anchor="middle">C</text>
-            <line x1="100" y1="70" x2="100" y2="130" stroke="#C9A876" stroke-width="1.5" stroke-linecap="round"/>
-            <text x="132" y="116" font-family="'Playfair Display', Georgia, serif" font-size="52" font-weight="400" fill="#B15E3B" text-anchor="middle">C</text>
+      <!-- ================= 12. FOTO FINAL & FOOTER ================= -->
+      <section class="relative w-full mt-10 overflow-hidden p-0">
+        <!-- Deckle Top -->
+        <div class="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none text-surface">
+          <svg class="relative block w-full h-7 fill-surface rotate-180" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 Q120,40 240,15 T480,35 T720,12 T960,32 T1200,5 L1200,120 L0,120 Z"></path>
           </svg>
         </div>
-        <span class="label-subtext" style="letter-spacing: 0.25em;">C & C • 18.10.2025 • HACIENDA LOS ENCINOS</span>
+
+        <img src="assets/preview_card.png" alt="Camila y Cristóbal felices" class="w-full h-72 object-cover object-center" onerror="this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuDEbd95zQ9TbkHfK7Wr8EZ2HRusIMa0T3c3olA8T5V4I2B1XLRuuRR3DzOj8h7Th5Y0NtKupTtAKoaKSsmUUtv7ZAyL-y6vttYb5L8v3O5_VWm5x0N8pb5XFwzimFEIeOa7A-tXcVuHhvRS8JpWyxaygkJL0-fo7nRIRzN4APigbioRFYJksyyFPLWFDfDZRzMPbHLVvaq2XITzXarPJEjfJG_VZMzpMJr8pJ-qi60tSVXfis2yXkWH'"/>
+
+        <div class="absolute -bottom-3 -right-3 w-28 h-20 pointer-events-none z-20 opacity-90">
+          <svg viewBox="0 0 300 200" width="100%" height="100%" fill="none">
+            <path d="M 10 190 Q 90 150 160 110 T 280 30" stroke="#8C6747" stroke-width="2.5" stroke-linecap="round"/>
+            <ellipse cx="60" cy="170" rx="16" ry="10" transform="rotate(-30 60 170)" fill="#78866B" opacity="0.8"/>
+            <ellipse cx="95" cy="140" rx="18" ry="11" transform="rotate(-40 95 140)" fill="#8A9A7B" opacity="0.85"/>
+            <path d="M 120 120 C 140 90 170 100 160 130 C 145 135 125 135 120 120 Z" fill="#D49B4B" opacity="0.8"/>
+            <circle cx="160" cy="105" r="14" fill="#D98A7A" opacity="0.75"/>
+            <circle cx="100" cy="120" r="4" fill="#8C4334"/>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Footer Signature -->
+      <footer class="w-full text-center pt-8 pb-3 bg-surface">
+        <div class="flex items-center justify-center space-x-2">
+          <span class="text-[11px] font-bold text-outline uppercase tracking-[0.25em]">C & C • 18 DE OCTUBRE DE 2025</span>
+        </div>
       </footer>
 
     </main>
   </div>
 
-  <!-- =========================================================================
-       3. FLOATING AUDIO WIDGET & TOAST NOTIFICATION
-       ========================================================================= -->
-  <aside class="floating-audio-widget">
-    <button type="button" class="audio-btn-circle" id="audioToggleBtn" title="Reproducir / Pausar música ambiental" aria-label="Música ambiental">
-      <span class="material-symbols-outlined" id="audioIcon" style="font-size: 24px;">music_note</span>
-    </button>
+  <!-- Widget Flotante de Música Ambiental -->
+  <aside class="audio-floating-pill" id="audioToggleBtn" title="Reproducir música romántica">
+    <div class="flex items-center gap-0.5" id="equalizerBars">
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+      <span class="equalizer-bar"></span>
+    </div>
+    <span class="text-[12px] font-semibold tracking-wider uppercase text-primary" id="audioLabel">Música</span>
   </aside>
 
-  <!-- Toast Notification -->
-  <div class="toast-notification" id="toastNotification" role="alert" aria-live="polite">
-    <span class="material-symbols-outlined" style="font-size: 20px; color: var(--color-gold);">info</span>
-    <span id="toastText">Notificación</span>
+  <!-- Toast Notificaciones -->
+  <div class="toast-box" id="toastBox">
+    <span class="material-symbols-outlined text-[18px] text-gold">check_circle</span>
+    <span id="toastMsg">¡Texto copiado!</span>
   </div>
 
-  <!-- Custom Javascript -->
-  <script src="js/app.js"></script>
+  <!-- Lógica Interactiva Javascript -->
+  <script>
+    // 1. Contador Regresivo
+    (function initCountdown() {
+      const weddingDate = new Date('2025-10-18T17:00:00').getTime();
+      function update() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        const daysEl = document.getElementById('cdDays');
+        const hoursEl = document.getElementById('cdHours');
+        const minutesEl = document.getElementById('cdMinutes');
+        const secondsEl = document.getElementById('cdSeconds');
+
+        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+        if (distance <= 0) {
+          daysEl.textContent = "00";
+          hoursEl.textContent = "00";
+          minutesEl.textContent = "00";
+          secondsEl.textContent = "00";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        daysEl.textContent = days < 10 ? '0' + days : days;
+        hoursEl.textContent = hours < 10 ? '0' + hours : hours;
+        minutesEl.textContent = minutes < 10 ? '0' + minutes : minutes;
+        secondsEl.textContent = seconds < 10 ? '0' + seconds : seconds;
+      }
+      update();
+      setInterval(update, 1000);
+    })();
+
+    // 2. Toast de Notificación
+    function showToast(msg) {
+      const box = document.getElementById('toastBox');
+      const text = document.getElementById('toastMsg');
+      if (!box || !text) return;
+      text.textContent = msg;
+      box.classList.add('show');
+      setTimeout(() => box.classList.remove('show'), 2500);
+    }
+
+    // 3. Copiado al Portapapeles
+    function copyText(val, successMsg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(val).then(() => showToast(successMsg)).catch(() => fallback(val, successMsg));
+      } else {
+        fallback(val, successMsg);
+      }
+      function fallback(t, m) {
+        const el = document.createElement('textarea');
+        el.value = t;
+        document.body.appendChild(el);
+        el.select();
+        try { document.execCommand('copy'); showToast(m); } catch(e) {}
+        document.body.removeChild(el);
+      }
+    }
+
+    // 4. Calendario
+    const calTitle = encodeURIComponent('Boda Camila & Cristóbal');
+    const calDesc = encodeURIComponent('Celebración de la Boda de Camila & Cristóbal en Hacienda Los Encinos.');
+    const calLoc = encodeURIComponent('Hacienda Los Encinos, Carretera al Valle Km 14.5');
+    const btnGCal = document.getElementById('btnGoogleCal');
+    if (btnGCal) {
+      btnGCal.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${calTitle}&dates=20251018T170000/20251019T040000&details=${calDesc}&location=${calLoc}`;
+    }
+
+    const btnIcs = document.getElementById('btnIcsCal');
+    if (btnIcs) {
+      btnIcs.addEventListener('click', (e) => {
+        e.preventDefault();
+        const icsContent = "BEGIN:VCALENDAR\nVERSION:2.0\nBEGIN:VEVENT\nSUMMARY:Boda Camila & Cristóbal\nDESCRIPTION:Celebración de la Boda de Camila & Cristóbal\nLOCATION:Hacienda Los Encinos\nDTSTART:20251018T170000\nDTEND:20251019T040000\nEND:VEVENT\nEND:VCALENDAR";
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.setAttribute('download', 'Boda_Camila_y_Cristobal.ics');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        showToast('📅 Calendario (.ics) descargado');
+      });
+    }
+
+    // 5. Formulario RSVP -> WhatsApp
+    const rsvpForm = document.getElementById('rsvpForm');
+    if (rsvpForm) {
+      rsvpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('guestName')?.value || 'Invitado(a)';
+        const att = document.querySelector('input[name="attending"]:checked')?.value === 'confirm' ? '¡Sí, confirmo con alegría mi asistencia! 💍' : 'Lamentablemente no podré acompañarles. 🤍';
+        const passes = document.getElementById('guestPasses')?.value || '2 personas';
+        const diet = document.getElementById('guestDiet')?.value || 'Ninguna';
+
+        const text = `🍂 *CONFIRMACIÓN DE ASISTENCIA — BODA CAMILA & CRISTÓBAL* 🍂\n\n` +
+          `👤 *Invitado:* ${name}\n` +
+          `💌 *Respuesta:* ${att}\n` +
+          `👥 *Pases:* ${passes}\n` +
+          `🥗 *Alérgenos/Dieta:* ${diet}\n`;
+
+        window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+        showToast('Abriendo WhatsApp...');
+      });
+    }
+
+    // 6. Web Audio API Piano Synthesizer
+    let audioCtx = null;
+    let isPlaying = false;
+    let musicTimer = null;
+    const notes = [261.63, 329.63, 392.00, 523.25, 220.00, 261.63, 329.63, 440.00, 174.61, 220.00, 261.63, 349.23, 196.00, 246.94, 293.66, 392.00];
+    let noteIdx = 0;
+
+    function playNote(freq) {
+      if (!audioCtx || audioCtx.state !== 'running') return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.07, audioCtx.currentTime + 0.04);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.2);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 2.2);
+      } catch(e) {}
+    }
+
+    function toggleAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+
+      isPlaying = !isPlaying;
+      const btn = document.getElementById('audioToggleBtn');
+      const label = document.getElementById('audioLabel');
+
+      if (isPlaying) {
+        btn.classList.add('playing');
+        label.textContent = 'Sonando';
+        musicTimer = setInterval(() => {
+          if (!isPlaying) return;
+          playNote(notes[noteIdx % notes.length]);
+          noteIdx++;
+        }, 550);
+        showToast('🎵 Música ambiental romántica activada');
+      } else {
+        btn.classList.remove('playing');
+        label.textContent = 'Música';
+        if (musicTimer) clearInterval(musicTimer);
+        showToast('🔇 Música en pausa');
+      }
+    }
+
+    const audioBtn = document.getElementById('audioToggleBtn');
+    if (audioBtn) audioBtn.addEventListener('click', toggleAudio);
+
+    // 7. Partículas de Hojas en Canvas
+    (function initLeaves() {
+      const cv = document.getElementById('leavesCanvas');
+      if (!cv) return;
+      const cx = cv.getContext('2d');
+      let w = (cv.width = window.innerWidth);
+      let h = (cv.height = window.innerHeight);
+      window.addEventListener('resize', () => { w = cv.width = window.innerWidth; h = cv.height = window.innerHeight; });
+
+      const colors = ['#B15E3B', '#C9A876', '#8C4334', '#D49B4B', '#768776'];
+      const leaves = [];
+      for (let i = 0; i < 22; i++) {
+        leaves.push({
+          x: Math.random() * w,
+          y: Math.random() * h - h,
+          s: Math.random() * 8 + 6,
+          vy: Math.random() * 0.8 + 0.5,
+          vx: Math.random() * 1 - 0.5,
+          rot: Math.random() * 360,
+          vrot: (Math.random() - 0.5) * 2,
+          c: colors[Math.floor(Math.random() * colors.length)],
+          o: Math.random() * 0.45 + 0.35
+        });
+      }
+
+      function loop() {
+        cx.clearRect(0, 0, w, h);
+        leaves.forEach(l => {
+          l.y += l.vy;
+          l.x += Math.sin(l.y * 0.015) * 0.7 + l.vx * 0.3;
+          l.rot += l.vrot;
+          if (l.y > h + 20) { l.y = -20; l.x = Math.random() * w; }
+          cx.save();
+          cx.translate(l.x, l.y);
+          cx.rotate((l.rot * Math.PI) / 180);
+          cx.globalAlpha = l.o;
+          cx.fillStyle = l.c;
+          cx.beginPath();
+          cx.ellipse(0, 0, l.s, l.s * 0.48, 0, 0, Math.PI * 2);
+          cx.fill();
+          cx.restore();
+        });
+        requestAnimationFrame(loop);
+      }
+      loop();
+    })();
+  </script>
 </body>
 </html>
