@@ -402,6 +402,16 @@ document.addEventListener('DOMContentLoaded', () => {
       previewImg: 'assets/portfolio/luciana_xv.png',
       urlDemo: '/portafolio/celebraciones/lucianavillarreal',
       status: 'active'
+    },
+    {
+      id: 'quinceanera-15-1',
+      name: 'Valentina XV • Gala Celestial',
+      type: 'celebraciones',
+      categoryLabel: 'Landing Page de XV Años • Edición 15.1 Luxury Gala',
+      desc: 'Experiencia web de gala para fiesta de 15 años con diseño celestial en azul noche y oro rosa, sobre VIP animado, audio ambiental sinfónico, cuenta regresiva, itinerario interactivo con mapas, código de vestimenta, galería lookbook y confirmación RSVP directa por WhatsApp.',
+      previewImg: 'assets/portfolio/xv_15_1.png',
+      urlDemo: '/portafolio/celebraciones/quinceanera_15_1',
+      status: 'active'
     }
   ];
 

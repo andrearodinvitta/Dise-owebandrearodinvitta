@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>
+    // Detector dinámico de base URL para funcionamiento transparente en Localhost y Vercel
+    (function() {
+      var p = window.location.pathname;
+      if (p.indexOf('portafolio') !== -1 || p.indexOf('celebraciones') !== -1) {
+        var base = document.createElement('base');
+        var dir = p.substring(0, p.lastIndexOf('/') + 1);
+        if (!dir) dir = p + '/';
+        base.href = dir;
+        document.head.prepend(base);
+      }
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Valentina • Mis XV Años — Gala Celestial (Edición 15.1)</title>
+  <meta name="description" content="Invitación y landing page oficial de la Gala de XV Años de Valentina. Sábado 18 de Octubre, 2025. Itinerario, Dress Code, RSVP y mesa de regalos." />
+
+  <!-- OpenGraph / Social Share -->
+  <meta property="og:title" content="Valentina • Mis XV Años (Gala Celestial 15.1)" />
+  <meta property="og:description" content="Acompáñanos a celebrar una noche mágica e inolvidable bajo las estrellas." />
+  <meta property="og:image" content="assets/images/luciana_cover_portrait.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/golden_crown.svg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Alex+Brush&display=swap" rel="stylesheet" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Background Particle Field Canvas -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <!-- ==========================================================================
+       1. VIP PASS ENVELOPE MODAL (EXPERIENCIA DE ENTRADA)
+       ========================================================================== -->
+  <aside class="vip-pass-overlay" id="vipOverlay" aria-modal="true" role="dialog" aria-label="Pase de Gala de XV Años">
+    <div class="vip-ticket-card">
+      <div class="ticket-crest">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#e6c594" stroke-width="1.8">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+      </div>
+      <span class="ticket-tag">PASE VIP EXCLUSIVO • EDICIÓN 15.1</span>
+      <h2 class="ticket-name">VALENTINA</h2>
+      <span class="ticket-sub">Mis Quince Años</span>
+      <div class="ticket-dateline">
+        <span>SÁBADO 18 OCT 2025</span>
+        <span>•</span>
+        <span>GALA DE ESTRELLAS</span>
+      </div>
+      <button class="btn-open-experience" id="btnOpenExperience" aria-label="Abrir Invitación de Gala">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+          <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span>ABRIR INVITACIÓN & MÚSICA</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       2. TOP STICKY NAVIGATION BAR & AUDIO ENGINE
+       ========================================================================== -->
+  <header class="gala-navbar" id="galaNavbar">
+    <div class="gala-container nav-wrapper">
+      <a href="#hero" class="nav-brand" aria-label="Inicio Gala XV">
+        <div class="brand-monogram">V</div>
+        <div class="brand-text">
+          <span class="brand-title">VALENTINA XV</span>
+          <span class="brand-subtitle">Edición 15.1</span>
+        </div>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#itinerario" class="nav-link">Itinerario</a></li>
+          <li><a href="#ubicaciones" class="nav-link">Ubicaciones</a></li>
+          <li><a href="#dresscode" class="nav-link">Dress Code</a></li>
+          <li><a href="#galeria" class="nav-link">Lookbook</a></li>
+          <li><a href="#regalos" class="nav-link">Regalos</a></li>
+          <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        </ul>
+      </nav>
+
+      <div class="music-toggle-container">
+        <button class="music-btn" id="musicToggleBtn" aria-label="Controlar música ambiental">
+          <span class="music-vinyl"></span>
+          <span id="musicBtnText">Música de Gala: OFF</span>
+          <div class="equalizer-bars">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. HERO SECTION & HERO PHOTO
+       ========================================================================== -->
+  <section class="gala-hero" id="hero">
+    <div class="hero-glow-sphere"></div>
+    <div class="gala-container gala-container-sm">
+      <div class="hero-edition-pill">
+        <span>✨ COLECCIÓN DE GALA CELESTIAL • EDICIÓN 15.1</span>
+      </div>
+      <h1 class="hero-headline">VALENTINA</h1>
+      <span class="hero-script-lead">Mis Quince Años</span>
+
+      <div class="hero-dateline-box">
+        <span>SÁBADO, 18 DE OCTUBRE DE 2025</span>
+        <span>•</span>
+        <span>HACIENDA REAL DE LAS ESTRELLAS</span>
+      </div>
+
+      <div class="hero-photo-frame-wrapper">
+        <div class="hero-photo-glow"></div>
+        <div class="hero-photo-arch">
+          <img src="assets/images/luciana_cover_portrait.png" alt="Retrato de Gala de Quinceañera Valentina" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. LIVE COUNTDOWN SECTION
+       ========================================================================== -->
+  <section class="countdown-section">
+    <div class="gala-container gala-container-sm">
+      <div class="countdown-card">
+        <h2 class="countdown-title">TIEMPO PARA LA GRAN NOCHE DE GALA</h2>
+        <div class="countdown-grid">
+          <div class="time-box">
+            <span class="time-number" id="countDays">00</span>
+            <span class="time-label">Días</span>
+          </div>
+          <div class="time-box">
+            <span class="time-number" id="countHours">00</span>
+            <span class="time-label">Horas</span>
+          </div>
+          <div class="time-box">
+            <span class="time-number" id="countMinutes">00</span>
+            <span class="time-label">Minutos</span>
+          </div>
+          <div class="time-box">
+            <span class="time-number" id="countSeconds">00</span>
+            <span class="time-label">Segundos</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. EDITORIAL LETTER / DEDICATORIA
+       ========================================================================== -->
+  <section class="gala-section" id="dedicatoria">
+    <div class="gala-container gala-container-sm">
+      <div class="letter-card">
+        <div class="letter-quote-mark">“</div>
+        <div class="section-header" style="margin-bottom: 2rem;">
+          <span class="section-eyebrow">UN MENSAJE DESDE EL CORAZÓN</span>
+          <h2 class="section-title">El Comienzo de un Sueño</h2>
+          <span class="section-script">Bajo el cielo estrellado</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <p class="letter-content">
+          Hay momentos en la vida que son irrepetibles, pero compartirlos con las personas que más amamos los hace eternos. 
+          Hoy doy un paso hacia una nueva etapa llena de ilusiones, metas y aprendizajes. 
+          Tu presencia es el regalo más hermoso que puedo recibir en esta noche mágica donde los sueños se visten de gala.
+        </p>
+
+        <div class="letter-signatures">
+          <div class="sig-block">
+            <p>Con amor,</p>
+            <span class="sig-name">Valentina</span>
+          </div>
+          <div class="sig-block">
+            <p>Y la bendición de mis padres,</p>
+            <span class="sig-name">Familia Rodríguez</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. ITINERARIO DE GALA (TIMELINE)
+       ========================================================================== -->
+  <section class="gala-section" id="itinerario">
+    <div class="gala-container">
+      <div class="section-header">
+        <span class="section-eyebrow">CRONOGRAMA DE LA VELADA</span>
+        <h2 class="section-title">Itinerario de la Noche</h2>
+        <span class="section-script">Cada momento diseñado a la perfección</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline-track">
+        <!-- 17:00 Ceremonia -->
+        <div class="timeline-event">
+          <div class="timeline-node">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div class="timeline-card">
+            <span class="event-time">17:00 HORAS</span>
+            <h3 class="event-title">Misa de Acción de Gracias</h3>
+            <p class="event-desc">Ceremonia religiosa y bendición solemne en la Parroquia Real de San Jerónimo.</p>
+          </div>
+        </div>
+
+        <!-- 19:00 Coctel de Bienvenida -->
+        <div class="timeline-event">
+          <div class="timeline-node">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 21h8m-4-8v8m-7-9a7 7 0 0 1 14 0c0 3-2 5-7 7-5-2-7-4-7-7z"></path>
+            </svg>
+          </div>
+          <div class="timeline-card">
+            <span class="event-time">19:00 HORAS</span>
+            <h3 class="event-title">Cóctel de Bienvenida & Alfombra Roja</h3>
+            <p class="event-desc">Recepción de invitados con champagne, canapés gourmet y sesión de fotos en photocall.</p>
+          </div>
+        </div>
+
+        <!-- 20:30 Entrada Triunfal & Vals -->
+        <div class="timeline-event">
+          <div class="timeline-node">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="timeline-card">
+            <span class="event-time">20:30 HORAS</span>
+            <h3 class="event-title">Entrada Triunfal & Vals Real</h3>
+            <p class="event-desc">Apertura oficial de la gala, tradicional cambio de zapatilla, entrega de corona y vals de honor con sus chambelanes.</p>
+          </div>
+        </div>
+
+        <!-- 21:30 Banquete & Brindis -->
+        <div class="timeline-event">
+          <div class="timeline-node">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+              <line x1="6" y1="1" x2="6" y2="4"></line>
+              <line x1="10" y1="1" x2="10" y2="4"></line>
+              <line x1="14" y1="1" x2="14" y2="4"></line>
+            </svg>
+          </div>
+          <div class="timeline-card">
+            <span class="event-time">21:30 HORAS</span>
+            <h3 class="event-title">Cena de Gala & Brindis</h3>
+            <p class="event-desc">Exquisito menú de cuatro tiempos, palabras conmemorativas de la familia y brindis de honor.</p>
+          </div>
+        </div>
+
+        <!-- 23:00 Fiesta & DJ -->
+        <div class="timeline-event">
+          <div class="timeline-node">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+          </div>
+          <div class="timeline-card">
+            <span class="event-time">23:00 HORAS</span>
+            <h3 class="event-title">Apertura de Pista & DJ Live Set</h3>
+            <p class="event-desc">Show de luces, pirotecnia fría, barra libre internacional y baile hasta el amanecer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. UBICACIONES & GUÍA GPS
+       ========================================================================== -->
+  <section class="gala-section" id="ubicaciones">
+    <div class="gala-container">
+      <div class="section-header">
+        <span class="section-eyebrow">GUÍA DE LLEGADA</span>
+        <h2 class="section-title">Ubicaciones del Evento</h2>
+        <span class="section-script">Te esperamos en nuestros dos escenarios de gala</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="locations-grid">
+        <!-- Card 1: Iglesia -->
+        <article class="location-card">
+          <div>
+            <div class="location-icon-badge">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <span class="location-type">CEREMONIA RELIGIOSA • 17:00 HRS</span>
+            <h3 class="location-name">Parroquia San Jerónimo el Real</h3>
+            <p class="location-address">Calle Moreto 4, 28014 Madrid. Aparcamiento público disponible junto al recinto.</p>
+          </div>
+          <div class="location-actions">
+            <a href="https://maps.google.com/?q=Parroquia+San+Jeronimo+el+Real+Madrid" target="_blank" rel="noopener noreferrer" class="btn-map-action">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Google Maps
+            </a>
+            <a href="https://waze.com/ul?q=Parroquia+San+Jeronimo+el+Real+Madrid" target="_blank" rel="noopener noreferrer" class="btn-map-action">
+              Waze
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2: Salón -->
+        <article class="location-card">
+          <div>
+            <div class="location-icon-badge">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+            </div>
+            <span class="location-type">RECEPCIÓN & FIESTA • 19:00 HRS</span>
+            <h3 class="location-name">Palacio de Cristal & Jardín Imperial</h3>
+            <p class="location-address">Camino Real de los Olivos Km 12, Finca Las Encinas. Servicio de Valet Parking incluido.</p>
+          </div>
+          <div class="location-actions">
+            <a href="https://maps.google.com/?q=Palacio+de+Cristal+Madrid" target="_blank" rel="noopener noreferrer" class="btn-map-action">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Google Maps
+            </a>
+            <a href="https://waze.com/ul?q=Palacio+de+Cristal+Madrid" target="_blank" rel="noopener noreferrer" class="btn-map-action">
+              Waze
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. CÓDIGO DE VESTIMENTA & INSPIRACIÓN
+       ========================================================================== -->
+  <section class="gala-section" id="dresscode">
+    <div class="gala-container gala-container-sm">
+      <div class="dresscode-card">
+        <span class="dresscode-badge">ETIQUETA RIGUROSA</span>
+        <h2 class="dresscode-title">Black Tie & Gala Elegance</h2>
+        <p class="dresscode-desc">
+          Para honrar esta noche celestial, les invitamos a vestir de gala formal. 
+          Caballeros con esmoquin o traje oscuro formal y corbata. Damas con vestido largo de noche en nuestra paleta sugerida.
+        </p>
+
+        <div class="palette-swatches-grid">
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #0d1a33;"></div>
+            <span class="swatch-label">Midnight Blue</span>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #e8a5b8;"></div>
+            <span class="swatch-label">Dusty Rose</span>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #e6c594;"></div>
+            <span class="swatch-label">Champagne</span>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #2b2d38;"></div>
+            <span class="swatch-label">Charcoal Black</span>
+          </div>
+          <div class="swatch-item">
+            <div class="swatch-circle" style="background-color: #cbd4e2;"></div>
+            <span class="swatch-label">Silver Starlight</span>
+          </div>
+        </div>
+
+        <div class="dresscode-notice">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span>Aviso especial: El color <strong>Esmeralda Real</strong> y el <strong>Rosa Dorado</strong> están reservados con cariño para la Quinceañera.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. LOOKBOOK EDITORIAL & GALERÍA DE FOTOS
+       ========================================================================== -->
+  <section class="gala-section" id="galeria">
+    <div class="gala-container">
+      <div class="section-header">
+        <span class="section-eyebrow">SESIÓN DE FOTOS OFICIAL</span>
+        <h2 class="section-title">Lookbook de Gala</h2>
+        <span class="section-script">Recuerdos inmortalizados antes del gran día</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="gallery-filter-tabs">
+        <button class="filter-btn active" data-filter="all">Todas las Fotos</button>
+        <button class="filter-btn" data-filter="editorial">Alta Costura</button>
+        <button class="filter-btn" data-filter="gala">Detalles de Gala</button>
+        <button class="filter-btn" data-filter="recuerdos">Momentos</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-card" data-category="editorial">
+          <img src="assets/images/luciana_cover_portrait.png" alt="Editorial Cover Portrait" loading="lazy" />
+          <div class="gallery-overlay-hint"><span class="gallery-caption">Vestido de Gala Haute Couture</span></div>
+        </div>
+        <div class="gallery-card" data-category="editorial">
+          <img src="assets/images/luciana_couture_gown.png" alt="Couture Gown Spread" loading="lazy" />
+          <div class="gallery-overlay-hint"><span class="gallery-caption">Sesión en Palacio</span></div>
+        </div>
+        <div class="gallery-card" data-category="gala">
+          <img src="assets/images/luciana_flash_backstage.png" alt="Backstage Flash Photo" loading="lazy" />
+          <div class="gallery-overlay-hint"><span class="gallery-caption">Candid & Flash Editorial</span></div>
+        </div>
+        <div class="gallery-card" data-category="gala">
+          <img src="assets/images/f01.jpg" alt="Detalle de Tiara" loading="lazy" />
+          <div class="gallery-overlay-hint"><span class="gallery-caption">Corona y Joyas de Oro</span></div>
+        </div>
+        <div class="gallery-card" data-category="recuerdos">
+          <img src="assets/images/f02.jpg" alt="Momentos Especiales" loading="lazy" />
+          <div class="gallery-overlay-hint"><span class="gallery-caption">Ilusiones de los 15 Años</span></div>
+        </div>
+        <div class="gallery-card" data-category="recuerdos">
+          <img src="assets/images/f03.jpg" alt="Retrato Íntimo" loading="lazy" />
+          <div class="gallery-overlay-hint"><span class="gallery-caption">Luz de Medianoche</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" aria-hidden="true" role="dialog">
+    <button class="btn-close-lightbox" id="btnCloseLightbox" aria-label="Cerrar visor de foto">&times;</button>
+    <div class="lightbox-img-wrapper">
+      <img src="" alt="Foto en alta resolución" id="lightboxImg" />
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       10. MESA DE REGALOS & LLUVIA DE SOBRES
+       ========================================================================== -->
+  <section class="gala-section" id="regalos">
+    <div class="gala-container">
+      <div class="section-header">
+        <span class="section-eyebrow">DETALLES CON AMOR</span>
+        <h2 class="section-title">Mesa de Regalos</h2>
+        <span class="section-script">Tu compañía es lo más valioso, pero si deseas hacerme un presente...</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="gifts-grid">
+        <!-- Lluvia de Sobres -->
+        <article class="gift-card">
+          <div>
+            <div class="gift-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <h3 class="gift-title">Lluvia de Sobres</h3>
+            <p class="gift-desc">En la recepción dispondremos de un baúl de cristal donde podrás depositar tu sobre con tus mejores deseos.</p>
+          </div>
+          <div class="bank-info-box" style="text-align: center;">
+            <span style="color: var(--gold-light); font-size: 0.85rem; font-weight: 600;">✨ Baúl de los Deseos en la entrada</span>
+          </div>
+        </article>
+
+        <!-- Transferencia Bancaria -->
+        <article class="gift-card">
+          <div>
+            <div class="gift-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                <line x1="2" y1="10" x2="22" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="gift-title">Regalo en Efectivo / Transferencia</h3>
+            <p class="gift-desc">Para mi fondo de estudios y mi viaje soñado de XV años:</p>
+          </div>
+          <div>
+            <div class="bank-info-box">
+              <div class="bank-row">
+                <span class="bank-label">Banco:</span>
+                <span class="bank-value">Santander / BBVA</span>
+              </div>
+              <div class="bank-row">
+                <span class="bank-label">Titular:</span>
+                <span class="bank-value">Valentina Rodríguez</span>
+              </div>
+              <div class="bank-row">
+                <span class="bank-label">IBAN / CLABE:</span>
+                <span class="bank-value">ES91 0049 1500 2420 1234 5678</span>
+              </div>
+            </div>
+            <button class="btn-copy-bank" data-copy-text="ES9100491500242012345678" aria-label="Copiar número de cuenta bancaria">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>COPIAR CUENTA IBAN</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Tienda Departamental -->
+        <article class="gift-card">
+          <div>
+            <div class="gift-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+            </div>
+            <h3 class="gift-title">Mesa de Regalos Online</h3>
+            <p class="gift-desc">Puedes consultar mi lista de deseos seleccionada en El Corte Inglés y Amazon.</p>
+          </div>
+          <div>
+            <div class="bank-info-box">
+              <div class="bank-row">
+                <span class="bank-label">Código de Evento:</span>
+                <span class="bank-value">XV-VALENTINA-2025</span>
+              </div>
+            </div>
+            <button class="btn-copy-bank" data-copy-text="XV-VALENTINA-2025" aria-label="Copiar código de mesa de regalos">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>COPIAR CÓDIGO</span>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       11. FORMULARIO SMART RSVP (CONFIRMACIÓN POR WHATSAPP)
+       ========================================================================== -->
+  <section class="gala-section" id="rsvp">
+    <div class="gala-container gala-container-sm">
+      <div class="rsvp-container-card">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-eyebrow">CONFIRMACIÓN DE ASISTENCIA</span>
+          <h2 class="section-title">RSVP Oficial</h2>
+          <span class="section-script">Por favor confirma antes del 30 de Septiembre</span>
+          <div class="section-divider"></div>
+        </div>
+
+        <form id="rsvpForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="guestName" class="form-label">Nombre Completo *</label>
+              <input type="text" id="guestName" class="form-input" placeholder="Ej. Roberto Gómez y Familia" required />
+            </div>
+
+            <div class="form-group">
+              <label for="guestPhone" class="form-label">Teléfono de Contacto</label>
+              <input type="tel" id="guestPhone" class="form-input" placeholder="+34 600 000 000" />
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label">¿Nos acompañarás en la Gala? *</label>
+              <div class="radio-pills-group">
+                <label class="radio-pill-label">
+                  <input type="radio" name="attendance" value="Sí asistiré con alegría" checked />
+                  <span>✨ Sí, allí estaré</span>
+                </label>
+                <label class="radio-pill-label">
+                  <input type="radio" name="attendance" value="No podré asistir" />
+                  <span>No podré asistir</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="guestPasses" class="form-label">Pases a Confirmar</label>
+              <select id="guestPasses" class="form-select">
+                <option value="1 pase">1 Persona</option>
+                <option value="2 pases" selected>2 Personas</option>
+                <option value="3 pases">3 Personas</option>
+                <option value="4 pases">4 Personas (Familia)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guestDietary" class="form-label">Alérgenos / Menú Especial</label>
+              <input type="text" id="guestDietary" class="form-input" placeholder="Ej. Celíaco, Vegano, Ninguno" />
+            </div>
+
+            <div class="form-group full-width">
+              <label for="guestSong" class="form-label">¿Qué canción te gustaría bailar en la fiesta?</label>
+              <input type="text" id="guestSong" class="form-input" placeholder="Canción / Artista favorito para el DJ" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-submit-rsvp" id="btnSubmitRsvp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path>
+            </svg>
+            <span>CONFIRMAR ASISTENCIA VÍA WHATSAPP</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       12. MURO DE DESEOS & GUESTBOOK
+       ========================================================================== -->
+  <section class="gala-section" id="deseos">
+    <div class="gala-container gala-container-sm">
+      <div class="section-header">
+        <span class="section-eyebrow">DEDICATORIAS DIGITALES</span>
+        <h2 class="section-title">Muro de los Deseos</h2>
+        <span class="section-script">Deja una bendición o mensaje para Valentina</span>
+        <div class="section-divider"></div>
+      </div>
+
+      <form id="wishForm" style="background: rgba(14, 18, 29, 0.85); border: 1px solid var(--border-glass); border-radius: var(--radius-md); padding: 2rem; backdrop-filter: blur(12px);">
+        <div class="form-group" style="margin-bottom: 1.25rem;">
+          <label for="wishAuthor" class="form-label">Tu Nombre o Parentesco</label>
+          <input type="text" id="wishAuthor" class="form-input" placeholder="Ej. Tus Tíos Carlos y Marina" required />
+        </div>
+        <div class="form-group" style="margin-bottom: 1.5rem;">
+          <label for="wishMessage" class="form-label">Tu Deseo de Gala</label>
+          <textarea id="wishMessage" class="form-textarea" placeholder="Escribe aquí tus palabras para la quinceañera..." required></textarea>
+        </div>
+        <button type="submit" class="btn-map-action" style="width: 100%; justify-content: center; padding: 0.9rem;">
+          ✨ PUBLICAR EN EL MURO
+        </button>
+      </form>
+
+      <div class="wishes-card-deck" id="wishesDeck">
+        <div class="wish-item-card">
+          <div class="wish-sender">✨ Padrinos Fernando y Lucía</div>
+          <p class="wish-text">"Que esta nueva etapa esté llena de bendiciones, éxitos y que nunca dejes de brillar como la hermosa estrella que eres. ¡Te amamos Valentina!"</p>
+        </div>
+        <div class="wish-item-card">
+          <div class="wish-sender">✨ Tus amigas del colegio</div>
+          <p class="wish-text">"¡Contando los días para bailar toda la noche contigo! Vas a ser la quinceañera más guapa del mundo. 👑💖"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       13. FOOTER
+       ========================================================================== -->
+  <footer class="gala-footer">
+    <div class="gala-container">
+      <div class="footer-monogram">V • XV</div>
+      <p class="footer-thanks">¡Gracias por ser parte de mi noche mágica!</p>
+      <div class="footer-signature-andrea">
+        <span>Diseñado con pasión editorial por <a href="https://paginasweb-psi.vercel.app" target="_blank">Andrea Rodríguez • Estudio de Diseño Web</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       14. MOBILE BOTTOM FLOATING ACTION BAR
+       ========================================================================== -->
+  <div class="mobile-bottom-bar" role="navigation" aria-label="Acciones rápidas">
+    <a href="#rsvp" class="mobile-bar-btn" aria-label="Confirmar asistencia">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"></path></svg>
+      <span>RSVP</span>
+    </a>
+    <a href="#ubicaciones" class="mobile-bar-btn" aria-label="Ver ubicaciones">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path></svg>
+      <span>Llegar</span>
+    </a>
+    <a href="#itinerario" class="mobile-bar-btn" aria-label="Ver itinerario">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+      <span>Horario</span>
+    </a>
+    <a href="#regalos" class="mobile-bar-btn" aria-label="Mesa de regalos">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+      <span>Regalo</span>
+    </a>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="gala-toast" id="galaToast" role="status" aria-live="polite"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
