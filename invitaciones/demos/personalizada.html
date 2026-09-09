@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Invitación de Boda Victoria & Sebastián - Demo Bespoke Royal (Personalizada)">
+  <title>Victoria & Sebastián | Bespoke Royal (Demo Personalizada)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- Canvas Confetti Library for live wishes celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "royal-black": "#0E0E10",
+            "royal-card": "#18181C",
+            "royal-gold": "#D4AF37",
+            "royal-gold-light": "#F3E5AB",
+            "royal-ivory": "#FAF8F5",
+            "royal-border": "#2A2A32"
+          },
+          fontFamily: {
+            cormorant: ["'Cormorant Garamond'", "serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #0E0E10;
+      color: #FAF8F5;
+      overflow-x: hidden;
+    }
+    .gold-shimmer-text {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-border-gradient {
+      border-image: linear-gradient(135deg, #F3E5AB, #D4AF37, #AA7C11) 1;
+    }
+  </style>
+</head>
+<body class="font-body antialiased selection:bg-royal-gold/30 selection:text-white">
+
+  <!-- TOP RETURN BAR (STICKY) -->
+  <aside class="sticky top-0 z-50 bg-black text-white px-4 py-2.5 shadow-md flex items-center justify-between text-xs border-b border-royal-border">
+    <div class="flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-royal-gold animate-pulse"></span>
+      <span class="font-semibold tracking-wide uppercase text-[11px] text-royal-gold-light">Demo: Plan Personalizado (Bespoke Royal)</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <!-- Language Switcher Toggle -->
+      <div class="inline-flex rounded-full bg-royal-card p-0.5 border border-royal-border text-[10px]">
+        <button id="langEsBtn" onclick="switchLang('es')" class="px-2.5 py-0.5 rounded-full bg-royal-gold text-black font-bold">ES</button>
+        <button id="langEnBtn" onclick="switchLang('en')" class="px-2.5 py-0.5 rounded-full text-stone-400 font-bold hover:text-white">EN</button>
+      </div>
+
+      <a href="../../catalogo/" class="inline-flex items-center gap-1.5 bg-royal-gold hover:bg-white text-black px-3 py-1 rounded-full font-bold transition-all text-[11px] uppercase tracking-wider">
+        <span class="material-symbols-outlined text-sm">arrow_back</span>
+        <span data-i18n="back_catalog">Volver al Catálogo</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden">
+    <!-- Ambient gold nebula background -->
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-royal-gold/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-xl mx-auto flex flex-col items-center">
+      <!-- Royal Gold Monogram -->
+      <div class="w-20 h-20 rounded-full border-2 border-royal-gold flex items-center justify-center mb-6 bg-royal-card/80 backdrop-blur-md shadow-[0_0_30px_rgba(212,175,55,0.2)]">
+        <span class="font-cormorant text-3xl font-bold gold-shimmer-text">V & S</span>
+      </div>
+
+      <span class="text-xs font-bold tracking-[0.4em] uppercase text-royal-gold mb-3" data-i18n="hero_eyebrow">Haute Couture Wedding</span>
+
+      <h1 class="font-cormorant text-4xl sm:text-7xl font-normal tracking-wide mb-3 text-white">
+        VICTORIA & SEBASTIÁN
+      </h1>
+
+      <div class="w-20 h-px bg-gradient-to-r from-transparent via-royal-gold to-transparent my-4"></div>
+
+      <p class="font-cormorant italic text-xl sm:text-2xl text-stone-300 mb-8 max-w-md" data-i18n="hero_quote">
+        "Una noche de gala, música eterna y un amor sin precedentes."
+      </p>
+
+      <div class="bg-royal-card/90 backdrop-blur-md px-6 py-3 rounded-full border border-royal-gold/40 shadow-lg text-xs font-bold tracking-widest text-royal-gold-light uppercase mb-10">
+        <span data-i18n="hero_date">Viernes, 12 de Diciembre de 2025 • Château de L'Amour</span>
+      </div>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="grid grid-cols-4 gap-3 w-full max-w-sm text-center">
+        <div class="bg-royal-card p-3 rounded-2xl border border-royal-border">
+          <span id="pDays" class="font-cormorant text-3xl font-bold text-royal-gold block">180</span>
+          <span class="text-[9px] uppercase font-bold text-stone-400" data-i18n="days">Días</span>
+        </div>
+        <div class="bg-royal-card p-3 rounded-2xl border border-royal-border">
+          <span id="pHours" class="font-cormorant text-3xl font-bold text-royal-gold block">11</span>
+          <span class="text-[9px] uppercase font-bold text-stone-400" data-i18n="hours">Horas</span>
+        </div>
+        <div class="bg-royal-card p-3 rounded-2xl border border-royal-border">
+          <span id="pMinutes" class="font-cormorant text-3xl font-bold text-royal-gold block">45</span>
+          <span class="text-[9px] uppercase font-bold text-stone-400" data-i18n="minutes">Min</span>
+        </div>
+        <div class="bg-royal-card p-3 rounded-2xl border border-royal-border">
+          <span id="pSeconds" class="font-cormorant text-3xl font-bold text-royal-gold block">30</span>
+          <span class="text-[9px] uppercase font-bold text-stone-400" data-i18n="seconds">Seg</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTERACTIVE DIGITAL WALLET PASS (QR ACCESS PASS) -->
+  <section class="py-14 px-4 max-w-md mx-auto">
+    <div class="text-center mb-6">
+      <span class="text-xs font-bold tracking-widest text-royal-gold uppercase block mb-1" data-i18n="pass_eyebrow">Acceso VIP</span>
+      <h2 class="font-cormorant text-3xl text-white" data-i18n="pass_title">Pase Digital de Entrada</h2>
+      <p class="text-xs text-stone-400 mt-1" data-i18n="pass_subtitle">Presenta este código al ingresar al evento</p>
+    </div>
+
+    <!-- Pass Card -->
+    <div class="bg-gradient-to-br from-stone-900 to-black rounded-3xl p-6 border-2 border-royal-gold shadow-[0_0_40px_rgba(212,175,55,0.15)] relative overflow-hidden" id="walletPass">
+      <div class="flex items-center justify-between border-b border-royal-border pb-4 mb-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-royal-gold font-bold">Bespoke Guest Pass</span>
+          <h4 class="font-cormorant text-xl text-white font-bold">Victoria & Sebastián</h4>
+        </div>
+        <span class="material-symbols-outlined text-royal-gold text-2xl">stars</span>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 text-left text-xs mb-6">
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 font-bold block" data-i18n="guest_label">Invitado</span>
+          <span class="font-bold text-white text-sm" id="passGuestName">Invitado de Honor</span>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 font-bold block" data-i18n="table_label">Mesa Asignada</span>
+          <span class="font-bold text-royal-gold-light text-sm">Mesa Imperial 01</span>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 font-bold block" data-i18n="date_label">Fecha & Hora</span>
+          <span class="font-medium text-stone-300">12.12.2025 • 19:00h</span>
+        </div>
+        <div>
+          <span class="text-[10px] uppercase text-stone-500 font-bold block" data-i18n="code_label">Código de Pase</span>
+          <span class="font-mono text-royal-gold font-bold">#ROYAL-8842</span>
+        </div>
+      </div>
+
+      <!-- Dynamic QR Code Container -->
+      <div class="bg-white p-4 rounded-2xl flex flex-col items-center justify-center max-w-[200px] mx-auto shadow-md">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://paginasweb-psi.vercel.app/invitaciones/demos/personalizada&color=12-12-16" 
+             alt="QR Access Pass" 
+             class="w-32 h-32">
+        <span class="text-[9px] uppercase font-bold text-stone-700 mt-2 tracking-widest">Escaneo Rápido en Puerta</span>
+      </div>
+
+      <button onclick="downloadPass()" class="w-full mt-6 py-3 rounded-xl bg-royal-gold hover:bg-royal-gold-light text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
+        <span class="material-symbols-outlined text-base">download</span>
+        <span data-i18n="download_pass_btn">Guardar / Descargar Pase</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- LIVE GUEST WISHES BOARD (MURO INTERACTIVO EN VIVO) -->
+  <section class="py-16 px-4 max-w-3xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-xs font-bold tracking-widest text-royal-gold uppercase block mb-1" data-i18n="board_eyebrow">En Vivo</span>
+      <h2 class="font-cormorant text-3xl sm:text-4xl text-white" data-i18n="board_title">Muro de Deseos para los Novios</h2>
+      <p class="text-xs text-stone-400 mt-1" data-i18n="board_subtitle">Deja tu mensaje y dedicatoria. Aparecerá en pantalla inmediatamente.</p>
+    </div>
+
+    <!-- Post Wish Form -->
+    <div class="bg-royal-card p-6 rounded-2xl border border-royal-border mb-8 shadow-lg">
+      <form id="wishForm" class="space-y-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-stone-300 mb-1" data-i18n="form_your_name">Tu Nombre</label>
+            <input type="text" id="wishAuthor" required placeholder="Ej. Familia Gómez" class="w-full px-3.5 py-2.5 rounded-xl border border-royal-border bg-stone-900 text-sm text-white focus:outline-none focus:border-royal-gold">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-stone-300 mb-1" data-i18n="form_city">Ciudad / Relación</label>
+            <input type="text" id="wishRelation" placeholder="Ej. Amigos de la Universidad" class="w-full px-3.5 py-2.5 rounded-xl border border-royal-border bg-stone-900 text-sm text-white focus:outline-none focus:border-royal-gold">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1" data-i18n="form_wish_text">Tu Dedicatoria</label>
+          <textarea id="wishContent" required rows="2" placeholder="Que su unión sea eterna y llena de felicidad..." class="w-full px-3.5 py-2.5 rounded-xl border border-royal-border bg-stone-900 text-sm text-white focus:outline-none focus:border-royal-gold"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-royal-gold hover:bg-royal-gold-light text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+          <span class="material-symbols-outlined text-sm">favorite</span>
+          <span data-i18n="form_post_btn">Publicar en el Muro</span>
+        </button>
+      </form>
+    </div>
+
+    <!-- List of Live Wishes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="wishesContainer">
+      <!-- Default Wish 1 -->
+      <div class="bg-royal-card p-5 rounded-2xl border border-royal-border flex flex-col justify-between">
+        <p class="text-xs text-stone-300 italic mb-3">"Los queremos muchísimo. Que esta nueva etapa esté repleta de bendiciones y viajes inolvidables."</p>
+        <div class="flex items-center justify-between text-[11px] pt-2 border-t border-stone-800">
+          <span class="font-bold text-royal-gold">Camila & Mateo</span>
+          <span class="text-stone-500">Madrid</span>
+        </div>
+      </div>
+
+      <!-- Default Wish 2 -->
+      <div class="bg-royal-card p-5 rounded-2xl border border-royal-border flex flex-col justify-between">
+        <p class="text-xs text-stone-300 italic mb-3">"¡Contando los días para brindar con ustedes en el Château! Son una pareja inspiradora."</p>
+        <div class="flex items-center justify-between text-[11px] pt-2 border-t border-stone-800">
+          <span class="font-bold text-royal-gold">Rodrigo & Isabella</span>
+          <span class="text-stone-500">París</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITINERARIO DE GALA -->
+  <section class="py-14 px-4 max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="text-xs font-bold tracking-widest text-royal-gold uppercase block mb-1" data-i18n="schedule_eyebrow">Protocolo</span>
+      <h2 class="font-cormorant text-3xl text-white" data-i18n="schedule_title">Programa de Gala</h2>
+    </div>
+
+    <div class="space-y-4">
+      <div class="bg-royal-card p-6 rounded-2xl border border-royal-border flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-royal-gold uppercase">19:00 Horas</span>
+          <h4 class="font-cormorant text-xl text-white mt-0.5">Recepción Imperial & Alfombra Roja</h4>
+          <p class="text-xs text-stone-400">Champagne de bienvenida & cuarteto de cuerdas</p>
+        </div>
+        <span class="material-symbols-outlined text-royal-gold text-2xl">local_bar</span>
+      </div>
+
+      <div class="bg-royal-card p-6 rounded-2xl border border-royal-border flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-royal-gold uppercase">20:30 Horas</span>
+          <h4 class="font-cormorant text-xl text-white mt-0.5">Ceremonia de Votos & Brindis de Honor</h4>
+          <p class="text-xs text-stone-400">Salón de Espejos</p>
+        </div>
+        <span class="material-symbols-outlined text-royal-gold text-2xl">favorite</span>
+      </div>
+
+      <div class="bg-royal-card p-6 rounded-2xl border border-royal-border flex items-center justify-between">
+        <div>
+          <span class="text-xs font-bold text-royal-gold uppercase">22:00 Horas</span>
+          <h4 class="font-cormorant text-xl text-white mt-0.5">Banquete de 5 Tiempos & Gran Gala</h4>
+          <p class="text-xs text-stone-400">Menú de autor por Chef Estrella Michelin</p>
+        </div>
+        <span class="material-symbols-outlined text-royal-gold text-2xl">restaurant</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIRMACIÓN RSVP BESPOKE -->
+  <section class="py-16 px-4 max-w-lg mx-auto" id="rsvp">
+    <div class="bg-royal-card rounded-3xl p-8 border-2 border-royal-gold shadow-2xl text-center">
+      <span class="text-xs font-bold tracking-widest text-royal-gold uppercase block mb-1">R.S.V.P. VIP</span>
+      <h2 class="font-cormorant text-3xl text-white mb-2" data-i18n="rsvp_title">Confirmación de Asistencia</h2>
+      <p class="text-xs text-stone-400 mb-6" data-i18n="rsvp_deadline">
+        Favor de confirmar antes del <b>15 de Noviembre de 2025</b>.
+      </p>
+
+      <form id="bespokeRsvpForm" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1" data-i18n="rsvp_name_label">Nombre Completo del Titular</label>
+          <input type="text" id="pName" required placeholder="Nombre y Apellidos" class="w-full px-3.5 py-2.5 rounded-xl border border-royal-border bg-stone-900 text-sm text-white focus:outline-none focus:border-royal-gold">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1" data-i18n="rsvp_status_label">Respuesta</label>
+          <select id="pAtt" class="w-full px-3.5 py-2.5 rounded-xl border border-royal-border bg-stone-900 text-sm text-white focus:outline-none focus:border-royal-gold">
+            <option value="si">Confirmo con gran honor mi asistencia</option>
+            <option value="no">Declino con pesar</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-stone-300 mb-1" data-i18n="rsvp_shuttle_label">¿Requiere Servicio de Transporte / Shuttle?</label>
+          <select id="pShuttle" class="w-full px-3.5 py-2.5 rounded-xl border border-royal-border bg-stone-900 text-sm text-white focus:outline-none focus:border-royal-gold">
+            <option value="si">Sí, desde el Hotel Oficial</option>
+            <option value="no">No, llego por cuenta propia</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-royal-gold hover:bg-royal-gold-light text-black font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg">
+          <span data-i18n="rsvp_submit_btn">Confirmar Asistencia</span>
+          <span class="material-symbols-outlined text-sm">send</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FLOATING RETURN BUTTON -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a href="../../catalogo/" class="flex items-center gap-2 bg-black text-white hover:bg-royal-gold hover:text-black px-4 py-2.5 rounded-full shadow-2xl text-xs font-bold uppercase tracking-wider transition-all transform hover:scale-105 border border-royal-gold">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      <span data-i18n="back_catalog">Volver al Catálogo</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-xs text-stone-500 border-t border-royal-border bg-black">
+    <p class="font-cormorant text-base text-royal-gold mb-1">VICTORIA & SEBASTIÁN</p>
+    <p>12.12.2025 • Château de L'Amour</p>
+  </footer>
+
+  <script>
+    // Live Countdown
+    const pWeddingDate = new Date();
+    pWeddingDate.setDate(pWeddingDate.getDate() + 180);
+
+    function updatePCountdown() {
+      const now = new Date().getTime();
+      const dist = pWeddingDate.getTime() - now;
+      document.getElementById('pDays').innerText = Math.floor(dist / (1000 * 60 * 60 * 24));
+      document.getElementById('pHours').innerText = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      document.getElementById('pMinutes').innerText = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      document.getElementById('pSeconds').innerText = Math.floor((dist % (1000 * 60)) / 1000);
+    }
+    setInterval(updatePCountdown, 1000);
+    updatePCountdown();
+
+    // Bilingual Dictionary (ES / EN)
+    const translations = {
+      es: {
+        back_catalog: "Volver al Catálogo",
+        hero_eyebrow: "Haute Couture Wedding",
+        hero_quote: "\"Una noche de gala, música eterna y un amor sin precedentes.\"",
+        hero_date: "Viernes, 12 de Diciembre de 2025 • Château de L'Amour",
+        days: "Días", hours: "Horas", minutes: "Min", seconds: "Seg",
+        pass_eyebrow: "Acceso VIP",
+        pass_title: "Pase Digital de Entrada",
+        pass_subtitle: "Presenta este código al ingresar al evento",
+        guest_label: "Invitado",
+        table_label: "Mesa Asignada",
+        date_label: "Fecha & Hora",
+        code_label: "Código de Pase",
+        download_pass_btn: "Guardar / Descargar Pase",
+        board_eyebrow: "En Vivo",
+        board_title: "Muro de Deseos para los Novios",
+        board_subtitle: "Deja tu mensaje y dedicatoria. Aparecerá en pantalla inmediatamente.",
+        form_your_name: "Tu Nombre",
+        form_city: "Ciudad / Relación",
+        form_wish_text: "Tu Dedicatoria",
+        form_post_btn: "Publicar en el Muro",
+        schedule_eyebrow: "Protocolo",
+        schedule_title: "Programa de Gala",
+        rsvp_title: "Confirmación de Asistencia",
+        rsvp_deadline: "Favor de confirmar antes del 15 de Noviembre de 2025.",
+        rsvp_name_label: "Nombre Completo del Titular",
+        rsvp_status_label: "Respuesta",
+        rsvp_shuttle_label: "¿Requiere Servicio de Transporte / Shuttle?",
+        rsvp_submit_btn: "Confirmar Asistencia"
+      },
+      en: {
+        back_catalog: "Back to Catalog",
+        hero_eyebrow: "Haute Couture Wedding",
+        hero_quote: "\"An evening of gala, timeless symphony, and boundless love.\"",
+        hero_date: "Friday, December 12th, 2025 • Château de L'Amour",
+        days: "Days", hours: "Hours", minutes: "Mins", seconds: "Secs",
+        pass_eyebrow: "VIP Access",
+        pass_title: "Digital Admission Pass",
+        pass_subtitle: "Present this QR code upon arrival at the venue",
+        guest_label: "Guest",
+        table_label: "Assigned Table",
+        date_label: "Date & Time",
+        code_label: "Pass Code",
+        download_pass_btn: "Save / Download Wallet Pass",
+        board_eyebrow: "Live Feed",
+        board_title: "Wedding Wishes Wall",
+        board_subtitle: "Leave your blessings. It will appear on screen instantly.",
+        form_your_name: "Your Name",
+        form_city: "City / Relationship",
+        form_wish_text: "Your Message",
+        form_post_btn: "Post to Wall",
+        schedule_eyebrow: "Protocol",
+        schedule_title: "Gala Schedule",
+        rsvp_title: "RSVP Confirmation",
+        rsvp_deadline: "Please confirm by November 15th, 2025.",
+        rsvp_name_label: "Full Name",
+        rsvp_status_label: "Response",
+        rsvp_shuttle_label: "Do you require Shuttle Service?",
+        rsvp_submit_btn: "Submit RSVP"
+      }
+    };
+
+    function switchLang(lang) {
+      const isEs = lang === 'es';
+      document.getElementById('langEsBtn').className = isEs ? 'px-2.5 py-0.5 rounded-full bg-royal-gold text-black font-bold' : 'px-2.5 py-0.5 rounded-full text-stone-400 font-bold hover:text-white';
+      document.getElementById('langEnBtn').className = !isEs ? 'px-2.5 py-0.5 rounded-full bg-royal-gold text-black font-bold' : 'px-2.5 py-0.5 rounded-full text-stone-400 font-bold hover:text-white';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerText = translations[lang][key];
+        }
+      });
+    }
+
+    // Download Pass simulation
+    function downloadPass() {
+      alert("✨ Pase Digital listo. Puedes tomarle captura de pantalla o guardarlo en tus imágenes para presentarlo en la entrada.");
+    }
+
+    // Live Wishes Board Logic (with localStorage + Confetti)
+    const wishesContainer = document.getElementById('wishesContainer');
+    const savedWishes = JSON.parse(localStorage.getItem('bespoke_wishes') || '[]');
+
+    savedWishes.forEach(w => addWishToDOM(w.name, w.relation, w.text, false));
+
+    document.getElementById('wishForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const author = document.getElementById('wishAuthor').value;
+      const relation = document.getElementById('wishRelation').value;
+      const content = document.getElementById('wishContent').value;
+
+      addWishToDOM(author, relation, content, true);
+
+      savedWishes.push({ name: author, relation: relation, text: content });
+      localStorage.setItem('bespoke_wishes', JSON.stringify(savedWishes));
+
+      // Trigger Confetti!
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.6 },
+          colors: ['#D4AF37', '#F3E5AB', '#ffffff']
+        });
+      }
+
+      document.getElementById('wishForm').reset();
+    });
+
+    function addWishToDOM(author, relation, text, prepend) {
+      const card = document.createElement('div');
+      card.className = "bg-royal-card p-5 rounded-2xl border border-royal-gold/40 flex flex-col justify-between transform transition-all duration-500 scale-100";
+      card.innerHTML = `
+        <p class="text-xs text-stone-200 italic mb-3">"${text}"</p>
+        <div class="flex items-center justify-between text-[11px] pt-2 border-t border-stone-800">
+          <span class="font-bold text-royal-gold">${author}</span>
+          <span class="text-stone-400">${relation || 'Invitado VIP'}</span>
+        </div>
+      `;
+      if (prepend && wishesContainer.firstChild) {
+        wishesContainer.insertBefore(card, wishesContainer.firstChild);
+      } else {
+        wishesContainer.appendChild(card);
+      }
+    }
+
+    // RSVP form handler
+    document.getElementById('bespokeRsvpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('pName').value;
+      const att = document.getElementById('pAtt').value;
+      const shuttle = document.getElementById('pShuttle').value;
+
+      document.getElementById('passGuestName').innerText = name;
+
+      const txt = att === 'si' ? 'Confirmo con honor mi asistencia a la Gran Gala' : 'Declino con pesar';
+      const msg = encodeURIComponent(`Hola Victoria y Sebastián! Soy ${name}.\n${txt}\nTransporte: ${shuttle}\nPase Digital Generado.`);
+      window.open(`https://wa.me/34600000000?text=${msg}`, '_blank');
+    });
+
+    // Smart return to catalog handler
+    document.querySelectorAll('a[href*="catalogo"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        if (window.location.pathname.includes('/invitaciones')) {
+          e.preventDefault();
+          window.location.href = '/invitaciones';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

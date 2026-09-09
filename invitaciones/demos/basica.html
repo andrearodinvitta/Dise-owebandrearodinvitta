@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Invitación de Boda Sofía & Alejandro - Demo Esencial Romance (Básica)">
+  <title>Sofía & Alejandro | Invitación de Boda (Demo Básica)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "warm-bg": "#FAF8F5",
+            "warm-card": "#FFFFFF",
+            "warm-accent": "#8C7355",
+            "warm-dark": "#2A2521",
+            "warm-muted": "#6E675F",
+            "warm-border": "#E8E2D9"
+          },
+          fontFamily: {
+            display: ["'Playfair Display'", "serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF8F5;
+      color: #2A2521;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="font-body antialiased selection:bg-warm-accent/20">
+
+  <!-- TOP RETURN BAR (STICKY) -->
+  <aside class="sticky top-0 z-50 bg-warm-dark text-white px-4 py-2.5 shadow-md flex items-center justify-between text-xs">
+    <div class="flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+      <span class="font-semibold tracking-wide uppercase text-[11px]">Demo: Plan Básico (Esencial Romance)</span>
+    </div>
+    <a href="../../catalogo/" class="inline-flex items-center gap-1.5 bg-warm-accent hover:bg-white hover:text-warm-dark text-white px-3 py-1 rounded-full font-bold transition-all text-[11px] uppercase tracking-wider">
+      <span class="material-symbols-outlined text-sm">arrow_back</span>
+      <span>Volver al Catálogo</span>
+    </a>
+  </aside>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-25">
+      <img src="assets/pareja_editorial.png" alt="Sofía y Alejandro" class="w-full h-full object-cover filter blur-[2px] scale-105">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-warm-bg/90 via-warm-bg/75 to-warm-bg z-0"></div>
+
+    <div class="relative z-10 max-w-lg mx-auto flex flex-col items-center">
+      <span class="text-xs font-semibold tracking-[0.25em] text-warm-accent uppercase mb-3">Nos casamos</span>
+      
+      <h1 class="font-display text-4xl sm:text-6xl text-warm-dark font-normal tracking-tight mb-2">
+        Sofía & Alejandro
+      </h1>
+      
+      <div class="w-16 h-px bg-warm-accent/60 my-4"></div>
+      
+      <p class="font-display italic text-lg sm:text-xl text-warm-muted mb-8">
+        "El amor no se mira con los ojos, sino con el alma."
+      </p>
+
+      <div class="bg-white/80 backdrop-blur-md px-6 py-3 rounded-full border border-warm-border shadow-sm mb-10 text-xs sm:text-sm font-medium tracking-widest text-warm-dark uppercase">
+        Sábado, 18 de Octubre de 2025 • Madrid
+      </div>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 w-full max-w-sm text-center">
+        <div class="bg-white p-3 rounded-xl border border-warm-border shadow-sm">
+          <span id="days" class="font-display text-2xl sm:text-3xl font-bold text-warm-accent block">120</span>
+          <span class="text-[10px] uppercase font-semibold text-warm-muted">Días</span>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-warm-border shadow-sm">
+          <span id="hours" class="font-display text-2xl sm:text-3xl font-bold text-warm-accent block">14</span>
+          <span class="text-[10px] uppercase font-semibold text-warm-muted">Horas</span>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-warm-border shadow-sm">
+          <span id="minutes" class="font-display text-2xl sm:text-3xl font-bold text-warm-accent block">35</span>
+          <span class="text-[10px] uppercase font-semibold text-warm-muted">Min</span>
+        </div>
+        <div class="bg-white p-3 rounded-xl border border-warm-border shadow-sm">
+          <span id="seconds" class="font-display text-2xl sm:text-3xl font-bold text-warm-accent block">42</span>
+          <span class="text-[10px] uppercase font-semibold text-warm-muted">Seg</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WELCOME MESSAGE -->
+  <section class="py-14 px-4 max-w-xl mx-auto text-center">
+    <span class="material-symbols-outlined text-warm-accent text-3xl mb-2">favorite</span>
+    <h2 class="font-display text-2xl sm:text-3xl text-warm-dark mb-4">Nuestra Boda</h2>
+    <p class="text-sm sm:text-base text-warm-muted leading-relaxed mb-6">
+      Queremos compartir con ustedes el día más especial de nuestras vidas. Su presencia, sus risas y su cariño harán que esta fecha sea verdaderamente mágica e inolvidable.
+    </p>
+    <div class="w-12 h-px bg-warm-accent/40 mx-auto"></div>
+  </section>
+
+  <!-- ITINERARY & LOCATIONS -->
+  <section class="py-12 px-4 max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="text-xs font-semibold tracking-widest text-warm-accent uppercase block mb-1">Dónde & Cuándo</span>
+      <h2 class="font-display text-2xl sm:text-3xl text-warm-dark">Itinerario del Gran Día</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Ceremonia -->
+      <div class="bg-white rounded-2xl p-6 border border-warm-border shadow-sm text-center flex flex-col items-center justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-full bg-warm-bg flex items-center justify-center text-warm-accent mb-4 border border-warm-border">
+            <span class="material-symbols-outlined text-2xl">church</span>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-warm-accent">17:30 Horas</span>
+          <h3 class="font-display text-xl text-warm-dark mt-1 mb-2">Ceremonia Religiosa</h3>
+          <p class="text-xs text-warm-muted mb-4">
+            Parroquia San Jerónimo el Real<br>Calle Moreto 4, 28014 Madrid
+          </p>
+        </div>
+        <div class="flex gap-2 w-full pt-2">
+          <a href="https://maps.google.com/?q=San+Jeronimo+el+Real+Madrid" target="_blank" class="flex-1 py-2 rounded-lg bg-warm-bg hover:bg-warm-border text-warm-dark text-xs font-semibold flex items-center justify-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">map</span> Maps
+          </a>
+          <a href="https://waze.com/ul?q=San+Jeronimo+el+Real+Madrid" target="_blank" class="flex-1 py-2 rounded-lg bg-warm-bg hover:bg-warm-border text-warm-dark text-xs font-semibold flex items-center justify-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">navigation</span> Waze
+          </a>
+        </div>
+      </div>
+
+      <!-- Recepción -->
+      <div class="bg-white rounded-2xl p-6 border border-warm-border shadow-sm text-center flex flex-col items-center justify-between">
+        <div>
+          <div class="w-12 h-12 rounded-full bg-warm-bg flex items-center justify-center text-warm-accent mb-4 border border-warm-border">
+            <span class="material-symbols-outlined text-2xl">wine_bar</span>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-wider text-warm-accent">19:30 Horas</span>
+          <h3 class="font-display text-xl text-warm-dark mt-1 mb-2">Banquete & Celebración</h3>
+          <p class="text-xs text-warm-muted mb-4">
+            Finca La Gaivota<br>Carretera de Pozuelo km 3, Madrid
+          </p>
+        </div>
+        <div class="flex gap-2 w-full pt-2">
+          <a href="https://maps.google.com/?q=Finca+Madrid" target="_blank" class="flex-1 py-2 rounded-lg bg-warm-bg hover:bg-warm-border text-warm-dark text-xs font-semibold flex items-center justify-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">map</span> Maps
+          </a>
+          <a href="https://waze.com/ul?q=Finca+Madrid" target="_blank" class="flex-1 py-2 rounded-lg bg-warm-bg hover:bg-warm-border text-warm-dark text-xs font-semibold flex items-center justify-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">navigation</span> Waze
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY (LIGHTBOX) -->
+  <section class="py-12 px-4 max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-xs font-semibold tracking-widest text-warm-accent uppercase block mb-1">Momentos Especiales</span>
+      <h2 class="font-display text-2xl sm:text-3xl text-warm-dark">Galería de Fotos</h2>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
+      <div class="group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer shadow-sm" onclick="openLightbox('assets/foto_compromiso_1.jpg')">
+        <img src="assets/foto_compromiso_1.jpg" alt="Foto 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">zoom_in</span>
+        </div>
+      </div>
+
+      <div class="group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer shadow-sm" onclick="openLightbox('assets/foto_compromiso_2.jpg')">
+        <img src="assets/foto_compromiso_2.jpg" alt="Foto 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">zoom_in</span>
+        </div>
+      </div>
+
+      <div class="group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer shadow-sm" onclick="openLightbox('assets/foto_compromiso_3.jpg')">
+        <img src="assets/foto_compromiso_3.jpg" alt="Foto 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">zoom_in</span>
+        </div>
+      </div>
+
+      <div class="group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer shadow-sm" onclick="openLightbox('assets/foto_compromiso_4.jpg')">
+        <img src="assets/foto_compromiso_4.jpg" alt="Foto 4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">zoom_in</span>
+        </div>
+      </div>
+
+      <div class="group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer shadow-sm" onclick="openLightbox('assets/pareja_editorial.png')">
+        <img src="assets/pareja_editorial.png" alt="Foto 5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">zoom_in</span>
+        </div>
+      </div>
+
+      <div class="group relative rounded-xl overflow-hidden aspect-[4/5] cursor-pointer shadow-sm" onclick="openLightbox('assets/pareja_toscana.png')">
+        <img src="assets/pareja_toscana.png" alt="Foto 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">zoom_in</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section class="py-10 px-4 max-w-md mx-auto text-center">
+    <div class="bg-white rounded-2xl p-6 border border-warm-border shadow-sm">
+      <span class="material-symbols-outlined text-warm-accent text-3xl mb-2">styler</span>
+      <h3 class="font-display text-xl text-warm-dark mb-1">Código de Vestimenta</h3>
+      <p class="text-xs font-bold uppercase tracking-wider text-warm-accent mb-2">Formal / Elegante</p>
+      <p class="text-xs text-warm-muted leading-relaxed">
+        Ellos: Traje o americana formal.<br>
+        Ellas: Vestido largo o midi.<br>
+        <span class="text-[11px] text-warm-accent/80 italic mt-1 block">Nos reservamos el color blanco para la novia.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- RSVP SECTION -->
+  <section class="py-14 px-4 max-w-lg mx-auto" id="rsvp">
+    <div class="bg-white rounded-2xl p-6 sm:p-8 border border-warm-border shadow-md text-center">
+      <span class="text-xs font-semibold tracking-widest text-warm-accent uppercase block mb-1">Confirmación</span>
+      <h2 class="font-display text-2xl sm:text-3xl text-warm-dark mb-2">¿Nos acompañas?</h2>
+      <p class="text-xs sm:text-sm text-warm-muted mb-6 leading-relaxed">
+        Por favor confirma tu asistencia antes del <b>15 de Septiembre de 2025</b>.
+      </p>
+
+      <form id="rsvpForm" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-semibold text-warm-dark mb-1">Nombre Completo</label>
+          <input type="text" id="guestName" required placeholder="Ej. Carlos Mendoza" class="w-full px-3.5 py-2.5 rounded-xl border border-warm-border bg-warm-bg text-sm focus:outline-none focus:border-warm-accent">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-warm-dark mb-1">¿Asistirás al evento?</label>
+          <select id="attendance" class="w-full px-3.5 py-2.5 rounded-xl border border-warm-border bg-warm-bg text-sm focus:outline-none focus:border-warm-accent">
+            <option value="si">¡Sí, ahí estaré con alegría!</option>
+            <option value="no">Lamentablemente no podré asistir</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-warm-dark mb-1">Número de pases / acompañantes</label>
+          <select id="guestCount" class="w-full px-3.5 py-2.5 rounded-xl border border-warm-border bg-warm-bg text-sm focus:outline-none focus:border-warm-accent">
+            <option value="1">1 Persona</option>
+            <option value="2">2 Personas</option>
+            <option value="3">3 Personas</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-warm-dark mb-1">Mensaje para los novios (Opcional)</label>
+          <textarea id="guestMsg" rows="2" placeholder="¡Muchas felicidades chicos!" class="w-full px-3.5 py-2.5 rounded-xl border border-warm-border bg-warm-bg text-sm focus:outline-none focus:border-warm-accent"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-warm-dark hover:bg-warm-accent text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm">
+          <span>Confirmar Asistencia por WhatsApp</span>
+          <span class="material-symbols-outlined text-sm">send</span>
+        </button>
+      </form>
+
+      <div id="rsvpSuccess" class="hidden mt-4 p-3 bg-green-50 text-green-800 rounded-xl text-xs font-semibold text-center">
+        ¡Gracias! Se ha generado tu confirmación para enviarla a los novios.
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Vista ampliada" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain">
+    <button class="absolute top-4 right-4 text-white text-3xl font-light" onclick="closeLightbox()">&times;</button>
+  </div>
+
+  <!-- FLOATING RETURN BUTTON -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a href="../../catalogo/" class="flex items-center gap-2 bg-warm-dark text-white hover:bg-warm-accent px-4 py-2.5 rounded-full shadow-xl text-xs font-bold uppercase tracking-wider transition-all transform hover:scale-105 border border-white/20">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      <span>Volver al Catálogo</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-xs text-warm-muted border-t border-warm-border bg-white">
+    <p class="font-display italic text-sm text-warm-dark mb-1">Sofía & Alejandro</p>
+    <p>18.10.2025 • Madrid</p>
+  </footer>
+
+  <script>
+    // Live Countdown Timer
+    const weddingDate = new Date();
+    weddingDate.setDate(weddingDate.getDate() + 120);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate.getTime() - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').innerText = days;
+      document.getElementById('hours').innerText = hours;
+      document.getElementById('minutes').innerText = minutes;
+      document.getElementById('seconds').innerText = seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Lightbox handlers
+    function openLightbox(src) {
+      document.getElementById('lightboxImg').src = src;
+      const lb = document.getElementById('lightbox');
+      lb.classList.remove('hidden');
+      lb.classList.add('flex');
+    }
+    function closeLightbox() {
+      const lb = document.getElementById('lightbox');
+      lb.classList.add('hidden');
+      lb.classList.remove('flex');
+    }
+
+    // RSVP Form handler
+    document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value;
+      const att = document.getElementById('attendance').value;
+      const count = document.getElementById('guestCount').value;
+      const msg = document.getElementById('guestMsg').value;
+
+      const statusText = att === 'si' ? 'Confirmo con mucha alegría mi asistencia' : 'Lamentablemente no podré asistir';
+      const fullMsg = encodeURIComponent(`Hola Sofía y Alejandro! Soy ${name}. ${statusText} (${count} pases). Mensaje: "${msg || 'Un fuerte abrazo'}"`);
+
+      document.getElementById('rsvpSuccess').classList.remove('hidden');
+      setTimeout(() => {
+        window.open(`https://wa.me/34600000000?text=${fullMsg}`, '_blank');
+      }, 600);
+    });
+
+    // Smart return to catalog handler
+    document.querySelectorAll('a[href*="catalogo"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        if (window.location.pathname.includes('/invitaciones')) {
+          e.preventDefault();
+          window.location.href = '/invitaciones';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

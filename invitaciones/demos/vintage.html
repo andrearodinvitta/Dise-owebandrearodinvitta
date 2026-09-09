@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Invitación de Boda Marta & Jerónimo - Demo Vintage Romance">
+  <title>Marta & Jerónimo | Romance Clásico (Demo Vintage)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "vintage-parchment": "#F7F3E9",
+            "vintage-card": "#FFFDF9",
+            "vintage-burgundy": "#5A1827",
+            "vintage-gold": "#B38B32",
+            "vintage-dark": "#241D1E",
+            "vintage-border": "#E2D8C3"
+          },
+          fontFamily: {
+            cinzel: ["'Cinzel'", "serif"],
+            display: ["'Playfair Display'", "serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #F7F3E9;
+      color: #241D1E;
+      overflow-x: hidden;
+    }
+    .polaroid {
+      background: white;
+      padding: 10px 10px 24px 10px;
+      box-shadow: 0 10px 25px -5px rgba(36, 29, 30, 0.12);
+      transition: transform 0.4s ease;
+    }
+    .polaroid:hover {
+      transform: translateY(-4px) rotate(0deg) scale(1.02) !important;
+    }
+    .seal-pulse {
+      animation: sealPulse 2s infinite;
+    }
+    @keyframes sealPulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(90, 24, 39, 0.4); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(90, 24, 39, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(90, 24, 39, 0); }
+    }
+  </style>
+</head>
+<body class="font-body antialiased selection:bg-vintage-burgundy/20">
+
+  <!-- INTERACTIVE WAX SEAL COVER OVERLAY -->
+  <div id="envelopeOverlay" class="fixed inset-0 z-50 bg-[#241D1E] flex flex-col items-center justify-center p-6 text-center transition-all duration-700">
+    <div class="max-w-md w-full bg-[#F7F3E9] rounded-2xl p-8 shadow-2xl border-4 border-[#B38B32]/40 relative flex flex-col items-center">
+      <span class="font-cinzel text-xs tracking-[0.3em] uppercase text-vintage-burgundy font-bold mb-2">Correspondencia Privada</span>
+      <h2 class="font-display italic text-2xl sm:text-3xl text-vintage-dark mb-6">Invitación Exclusiva de Boda</h2>
+      
+      <!-- Wax Seal Button -->
+      <button onclick="openEnvelope()" class="w-24 h-24 rounded-full bg-vintage-burgundy text-white flex flex-col items-center justify-center shadow-2xl seal-pulse hover:scale-110 transition-transform border-4 border-vintage-gold/50 cursor-pointer">
+        <span class="material-symbols-outlined text-3xl text-vintage-gold">lock_open</span>
+        <span class="font-cinzel text-[9px] uppercase font-bold tracking-widest text-vintage-gold mt-1">Romper Sello</span>
+      </button>
+
+      <p class="text-xs text-stone-600 mt-6 font-medium">
+        Toca el sello de lacre para abrir la invitación
+      </p>
+    </div>
+  </div>
+
+  <!-- TOP RETURN BAR (STICKY) -->
+  <aside class="sticky top-0 z-40 bg-vintage-dark text-white px-4 py-2.5 shadow-md flex items-center justify-between text-xs">
+    <div class="flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-vintage-gold animate-pulse"></span>
+      <span class="font-semibold tracking-wide uppercase text-[11px]">Demo: Plan Vintage (Vintage Romance)</span>
+    </div>
+    <a href="../../catalogo/" class="inline-flex items-center gap-1.5 bg-vintage-burgundy hover:bg-vintage-gold hover:text-vintage-dark text-white px-3 py-1 rounded-full font-bold transition-all text-[11px] uppercase tracking-wider">
+      <span class="material-symbols-outlined text-sm">arrow_back</span>
+      <span>Volver al Catálogo</span>
+    </a>
+  </aside>
+
+  <!-- FLOATING AUDIO TOGGLE -->
+  <div class="fixed top-14 right-4 z-30 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-full border border-vintage-border shadow-md flex items-center gap-2">
+    <button id="vMusicBtn" onclick="toggleVMusic()" class="w-7 h-7 rounded-full bg-vintage-burgundy text-white flex items-center justify-center hover:bg-vintage-dark transition-all">
+      <span id="vMusicIcon" class="material-symbols-outlined text-sm">music_note</span>
+    </button>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-vintage-burgundy hidden sm:inline">Vals Clásico</span>
+    <audio id="vAudio" loop preload="auto">
+      <source src="assets/musica_boda_romantica.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[85vh] flex flex-col items-center justify-center text-center px-4 py-16 overflow-hidden">
+    <div class="max-w-lg mx-auto flex flex-col items-center">
+      <span class="font-cinzel text-xs font-bold tracking-[0.35em] text-vintage-gold uppercase mb-2">Anno Domini 2025</span>
+      
+      <h1 class="font-cinzel text-4xl sm:text-6xl text-vintage-burgundy font-normal tracking-wide mb-3">
+        MARTA & JERÓNIMO
+      </h1>
+
+      <div class="w-24 h-px bg-vintage-gold my-3"></div>
+
+      <p class="font-display italic text-lg sm:text-2xl text-stone-700 mb-8 max-w-md">
+        "Dos almas unidas por el destino, celebrando la dicha de su amor eterno."
+      </p>
+
+      <!-- Main Portrait Polaroid Frame -->
+      <div class="polaroid rounded-sm -rotate-1 max-w-xs mb-8 border border-stone-200">
+        <div class="aspect-[4/5] overflow-hidden bg-stone-100">
+          <img src="assets/hero.png" alt="Marta & Jerónimo" class="w-full h-full object-cover">
+        </div>
+        <p class="font-display italic text-center text-xs text-stone-700 mt-2">Marta & Jerónimo • Roma, 2024</p>
+      </div>
+
+      <div class="bg-vintage-card px-6 py-3 rounded-xl border border-vintage-border shadow-sm text-xs font-cinzel font-bold tracking-widest text-vintage-dark uppercase mb-8">
+        Sábado 27 de Septiembre de 2025 • Basílica Real
+      </div>
+
+      <!-- COUNTDOWN -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 w-full max-w-sm text-center">
+        <div class="bg-vintage-card p-3 rounded-xl border border-vintage-border shadow-sm">
+          <span id="vDays" class="font-cinzel text-2xl font-bold text-vintage-burgundy block">98</span>
+          <span class="text-[9px] uppercase font-bold text-vintage-gold">Días</span>
+        </div>
+        <div class="bg-vintage-card p-3 rounded-xl border border-vintage-border shadow-sm">
+          <span id="vHours" class="font-cinzel text-2xl font-bold text-vintage-burgundy block">16</span>
+          <span class="text-[9px] uppercase font-bold text-vintage-gold">Horas</span>
+        </div>
+        <div class="bg-vintage-card p-3 rounded-xl border border-vintage-border shadow-sm">
+          <span id="vMins" class="font-cinzel text-2xl font-bold text-vintage-burgundy block">40</span>
+          <span class="text-[9px] uppercase font-bold text-vintage-gold">Min</span>
+        </div>
+        <div class="bg-vintage-card p-3 rounded-xl border border-vintage-border shadow-sm">
+          <span id="vSecs" class="font-cinzel text-2xl font-bold text-vintage-burgundy block">18</span>
+          <span class="text-[9px] uppercase font-bold text-vintage-gold">Seg</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TIMELINE: NUESTRA HISTORIA -->
+  <section class="py-16 px-4 max-w-2xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="font-cinzel text-xs font-bold tracking-widest text-vintage-gold uppercase block mb-1">Capítulos de Amor</span>
+      <h2 class="font-display text-3xl text-vintage-burgundy">Nuestra Historia</h2>
+    </div>
+
+    <div class="relative border-l-2 border-vintage-gold/50 ml-4 sm:ml-32 space-y-10 pl-6">
+      <!-- Chapter 1 -->
+      <div class="relative group">
+        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-vintage-burgundy border-2 border-vintage-gold"></div>
+        <span class="font-cinzel text-xs font-bold text-vintage-gold tracking-wider">Otoño 2021</span>
+        <h3 class="font-display text-xl text-vintage-dark mt-0.5">El Primer Encuentro</h3>
+        <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+          Una tarde lluviosa en el café Greco de Roma. Una mirada compartida y una conversación que nunca terminó.
+        </p>
+      </div>
+
+      <!-- Chapter 2 -->
+      <div class="relative group">
+        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-vintage-burgundy border-2 border-vintage-gold"></div>
+        <span class="font-cinzel text-xs font-bold text-vintage-gold tracking-wider">Verano 2023</span>
+        <h3 class="font-display text-xl text-vintage-dark mt-0.5">La Propuesta en Florencia</h3>
+        <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+          Bajo el puente Vecchio al atardecer, entre violines y promesas sinceras, dijimos el primer "Sí, quiero".
+        </p>
+      </div>
+
+      <!-- Chapter 3 -->
+      <div class="relative group">
+        <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-vintage-burgundy border-2 border-vintage-gold"></div>
+        <span class="font-cinzel text-xs font-bold text-vintage-gold tracking-wider">Septiembre 2025</span>
+        <h3 class="font-display text-xl text-vintage-dark mt-0.5">El Gran Día</h3>
+        <p class="text-xs text-stone-600 mt-1 leading-relaxed">
+          El inicio de nuestro para siempre, rodeados de las personas que más amamos en el mundo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ITINERARIO VINTAGE -->
+  <section class="py-12 px-4 max-w-3xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="font-cinzel text-xs font-bold tracking-widest text-vintage-gold uppercase block mb-1">Celebración</span>
+      <h2 class="font-display text-3xl text-vintage-burgundy">Lugares & Horarios</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-vintage-card rounded-2xl p-6 border border-vintage-border shadow-sm text-center">
+        <div class="w-12 h-12 rounded-full bg-vintage-parchment flex items-center justify-center text-vintage-burgundy mx-auto mb-3 border border-vintage-border">
+          <span class="material-symbols-outlined text-2xl">church</span>
+        </div>
+        <span class="font-cinzel text-xs font-bold text-vintage-gold uppercase">18:00 Horas</span>
+        <h3 class="font-display text-xl text-vintage-dark mt-1 mb-2">Misa Nupcial</h3>
+        <p class="text-xs text-stone-600 mb-4">
+          Basílica Pontificia de San Miguel<br>Calle de San Justo 4, Madrid
+        </p>
+        <a href="https://maps.google.com/?q=Basilica+San+Miguel+Madrid" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-vintage-burgundy hover:text-vintage-gold underline">
+          <span>Abrir Ubicación en Google Maps</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+
+      <div class="bg-vintage-card rounded-2xl p-6 border border-vintage-border shadow-sm text-center">
+        <div class="w-12 h-12 rounded-full bg-vintage-parchment flex items-center justify-center text-vintage-burgundy mx-auto mb-3 border border-vintage-border">
+          <span class="material-symbols-outlined text-2xl">castle</span>
+        </div>
+        <span class="font-cinzel text-xs font-bold text-vintage-gold uppercase">20:30 Horas</span>
+        <h3 class="font-display text-xl text-vintage-dark mt-1 mb-2">Banquete & Baile</h3>
+        <p class="text-xs text-stone-600 mb-4">
+          Palacio de Aldovea<br>San Fernando de Henares, Madrid
+        </p>
+        <a href="https://maps.google.com/?q=Palacio+Aldovea+Madrid" target="_blank" class="inline-flex items-center gap-1 text-xs font-bold text-vintage-burgundy hover:text-vintage-gold underline">
+          <span>Abrir Ubicación en Google Maps</span>
+          <span class="material-symbols-outlined text-sm">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MESA DE REGALOS: SOBRE VIRTUAL / TRANSFERENCIA BANCARIA -->
+  <section class="py-14 px-4 max-w-xl mx-auto">
+    <div class="bg-vintage-card rounded-3xl p-8 border-2 border-vintage-gold/60 shadow-md text-center">
+      <div class="w-12 h-12 rounded-full bg-vintage-burgundy text-vintage-gold flex items-center justify-center mx-auto mb-4 shadow-sm">
+        <span class="material-symbols-outlined text-2xl">mail</span>
+      </div>
+      <span class="font-cinzel text-xs font-bold tracking-widest text-vintage-gold uppercase block mb-1">Mesa de Regalos</span>
+      <h3 class="font-display text-2xl text-vintage-dark mb-2">Sobre Virtual & Luna de Miel</h3>
+      <p class="text-xs text-stone-600 leading-relaxed mb-6">
+        El mejor regalo es su compañía. Si desean hacernos un presente, pueden contribuir a nuestro viaje soñado a Japón:
+      </p>
+
+      <div class="bg-vintage-parchment p-4 rounded-xl border border-vintage-border text-left mb-4">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-[10px] uppercase font-bold text-stone-500">Cuenta Bancaria (IBAN)</span>
+          <span class="text-[10px] font-bold text-vintage-burgundy">Banco Santander</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <code id="ibanText" class="font-mono text-xs sm:text-sm font-bold text-vintage-dark">ES91 0049 1500 0512 3456 7890</code>
+          <button onclick="copyIban()" class="px-3 py-1.5 rounded-lg bg-vintage-burgundy hover:bg-vintage-gold hover:text-vintage-dark text-white text-xs font-bold flex items-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">content_copy</span>
+            <span id="copyBtnText">Copiar</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-vintage-parchment p-4 rounded-xl border border-vintage-border text-left">
+        <div class="flex items-center justify-between mb-1">
+          <span class="text-[10px] uppercase font-bold text-stone-500">Bizum</span>
+          <span class="text-[10px] font-bold text-vintage-burgundy">Marta & Jerónimo</span>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <code class="font-mono text-xs sm:text-sm font-bold text-vintage-dark">+34 600 123 456</code>
+          <button onclick="copyBizum()" class="px-3 py-1.5 rounded-lg bg-vintage-burgundy hover:bg-vintage-gold hover:text-vintage-dark text-white text-xs font-bold flex items-center gap-1 transition-colors">
+            <span class="material-symbols-outlined text-sm">content_copy</span>
+            <span id="bizumBtnText">Copiar</span>
+          </button>
+        </div>
+      </div>
+
+      <div id="copyAlert" class="hidden mt-3 text-xs text-green-700 font-bold">
+        ✨ ¡Número copiado al portapapeles con éxito!
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIRMACIÓN RSVP -->
+  <section class="py-14 px-4 max-w-lg mx-auto" id="rsvp">
+    <div class="bg-vintage-card rounded-3xl p-8 border border-vintage-border shadow-xl text-center">
+      <span class="font-cinzel text-xs font-bold tracking-widest text-vintage-gold uppercase block mb-1">R.S.V.P.</span>
+      <h2 class="font-display text-3xl text-vintage-burgundy mb-2">Confirmar Asistencia</h2>
+      <p class="text-xs text-stone-600 mb-6">
+        Agradecemos confirmar antes del <b>1 de Septiembre de 2025</b>.
+      </p>
+
+      <form id="vintageRsvpForm" class="space-y-4 text-left">
+        <div>
+          <label class="block font-cinzel text-[11px] font-bold text-vintage-dark mb-1 uppercase tracking-wider">Nombre del Invitado</label>
+          <input type="text" id="vName" required placeholder="Nombre completo" class="w-full px-3.5 py-2.5 rounded-xl border border-vintage-border bg-vintage-parchment text-sm focus:outline-none focus:border-vintage-gold">
+        </div>
+
+        <div>
+          <label class="block font-cinzel text-[11px] font-bold text-vintage-dark mb-1 uppercase tracking-wider">Respuesta</label>
+          <select id="vAtt" class="w-full px-3.5 py-2.5 rounded-xl border border-vintage-border bg-vintage-parchment text-sm focus:outline-none focus:border-vintage-gold">
+            <option value="si">Acepto con honor y alegría</option>
+            <option value="no">Declino con pesar</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-cinzel text-[11px] font-bold text-vintage-dark mb-1 uppercase tracking-wider">Número de Personas</label>
+          <select id="vPases" class="w-full px-3.5 py-2.5 rounded-xl border border-vintage-border bg-vintage-parchment text-sm focus:outline-none focus:border-vintage-gold">
+            <option value="1">1 Pase</option>
+            <option value="2">2 Pases</option>
+            <option value="3">3 Pases</option>
+          </select>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-vintage-burgundy hover:bg-vintage-dark text-white font-cinzel font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all shadow-md">
+          <span>Enviar Confirmación</span>
+          <span class="material-symbols-outlined text-sm text-vintage-gold">send</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FLOATING RETURN BUTTON -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a href="../../catalogo/" class="flex items-center gap-2 bg-vintage-dark text-white hover:bg-vintage-burgundy px-4 py-2.5 rounded-full shadow-xl text-xs font-bold uppercase tracking-wider transition-all transform hover:scale-105 border border-white/20">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      <span>Volver al Catálogo</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-xs text-stone-500 border-t border-vintage-border bg-vintage-card">
+    <p class="font-cinzel text-sm text-vintage-burgundy font-bold mb-1">MARTA & JERÓNIMO</p>
+    <p>Madrid, 2025</p>
+  </footer>
+
+  <script>
+    // Open Envelope handler
+    function openEnvelope() {
+      const overlay = document.getElementById('envelopeOverlay');
+      overlay.style.opacity = '0';
+      overlay.style.transform = 'translateY(-100%)';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 700);
+
+      // Auto start music after interaction
+      const audio = document.getElementById('vAudio');
+      audio.play().catch(() => {});
+    }
+
+    // Audio toggle
+    let vPlaying = false;
+    function toggleVMusic() {
+      const audio = document.getElementById('vAudio');
+      const icon = document.getElementById('vMusicIcon');
+      if (!vPlaying) {
+        audio.play().then(() => {
+          vPlaying = true;
+          icon.innerText = 'pause';
+        }).catch(() => {});
+      } else {
+        audio.pause();
+        vPlaying = false;
+        icon.innerText = 'music_note';
+      }
+    }
+
+    // Copy IBAN / Bizum
+    function copyIban() {
+      navigator.clipboard.writeText("ES9100491500051234567890").then(() => {
+        document.getElementById('copyBtnText').innerText = '¡Copiado!';
+        showAlert();
+        setTimeout(() => document.getElementById('copyBtnText').innerText = 'Copiar', 2500);
+      });
+    }
+
+    function copyBizum() {
+      navigator.clipboard.writeText("+34600123456").then(() => {
+        document.getElementById('bizumBtnText').innerText = '¡Copiado!';
+        showAlert();
+        setTimeout(() => document.getElementById('bizumBtnText').innerText = 'Copiar', 2500);
+      });
+    }
+
+    function showAlert() {
+      const alert = document.getElementById('copyAlert');
+      alert.classList.remove('hidden');
+      setTimeout(() => alert.classList.add('hidden'), 3000);
+    }
+
+    // RSVP handler
+    document.getElementById('vintageRsvpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('vName').value;
+      const att = document.getElementById('vAtt').value;
+      const pases = document.getElementById('vPases').value;
+      const txt = att === 'si' ? 'Confirmo con honor mi asistencia' : 'Declino con pesar';
+      const msg = encodeURIComponent(`Hola Marta y Jerónimo! Soy ${name}. ${txt} (${pases} personas). ¡Muchas felicidades!`);
+      window.open(`https://wa.me/34600000000?text=${msg}`, '_blank');
+    });
+
+    // Smart return to catalog handler
+    document.querySelectorAll('a[href*="catalogo"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        if (window.location.pathname.includes('/invitaciones')) {
+          e.preventDefault();
+          window.location.href = '/invitaciones';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
