@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" fill="none">
+  <defs>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCE7EB"/>
+      <stop offset="50%" stop-color="#E8A598"/>
+      <stop offset="100%" stop-color="#9A4152"/>
+    </linearGradient>
+    <linearGradient id="burgundyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9A4152"/>
+      <stop offset="100%" stop-color="#541523"/>
+    </linearGradient>
+    <linearGradient id="goldStem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C158"/>
+      <stop offset="100%" stop-color="#997A15"/>
+    </linearGradient>
+  </defs>
+  <!-- Decorative corner frame lines -->
+  <path d="M10 120 L10 10 L120 10" stroke="url(#goldStem)" stroke-width="1.2" stroke-linecap="square"/>
+  <path d="M18 100 L18 18 L100 18" stroke="#9A4152" stroke-width="0.8" stroke-dasharray="4,4" opacity="0.6"/>
+  <!-- Stems & Foliage -->
+  <path d="M10 10 Q60 50 110 40 Q160 30 180 80" stroke="url(#goldStem)" stroke-width="1.5" fill="none"/>
+  <path d="M10 10 Q50 60 40 110 Q30 160 80 180" stroke="url(#goldStem)" stroke-width="1.5" fill="none"/>
+  <!-- Gold leaves -->
+  <path d="M45 35 C55 20, 70 25, 65 40 C55 45, 45 40, 45 35 Z" fill="#E5C158" opacity="0.75"/>
+  <path d="M35 45 C20 55, 25 70, 40 65 C45 55, 40 45, 35 45 Z" fill="#E5C158" opacity="0.75"/>
+  <path d="M90 35 C105 25, 115 35, 105 48 C95 50, 90 42, 90 35 Z" fill="#C5A059" opacity="0.8"/>
+  <path d="M35 90 C25 105, 35 115, 48 105 C50 95, 42 90, 35 90 Z" fill="#C5A059" opacity="0.8"/>
+  <!-- Main Rose Flower -->
+  <g transform="translate(60, 60)">
+    <!-- Outer petals -->
+    <circle cx="0" cy="0" r="32" fill="url(#roseGrad)" opacity="0.85"/>
+    <path d="M-25 -10 C-30 -30, 0 -35, 20 -25 C35 -15, 35 15, 20 25 C0 35, -30 25, -25 -10 Z" fill="#FCE7EB" opacity="0.9"/>
+    <!-- Mid petals -->
+    <path d="M-18 -5 C-22 -20, 5 -25, 15 -15 C25 -5, 20 15, 10 20 C-5 25, -20 15, -18 -5 Z" fill="#E8A598"/>
+    <!-- Deep core -->
+    <circle cx="0" cy="0" r="12" fill="url(#burgundyGrad)"/>
+    <path d="M-5 -2 Q0 -8 5 -2 Q8 5 0 8 Q-8 5 -5 -2 Z" fill="#FFFFFF" opacity="0.6"/>
+  </g>
+  <!-- Secondary smaller rosebud -->
+  <g transform="translate(130, 45)">
+    <circle cx="0" cy="0" r="16" fill="url(#roseGrad)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="8" fill="url(#burgundyGrad)"/>
+    <circle cx="0" cy="0" r="3" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+  <!-- Third smaller rosebud -->
+  <g transform="translate(45, 130)">
+    <circle cx="0" cy="0" r="16" fill="url(#roseGrad)" opacity="0.9"/>
+    <circle cx="0" cy="0" r="8" fill="url(#burgundyGrad)"/>
+    <circle cx="0" cy="0" r="3" fill="#FFFFFF" opacity="0.8"/>
+  </g>
+</svg>
