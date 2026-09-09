@@ -22,6 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMusic(true);
       triggerConfettiSparkles();
     });
+
+    // Auto-apertura suave si se visualiza dentro del visor iframe / modal del portafolio
+    const isInsideIframe = (window.self !== window.top);
+    if (isInsideIframe) {
+      setTimeout(() => {
+        vipOverlay.classList.add('opened');
+      }, 1600);
+    }
   }
 
   // ==========================================================================

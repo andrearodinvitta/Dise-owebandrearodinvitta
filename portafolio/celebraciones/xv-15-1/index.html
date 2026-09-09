@@ -5,10 +5,14 @@
     // Detector dinámico de base URL para funcionamiento transparente en Localhost y Vercel
     (function() {
       var p = window.location.pathname;
-      if (p.indexOf('portafolio') !== -1 || p.indexOf('celebraciones') !== -1) {
+      if (p.indexOf('portafolio') !== -1 || p.indexOf('celebraciones') !== -1 || p.indexOf('demos') !== -1) {
         var base = document.createElement('base');
-        var dir = p.substring(0, p.lastIndexOf('/') + 1);
-        if (!dir) dir = p + '/';
+        var dir = p;
+        if (dir.endsWith('.html') || dir.endsWith('.htm')) {
+          dir = dir.substring(0, dir.lastIndexOf('/') + 1);
+        } else if (!dir.endsWith('/')) {
+          dir = dir + '/';
+        }
         base.href = dir;
         document.head.prepend(base);
       }
