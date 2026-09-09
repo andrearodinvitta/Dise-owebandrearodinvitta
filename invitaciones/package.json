@@ -1,0 +1,19 @@
+{
+  "name": "paginas-web-invitaciones",
+  "version": "1.0.0",
+  "description": "Catálogo de Invitaciones Web y Demos Interactivas - Andrea Rodriguez Studio",
+  "scripts": {
+    "dev": "python3 server.py 3000",
+    "start": "python3 server.py 3000",
+    "serve": "npx serve -l 3000 ."
+  },
+  "keywords": [
+    "invitaciones-web",
+    "boda",
+    "landing-page",
+    "catalogo",
+    "demos"
+  ],
+  "author": "Andrea Rodriguez",
+  "license": "ISC"
+}

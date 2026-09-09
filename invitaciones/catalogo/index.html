@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Catálogo de Invitaciones Web Digitales e Interactivas para Bodas y Celebraciones. Demos en vivo, RSVP en tiempo real, música ambiental y diseño de alta costura.">
+  <title>Catálogo de Invitaciones Web | Andrea Rodriguez Studio</title>
+
+  <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#fbf9f5",
+            "surface-low": "#f5f3ef",
+            "surface-card": "#ffffff",
+            "surface-high": "#eae8e4",
+            "surface-highest": "#e4e2de",
+            "on-surface": "#1b1c1a",
+            "on-surface-variant": "#57423e",
+            "secondary": "#775a19",
+            "secondary-dark": "#5a430f",
+            "secondary-light": "#fed488",
+            "secondary-fixed": "#ffdea5",
+            "on-secondary-fixed": "#261900",
+            "primary": "#1b1c1a",
+            "gold-accent": "#c59d5f"
+          },
+          fontFamily: {
+            display: ["'Playfair Display'", "serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"]
+          },
+          boxShadow: {
+            'luxury': '0 20px 40px -15px rgba(119, 90, 25, 0.08), 0 0 1px 1px rgba(119, 90, 25, 0.05)',
+            'luxury-hover': '0 30px 60px -15px rgba(119, 90, 25, 0.16), 0 0 1px 1px rgba(119, 90, 25, 0.1)'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      background-color: #fbf9f5;
+      color: #1b1c1a;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #775a19 0%, #b38b32 50%, #775a19 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card-zoom-img {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .group:hover .card-zoom-img {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="font-body min-h-screen flex flex-col antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+
+  <!-- TOP APP BAR -->
+  <header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-high transition-all duration-300">
+    <div class="max-w-6xl mx-auto h-16 px-4 sm:px-6 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-on-surface hover:opacity-80 transition-opacity">
+        <span class="material-symbols-outlined text-secondary text-2xl">diamond</span>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-sm sm:text-base tracking-wider uppercase">Andrea Rodriguez</span>
+          <span class="text-[10px] tracking-widest text-secondary uppercase font-semibold -mt-1">Invitaciones Web</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3">
+        <a href="/" class="hidden sm:inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors py-1.5 px-3 rounded-full hover:bg-surface-low">
+          <span class="material-symbols-outlined text-sm">arrow_back</span>
+          Volver a la Web Principal
+        </a>
+        <a href="https://wa.me/34600000000?text=Hola%20Andrea,%20quiero%20informaci%C3%B3n%20sobre%20las%20Invitaciones%20Web" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 bg-primary text-white hover:bg-secondary transition-colors text-xs font-semibold tracking-wider uppercase px-4 py-2 rounded-full shadow-sm">
+          <span>Consultar</span>
+          <span class="material-symbols-outlined text-sm">chat</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 pt-20 pb-20">
+    
+    <!-- HERO SECTION -->
+    <section class="relative px-4 sm:px-6 pt-8 pb-14 max-w-4xl mx-auto text-center overflow-hidden">
+      <!-- Ambient decorative glow -->
+      <div class="absolute -top-10 left-1/2 -translate-x-1/2 w-80 sm:w-96 h-80 sm:h-96 bg-secondary-light/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <!-- Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-low border border-surface-high shadow-sm mb-5">
+        <span class="material-symbols-outlined text-secondary text-sm animate-spin" style="animation-duration: 8s;">auto_awesome</span>
+        <span class="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-secondary">Colección Exclusiva • Experiencias Digitales</span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl text-on-surface font-normal tracking-tight mb-4 leading-tight">
+        Invitaciones Web para tu <span class="italic font-medium text-gold-gradient">Boda Inolvidable</span>
+      </h1>
+
+      <p class="text-on-surface-variant text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+        Elige el estilo perfecto para contar tu historia de amor con elegancia atemporal, interactividad fluida y confirmación en tiempo real.
+      </p>
+
+      <!-- Visual Centerpiece: Interactive Phone Frame -->
+      <div class="relative w-full max-w-[280px] sm:max-w-[310px] mx-auto mb-10 group">
+        <div class="absolute -inset-2 bg-gradient-to-b from-secondary-fixed/50 to-surface-high/40 rounded-[2.8rem] blur-xl opacity-70 group-hover:opacity-90 transition-opacity"></div>
+        <div class="relative bg-white rounded-[2.5rem] p-2.5 shadow-2xl border border-surface-high/60">
+          <div class="overflow-hidden rounded-[2rem] relative aspect-[9/17.5] bg-surface-low flex items-center justify-center">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAm77tUHzMg0-hDRPWopFlKvKudwZPAQRCJS6N71MmmMIl1HT7loUc7PmEstmAQ-o5XpTnRxiAaneLvtVRVDJgiMVRY-dcKgEuQyqXgKD1QKJgPRRiP73_p3rwXUJE5W7MjIVo2-N6-3DsXLoA_paK3tA-Ob8q6fSMw91hC3Vw9gmq5MLgcLFTPT0R0RAv-Xiv7R-UWXo3f4RB7AYjB3eoJw5Sz03bY91vBJcWNbwdEWBE-yMJdqctqcA" 
+                 alt="Muestra de invitación web de boda editorial" 
+                 class="w-full h-full object-cover card-zoom-img">
+            
+            <!-- Floating interactive live preview pill -->
+            <a href="../demos/tematica/" class="absolute bottom-4 left-3 right-3 bg-white/95 backdrop-blur-md py-2 px-3.5 rounded-full flex items-center justify-between shadow-lg hover:bg-white transition-all hover:scale-[1.02]">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+                <span class="text-[11px] font-bold tracking-wider uppercase text-on-surface">Explorar Demo en Vivo</span>
+              </div>
+              <span class="material-symbols-outlined text-sm text-secondary">open_in_new</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value Pills Row -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-xl mx-auto">
+        <div class="flex items-center gap-1.5 bg-white border border-surface-high/80 px-3.5 py-1.5 rounded-full shadow-sm">
+          <span class="material-symbols-outlined text-secondary text-base">task_alt</span>
+          <span class="text-xs font-semibold text-on-surface">RSVP a WhatsApp & Web</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-white border border-surface-high/80 px-3.5 py-1.5 rounded-full shadow-sm">
+          <span class="material-symbols-outlined text-secondary text-base">music_note</span>
+          <span class="text-xs font-semibold text-on-surface">Música & Contador</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-white border border-surface-high/80 px-3.5 py-1.5 rounded-full shadow-sm">
+          <span class="material-symbols-outlined text-secondary text-base">explore</span>
+          <span class="text-xs font-semibold text-on-surface">GPS & Google Maps</span>
+        </div>
+        <div class="flex items-center gap-1.5 bg-white border border-surface-high/80 px-3.5 py-1.5 rounded-full shadow-sm">
+          <span class="material-symbols-outlined text-secondary text-base">smartphone</span>
+          <span class="text-xs font-semibold text-on-surface">100% Adaptada a Móvil</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG GRID SECTION -->
+    <section class="px-4 sm:px-6 py-8 max-w-6xl mx-auto" id="planes">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">Catálogo Oficial</span>
+        <h2 class="font-display text-2xl sm:text-4xl text-on-surface font-normal">Planes & Experiencias Interactivas</h2>
+        <p class="text-on-surface-variant text-xs sm:text-sm mt-2">Tarifa única por evento • Sin mensualidades • Entrega rápida</p>
+      </div>
+
+      <!-- 4 CARDS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- CARD 1: BÁSICA (Esencial Romance) -->
+        <div class="bg-surface-card rounded-2xl p-6 shadow-luxury hover:shadow-luxury-hover transition-all duration-300 flex flex-col justify-between border border-surface-high group relative">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary border border-surface-high">
+                <span class="material-symbols-outlined text-xl">favorite_border</span>
+              </div>
+              <div class="text-right">
+                <span class="font-display text-2xl sm:text-3xl font-bold text-on-surface">$95</span>
+                <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider block">€ Tarifa única</span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-on-surface mb-1">1. Básica</h3>
+            <span class="text-xs font-semibold text-secondary block mb-2">Esencial Romance</span>
+            <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Ideal para bodas íntimas y parejas que aprecian una calidez minimalista, elegante y directa.
+            </p>
+
+            <div class="h-px bg-surface-high w-full mb-4"></div>
+
+            <!-- Features List -->
+            <ul class="space-y-2.5 text-xs text-on-surface mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Diseño responsive 1 página premium</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Cuenta regresiva en tiempo real</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Confirmación RSVP a WhatsApp</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Ubicación con Google Maps & Waze</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Galería fotográfica (hasta 6 fotos)</span>
+              </li>
+            </ul>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-5 aspect-[16/10] bg-surface-low border border-surface-high shadow-inner">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa7vT_1s2rhT4BDGq_O9SkPyr4TpqBQONp13E52OTYyVh3eQLxLs9hNNntlwVXK4fibvUrg4PPuE0yJ997w9pBhWze4XE-iFL5cHAbwq4l7wzjlAJBbfoHp8w0IN1fwLDQyPMSHqNPWWMnzM0yk2ShNf3r4ieRlcF_ZM8vaysVcOEgntphfu56rixGDIJhlFu7af6-G3vYE4uvDvKyFQk3e1vO7W8X0u8tFSVC1vfPDTUfz5ay5pAI5w" 
+                   alt="Preview Básica Esencial Romance" 
+                   class="w-full h-full object-cover card-zoom-img">
+              <div class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-[10px] font-bold text-on-surface shadow-sm">
+                Estilo Minimalista
+              </div>
+            </div>
+          </div>
+
+          <a href="../demos/basica/" class="w-full py-3 px-4 rounded-xl bg-surface-low hover:bg-surface-high text-on-surface font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-surface-high hover:border-secondary">
+            <span>Ver Demo Básica</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- CARD 2: TEMÁTICA (Elegance & Flora) [DESTACADO] -->
+        <div class="bg-surface-card rounded-2xl p-6 shadow-luxury-hover flex flex-col justify-between border-2 border-secondary relative group transform md:-translate-y-2">
+          <!-- Tag Más Popular -->
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase shadow-md flex items-center gap-1">
+            <span class="material-symbols-outlined text-xs">auto_awesome</span>
+            MÁS POPULAR
+          </div>
+
+          <div>
+            <div class="flex items-start justify-between mb-4 pt-2">
+              <div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed border border-secondary-light">
+                <span class="material-symbols-outlined text-xl">spa</span>
+              </div>
+              <div class="text-right">
+                <span class="font-display text-2xl sm:text-3xl font-bold text-secondary">$149</span>
+                <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider block">€ Tarifa única</span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-on-surface mb-1">2. Temática</h3>
+            <span class="text-xs font-semibold text-secondary block mb-2">Elegance & Flora</span>
+            <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Diseño botánico inmersivo con música ambiental, efectos de hojas y experiencia sensorial completa.
+            </p>
+
+            <div class="h-px bg-secondary-light w-full mb-4"></div>
+
+            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary block mb-2">Todo lo del plan Básico, más:</span>
+
+            <!-- Features List -->
+            <ul class="space-y-2.5 text-xs text-on-surface mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                <span>Música ambiental interactiva</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                <span>RSVP avanzado (menú y alergias)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                <span>Código de vestimenta & paleta</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                <span>Galería interactiva con slider</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check_circle</span>
+                <span>Sincronización a Calendario</span>
+              </li>
+            </ul>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-5 aspect-[16/10] bg-surface-low border border-surface-high shadow-inner">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF0UgzgUziql7xN-MRGwUyz1FXnyutQ-npscgAr44WpLcunI7_8ikHwWrcJp7lFF59I_tPUXiOW31KL2XORIcd-OD9-Y0Y7fzN62yaEaeqBfc7brZq_ZuFPGV-S9OxtXa1F7qRVNjbVGzGLoumWpMDOtpPW6Kls4lzECUQ-K-pvFgk9cQZeYZ--DYRBWxrq0GgHE9gCucXsKOZgOEZtZjTUZQ7xZrcKRQpjJ-lQILZ7XEOAMGk7_KJAw" 
+                   alt="Preview Temática Elegance & Flora" 
+                   class="w-full h-full object-cover card-zoom-img">
+              <div class="absolute top-2 left-2 bg-secondary text-white px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-sm flex items-center gap-1">
+                <span class="material-symbols-outlined text-[12px]">volume_up</span> Con Música & Efectos
+              </div>
+            </div>
+          </div>
+
+          <a href="../demos/tematica/" class="w-full py-3.5 px-4 rounded-xl bg-primary hover:bg-secondary text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-98">
+            <span class="text-secondary-fixed">Ver Demo Temática</span>
+            <span class="material-symbols-outlined text-base text-secondary-fixed">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- CARD 3: VINTAGE (Vintage Romance) -->
+        <div class="bg-surface-card rounded-2xl p-6 shadow-luxury hover:shadow-luxury-hover transition-all duration-300 flex flex-col justify-between border border-surface-high group relative">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary border border-surface-high">
+                <span class="material-symbols-outlined text-xl">history_edu</span>
+              </div>
+              <div class="text-right">
+                <span class="font-display text-2xl sm:text-3xl font-bold text-on-surface">$199</span>
+                <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider block">€ Tarifa única</span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-on-surface mb-1">3. Vintage</h3>
+            <span class="text-xs font-semibold text-secondary block mb-2">Vintage Romance</span>
+            <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Estilo carta de amor con apertura de sello de cera animado, historia en timeline y mesa de regalos virtual.
+            </p>
+
+            <div class="h-px bg-surface-high w-full mb-4"></div>
+
+            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary block mb-2">Todo lo de Temática, más:</span>
+
+            <!-- Features List -->
+            <ul class="space-y-2.5 text-xs text-on-surface mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Apertura animada con Sello de Cera</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Mesa de regalos & Sobre Virtual</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Línea de tiempo "Nuestra Historia"</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Copia rápida de cuenta bancaria</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">check</span>
+                <span>Galería vintage tipo polaroid</span>
+              </li>
+            </ul>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-5 aspect-[16/10] bg-surface-low border border-surface-high shadow-inner">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8WM02OQdYXjv-O0g9HgTbJ-We_8eLfQp-SMDJwC7ZX9nY2CHjAwNCXUTaID7P7mqsUQ0fetmk5I63H0yxW73TNepT_w0sUo2W-0rDWd5GjSivEKsYn5IzEf9LbYGwTsYA1Gl5YiLAOnK3GH72osxtUvTQ37vNPKK_mEJPb649snjrPxGXUt-SoM0qA91GCF3Uiby4AoD9V70a5nxQ_lkri9RonArbE6zq_7jqBmbz5pyQVtgDbEa8gQ" 
+                   alt="Preview Vintage Romance" 
+                   class="w-full h-full object-cover card-zoom-img">
+              <div class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2.5 py-0.5 rounded-full text-[10px] font-bold text-on-surface shadow-sm">
+                Sello de Cera & Sobre Virtual
+              </div>
+            </div>
+          </div>
+
+          <a href="../demos/vintage/" class="w-full py-3 px-4 rounded-xl bg-surface-low hover:bg-surface-high text-on-surface font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-surface-high hover:border-secondary">
+            <span>Ver Demo Vintage</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- CARD 4: PERSONALIZADA (Bespoke Royal) -->
+        <div class="bg-surface-card rounded-2xl p-6 shadow-luxury hover:shadow-luxury-hover transition-all duration-300 flex flex-col justify-between border border-surface-high group relative">
+          <div>
+            <div class="flex items-start justify-between mb-4">
+              <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary border border-surface-high">
+                <span class="material-symbols-outlined text-xl">hotel_class</span>
+              </div>
+              <div class="text-right">
+                <span class="font-display text-2xl sm:text-3xl font-bold text-on-surface">$289</span>
+                <span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider block">€ Tarifa única</span>
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-on-surface mb-1">4. Personalizada</h3>
+            <span class="text-xs font-semibold text-secondary block mb-2">Bespoke Royal Alta Costura</span>
+            <p class="text-xs text-on-surface-variant mb-4 leading-relaxed">
+              Diseño 100% exclusivo desde cero, monograma dorado, pase digital QR y muro interactivo en vivo.
+            </p>
+
+            <div class="h-px bg-surface-high w-full mb-4"></div>
+
+            <span class="text-[10px] font-bold uppercase tracking-wider text-secondary block mb-2">Experiencia de Ultra Lujo:</span>
+
+            <!-- Features List -->
+            <ul class="space-y-2.5 text-xs text-on-surface mb-6">
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">stars</span>
+                <span>Monograma dorado animado</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">stars</span>
+                <span>Pase QR digital con Wallet</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">stars</span>
+                <span>Muro de deseos interactivo en vivo</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">stars</span>
+                <span>Opción bilingüe (ES / EN)</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-secondary text-base">stars</span>
+                <span>Soporte VIP y cambios ilimitados</span>
+              </li>
+            </ul>
+
+            <!-- Thumbnail Preview -->
+            <div class="relative rounded-xl overflow-hidden mb-5 aspect-[16/10] bg-surface-low border border-surface-high shadow-inner">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkenulSoMs7twhIr-ahGx3osjxZumyh45P2K_BxVWx6Y-GFKqtp_35jGHE7GwfD9WmfT58Sn0ho_J8uHUViM0r6sPXbzto3XTm59dm2o_GKdLMbnuK2KCEOfNH2pBVRJ7-8EVvh_Do4CbJ3TpMyOe3adTJ8iaS5AqEtbPHkjlT6gWct2oiObCgoeYgqTVyDSCFkPCtD9zb5VbIh6tlubgzTubXzQfeySn4J8E-xhrUurXHfgMtDo8gRg" 
+                   alt="Preview Bespoke Royal" 
+                   class="w-full h-full object-cover card-zoom-img">
+              <div class="absolute top-2 left-2 bg-primary text-secondary-fixed px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-sm">
+                Pase QR & Muro en Vivo
+              </div>
+            </div>
+          </div>
+
+          <a href="../demos/personalizada/" class="w-full py-3 px-4 rounded-xl bg-surface-low hover:bg-surface-high text-on-surface font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all border border-surface-high hover:border-secondary">
+            <span>Ver Demo Personalizada</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- INSPIRATIONAL PHOTO BANNER -->
+    <section class="px-4 sm:px-6 py-6 max-w-6xl mx-auto">
+      <div class="relative w-full rounded-2xl overflow-hidden aspect-[16/8] sm:aspect-[21/9] bg-surface-low border border-surface-high shadow-md">
+        <img class="w-full h-full object-cover" 
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdp1_Dq8qN15JlU1siRPP2ByGMWZtQidtEknP0T02vUuuGHHSPUrN1YFsTZCFlXN4GHNC0_dQSpwUaiJr8OsgKYJRxTovdC8uzpNy5CKontqZ-V23jjKrG3t88mJ_j8haPRJ6dLyjDDxjSkpR9U-AjRJ-968NDjfhlBZpmaPXcLcgHCEfobh_jZHp7m0UoFiPqQbwWItEtOEVVZSCLi8jtGv_4xxa2vrMTlpNHRltR04wJtx1MZZrg2Q" 
+             alt="Papelería editorial de lujo para bodas">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/30 to-transparent flex items-end p-6 sm:p-10">
+          <p class="font-display text-lg sm:text-2xl lg:text-3xl text-white italic font-normal max-w-xl">
+            "El preludio perfecto al día más memorable de sus vidas."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS SECTION -->
+    <section class="px-4 sm:px-6 py-12 max-w-5xl mx-auto" id="beneficios">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-secondary block mb-1">Ventajas Lumière</span>
+        <h2 class="font-display text-2xl sm:text-3xl text-on-surface font-normal">¿Por qué elegir una invitación web?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <div class="bg-white p-5 sm:p-6 rounded-xl border border-surface-high shadow-sm flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary shrink-0 border border-surface-high">
+            <span class="material-symbols-outlined text-xl">eco</span>
+          </div>
+          <div>
+            <h3 class="font-display text-base font-bold text-on-surface mb-1">Ecológico y Sostenible</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Cero desperdicio de papel y una huella de carbono consciente sin sacrificar el lujo.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 sm:p-6 rounded-xl border border-surface-high shadow-sm flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary shrink-0 border border-surface-high">
+            <span class="material-symbols-outlined text-xl">savings</span>
+          </div>
+          <div>
+            <h3 class="font-display text-base font-bold text-on-surface mb-1">Ahorro del 70% vs Papelería</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Evita costos exorbitantes de imprenta, envíos postales y reimpresiones por cambios.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 sm:p-6 rounded-xl border border-surface-high shadow-sm flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary shrink-0 border border-surface-high">
+            <span class="material-symbols-outlined text-xl">edit_calendar</span>
+          </div>
+          <div>
+            <h3 class="font-display text-base font-bold text-on-surface mb-1">Cambios de Último Minuto</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Actualiza horarios, transporte o itinerario al instante sin necesidad de reimprimir nada.</p>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 sm:p-6 rounded-xl border border-surface-high shadow-sm flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-surface-low flex items-center justify-center text-secondary shrink-0 border border-surface-high">
+            <span class="material-symbols-outlined text-xl">send</span>
+          </div>
+          <div>
+            <h3 class="font-display text-base font-bold text-on-surface mb-1">Acceso Global Instantáneo</h3>
+            <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">Envía un enlace inolvidable por WhatsApp o email a invitados en cualquier rincón del mundo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FREE DEMO CTA CARD -->
+    <section class="px-4 sm:px-6 py-6 max-w-3xl mx-auto" id="contacto">
+      <div class="bg-surface-low rounded-2xl p-6 sm:p-10 border border-surface-high text-center relative overflow-hidden flex flex-col items-center shadow-md">
+        <span class="material-symbols-outlined absolute -right-8 -bottom-8 text-[130px] text-secondary opacity-5 pointer-events-none select-none">
+          filter_vintage
+        </span>
+        
+        <div class="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center shadow-md mb-4">
+          <span class="material-symbols-outlined text-2xl">smartphone</span>
+        </div>
+
+        <h3 class="font-display text-xl sm:text-3xl text-on-surface font-normal mb-2">
+          ¿Deseas probarla con tus datos?
+        </h3>
+        <p class="text-xs sm:text-sm text-on-surface-variant mb-6 max-w-md leading-relaxed">
+          Recibe una maqueta personalizada con los nombres de la pareja y fecha especial sin ningún compromiso.
+        </p>
+
+        <a href="https://wa.me/34600000000?text=Hola%20Andrea,%20me%20gustar%C3%ADa%20solicitar%20una%20muestra%20gratuita%20de%20invitaci%C3%B3n%20web" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-primary hover:bg-secondary text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-all active:scale-98">
+          <span class="material-symbols-outlined text-lg text-secondary-fixed">card_giftcard</span>
+          <span class="text-secondary-fixed">Solicitar Muestra Gratuita por WhatsApp</span>
+        </a>
+
+        <span class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant mt-4">
+          Respuesta en menos de 2 horas
+        </span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM BAR FOR MOBILE -->
+  <nav class="fixed bottom-0 w-full z-40 bg-surface/95 backdrop-blur-xl border-t border-surface-high sm:hidden pb-safe">
+    <div class="flex justify-around items-center h-16 px-2">
+      <a href="#planes" class="flex flex-col items-center justify-center text-secondary hover:text-on-surface transition-colors py-1">
+        <span class="material-symbols-outlined text-xl">auto_awesome</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Planes</span>
+      </a>
+      <a href="../demos/basica/" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-colors py-1">
+        <span class="material-symbols-outlined text-xl">favorite_border</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Básica</span>
+      </a>
+      <a href="../demos/tematica/" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-colors py-1">
+        <span class="material-symbols-outlined text-xl">spa</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Temática</span>
+      </a>
+      <a href="../demos/vintage/" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-colors py-1">
+        <span class="material-symbols-outlined text-xl">history_edu</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Vintage</span>
+      </a>
+      <a href="../demos/personalizada/" class="flex flex-col items-center justify-center text-on-surface-variant hover:text-secondary transition-colors py-1">
+        <span class="material-symbols-outlined text-xl">hotel_class</span>
+        <span class="text-[10px] font-bold uppercase tracking-wider">Personalizada</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-low border-t border-surface-high py-8 px-4 text-center text-xs text-on-surface-variant">
+    <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© 2025 Andrea Rodriguez Studio • Todos los derechos reservados.</p>
+      <div class="flex items-center gap-4">
+        <a href="/" class="hover:text-on-surface underline">Inicio</a>
+        <a href="#planes" class="hover:text-on-surface underline">Planes</a>
+        <a href="#beneficios" class="hover:text-on-surface underline">Beneficios</a>
+        <a href="#contacto" class="hover:text-on-surface underline">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Universal Smart Link Resolver
+    document.querySelectorAll('a[href*="demos/"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const path = window.location.pathname;
+        const href = a.getAttribute('href');
+        const match = href.match(/demos\/([a-z_]+)\/?/);
+        if (match && match[1]) {
+          const demoName = match[1];
+          if (path.includes('/invitaciones')) {
+            e.preventDefault();
+            window.location.href = '/invitaciones/demos/' + demoName + '/';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

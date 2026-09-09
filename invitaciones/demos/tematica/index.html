@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Invitación de Boda Camila & Cristóbal - Demo Temática Elegance & Flora">
+  <title>Camila & Cristóbal | Boda Botánica (Demo Temática)</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "botanical-bg": "#FAF6F0",
+            "botanical-olive": "#556434",
+            "botanical-terracotta": "#A44A3F",
+            "botanical-gold": "#C59D5F",
+            "botanical-dark": "#2E2824",
+            "botanical-card": "#FFFFFF",
+            "botanical-border": "#E6DDCF"
+          },
+          fontFamily: {
+            display: ["'Playfair Display'", "serif"],
+            body: ["'Plus Jakarta Sans'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF6F0;
+      color: #2E2824;
+      overflow-x: hidden;
+    }
+    .equalizer-bar {
+      animation: soundwave 1.2s infinite ease-in-out alternate;
+    }
+    @keyframes soundwave {
+      0% { height: 4px; }
+      100% { height: 18px; }
+    }
+    #fallingPetals {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 15;
+    }
+  </style>
+</head>
+<body class="font-body antialiased selection:bg-botanical-olive/20">
+
+  <!-- FALLING PETALS CANVAS -->
+  <canvas id="fallingPetals"></canvas>
+
+  <!-- TOP RETURN BAR (STICKY) -->
+  <aside class="sticky top-0 z-50 bg-botanical-dark text-white px-4 py-2.5 shadow-md flex items-center justify-between text-xs">
+    <div class="flex items-center gap-2">
+      <span class="inline-block w-2 h-2 rounded-full bg-botanical-gold animate-pulse"></span>
+      <span class="font-semibold tracking-wide uppercase text-[11px]">Demo: Plan Temático (Elegance & Flora)</span>
+    </div>
+    <a href="../../catalogo/" class="inline-flex items-center gap-1.5 bg-botanical-olive hover:bg-white hover:text-botanical-dark text-white px-3 py-1 rounded-full font-bold transition-all text-[11px] uppercase tracking-wider">
+      <span class="material-symbols-outlined text-sm">arrow_back</span>
+      <span>Volver al Catálogo</span>
+    </a>
+  </aside>
+
+  <!-- FLOATING MUSIC PLAYER -->
+  <div class="fixed top-14 right-4 z-40 bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-full border border-botanical-border shadow-lg flex items-center gap-2.5">
+    <button id="musicToggleBtn" onclick="toggleMusic()" class="w-8 h-8 rounded-full bg-botanical-olive text-white flex items-center justify-center hover:bg-botanical-dark transition-all" title="Reproducir / Pausar Música">
+      <span id="musicIcon" class="material-symbols-outlined text-lg">play_arrow</span>
+    </button>
+    <div class="flex items-end gap-0.5 h-4 px-1" id="soundWaves">
+      <div class="w-1 bg-botanical-olive rounded-full h-1"></div>
+      <div class="w-1 bg-botanical-olive rounded-full h-2"></div>
+      <div class="w-1 bg-botanical-olive rounded-full h-1"></div>
+    </div>
+    <span class="text-[10px] font-bold uppercase tracking-wider text-botanical-olive pr-1 hidden sm:inline" id="musicLabel">Música</span>
+    <audio id="bgAudio" loop preload="auto">
+      <source src="assets/musica_boda_romantica.wav" type="audio/wav">
+    </audio>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-20 overflow-hidden">
+    <!-- Botanical Decor SVG -->
+    <img src="assets/botanical_branch.svg" alt="" class="absolute -top-10 -left-10 w-48 opacity-20 pointer-events-none rotate-45">
+    <img src="assets/botanical_branch.svg" alt="" class="absolute -bottom-10 -right-10 w-48 opacity-20 pointer-events-none -rotate-135">
+
+    <div class="relative z-10 max-w-xl mx-auto flex flex-col items-center">
+      <!-- Monogram -->
+      <div class="w-16 h-16 rounded-full border-2 border-botanical-gold flex items-center justify-center mb-4 bg-white/60 backdrop-blur-sm shadow-sm">
+        <span class="font-display italic text-2xl font-bold text-botanical-olive">C&C</span>
+      </div>
+
+      <span class="text-xs font-bold tracking-[0.3em] text-botanical-terracotta uppercase mb-2">Nuestra Boda Botánica</span>
+      
+      <h1 class="font-display text-4xl sm:text-6xl text-botanical-dark font-normal tracking-tight mb-2">
+        Camila & Cristóbal
+      </h1>
+      
+      <p class="font-display italic text-lg sm:text-xl text-botanical-olive mb-6">
+        "Donde florece el amor, la vida cobra su sentido más pleno."
+      </p>
+
+      <div class="inline-flex items-center gap-2 bg-white/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-botanical-border shadow-sm mb-8 text-xs font-semibold tracking-widest text-botanical-dark uppercase">
+        <span class="material-symbols-outlined text-botanical-terracotta text-sm">calendar_month</span>
+        Sábado, 22 de Noviembre de 2025 • Finca El Olivar
+      </div>
+
+      <!-- PHOTO HERO CARD -->
+      <div class="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-xl aspect-[4/5] mb-8 border-4 border-white">
+        <img src="assets/hero_couple.png" alt="Camila & Cristóbal" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/60 to-transparent p-4 text-white text-left">
+          <p class="font-display italic text-base">Celebrando nuestro amor rodeados de naturaleza</p>
+        </div>
+      </div>
+
+      <!-- COUNTDOWN TIMER -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-4 w-full max-w-sm text-center">
+        <div class="bg-white p-3 rounded-2xl border border-botanical-border shadow-sm">
+          <span id="tDays" class="font-display text-2xl sm:text-3xl font-bold text-botanical-terracotta block">154</span>
+          <span class="text-[10px] uppercase font-bold text-botanical-olive">Días</span>
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-botanical-border shadow-sm">
+          <span id="tHours" class="font-display text-2xl sm:text-3xl font-bold text-botanical-terracotta block">08</span>
+          <span class="text-[10px] uppercase font-bold text-botanical-olive">Horas</span>
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-botanical-border shadow-sm">
+          <span id="tMinutes" class="font-display text-2xl sm:text-3xl font-bold text-botanical-terracotta block">22</span>
+          <span class="text-[10px] uppercase font-bold text-botanical-olive">Min</span>
+        </div>
+        <div class="bg-white p-3 rounded-2xl border border-botanical-border shadow-sm">
+          <span id="tSeconds" class="font-display text-2xl sm:text-3xl font-bold text-botanical-terracotta block">50</span>
+          <span class="text-[10px] uppercase font-bold text-botanical-olive">Seg</span>
+        </div>
+      </div>
+
+      <!-- Add to Calendar Button -->
+      <button onclick="addToCalendar()" class="mt-6 inline-flex items-center gap-2 bg-botanical-olive hover:bg-botanical-dark text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all shadow-sm">
+        <span class="material-symbols-outlined text-sm">event</span>
+        <span>Guardar Fecha en Calendario</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ITINERARIO DETALLADO -->
+  <section class="py-16 px-4 max-w-3xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold tracking-widest text-botanical-terracotta uppercase block mb-1">El Itinerario</span>
+      <h2 class="font-display text-3xl text-botanical-dark">Cronograma del Evento</h2>
+    </div>
+
+    <div class="space-y-6">
+      <!-- Item 1 -->
+      <div class="bg-white rounded-2xl p-6 border border-botanical-border shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-botanical-bg flex items-center justify-center text-botanical-olive shrink-0 border border-botanical-border">
+            <span class="material-symbols-outlined text-2xl">local_florist</span>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-botanical-terracotta uppercase tracking-wider">16:30 Horas</span>
+            <h3 class="font-display text-xl text-botanical-dark mt-0.5">Ceremonia al Aire Libre</h3>
+            <p class="text-xs text-stone-600 mt-1">Jardines Centrales de Finca El Olivar</p>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=Finca+El+Olivar+Madrid" target="_blank" class="px-4 py-2 rounded-xl bg-botanical-bg hover:bg-botanical-border text-botanical-dark text-xs font-semibold flex items-center gap-1.5 transition-colors shrink-0">
+          <span class="material-symbols-outlined text-sm text-botanical-olive">location_on</span>
+          <span>Ver Mapa GPS</span>
+        </a>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-white rounded-2xl p-6 border border-botanical-border shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-botanical-bg flex items-center justify-center text-botanical-olive shrink-0 border border-botanical-border">
+            <span class="material-symbols-outlined text-2xl">cocktail</span>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-botanical-terracotta uppercase tracking-wider">18:00 Horas</span>
+            <h3 class="font-display text-xl text-botanical-dark mt-0.5">Cóctel de Bienvenida & Música en Vivo</h3>
+            <p class="text-xs text-stone-600 mt-1">Terraza Los Castaños con cata de vinos</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-white rounded-2xl p-6 border border-botanical-border shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-botanical-bg flex items-center justify-center text-botanical-olive shrink-0 border border-botanical-border">
+            <span class="material-symbols-outlined text-2xl">dinner_dining</span>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-botanical-terracotta uppercase tracking-wider">20:00 Horas</span>
+            <h3 class="font-display text-xl text-botanical-dark mt-0.5">Cena Nupcial & Brindis</h3>
+            <p class="text-xs text-stone-600 mt-1">Pabellón de Cristal Iluminado</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="bg-white rounded-2xl p-6 border border-botanical-border shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl bg-botanical-bg flex items-center justify-center text-botanical-olive shrink-0 border border-botanical-border">
+            <span class="material-symbols-outlined text-2xl">nightlife</span>
+          </div>
+          <div>
+            <span class="text-xs font-bold text-botanical-terracotta uppercase tracking-wider">22:30 Horas</span>
+            <h3 class="font-display text-xl text-botanical-dark mt-0.5">Fiesta & Barra Libre</h3>
+            <p class="text-xs text-stone-600 mt-1">¡A bailar hasta que el cuerpo aguante!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRESS CODE & PALETA INTERACTIVA -->
+  <section class="py-14 px-4 max-w-xl mx-auto text-center">
+    <div class="bg-white rounded-3xl p-8 border border-botanical-border shadow-md">
+      <span class="material-symbols-outlined text-botanical-olive text-3xl mb-2">dry_cleaning</span>
+      <h3 class="font-display text-2xl text-botanical-dark mb-1">Código de Vestimenta</h3>
+      <p class="text-xs font-bold uppercase tracking-widest text-botanical-terracotta mb-4">Elegante de Jardín / Boho Chic</p>
+      
+      <p class="text-xs text-stone-600 leading-relaxed mb-6">
+        Les sugerimos tonalidades otoñales y de naturaleza. Toca cada color para ver recomendaciones:
+      </p>
+
+      <!-- Interactive Palette Swatches -->
+      <div class="flex justify-center gap-3 sm:gap-4 mb-4">
+        <button onclick="selectColor('Terracota Cálido', 'Ideal para vestidos y accesorios cálidos.')" class="w-10 h-10 rounded-full bg-[#A44A3F] shadow-md transform hover:scale-110 transition-transform focus:ring-2 ring-botanical-dark" title="Terracota"></button>
+        <button onclick="selectColor('Verde Oliva', 'Color insignia que armoniza con el follaje.')" class="w-10 h-10 rounded-full bg-[#556434] shadow-md transform hover:scale-110 transition-transform focus:ring-2 ring-botanical-dark" title="Oliva"></button>
+        <button onclick="selectColor('Mostaza Suave', 'Acento luminoso para corbatas, pashminas o vestidos.')" class="w-10 h-10 rounded-full bg-[#D4A373] shadow-md transform hover:scale-110 transition-transform focus:ring-2 ring-botanical-dark" title="Mostaza"></button>
+        <button onclick="selectColor('Champagne & Arena', 'Tonalidad neutra y sofisticada para trajes claros.')" class="w-10 h-10 rounded-full bg-[#E6D5B8] shadow-md transform hover:scale-110 transition-transform focus:ring-2 ring-botanical-dark" title="Champagne"></button>
+        <button onclick="selectColor('Verde Eucalipto', 'Fresco y natural para el día y la noche.')" class="w-10 h-10 rounded-full bg-[#7E9A86] shadow-md transform hover:scale-110 transition-transform focus:ring-2 ring-botanical-dark" title="Eucalipto"></button>
+      </div>
+
+      <div id="colorFeedback" class="p-3 bg-botanical-bg rounded-xl border border-botanical-border text-xs text-botanical-dark font-medium transition-all">
+        ✨ Toca un color arriba para descubrir su inspiración.
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DE FOTOS INTERACTIVA -->
+  <section class="py-12 px-4 max-w-4xl mx-auto">
+    <div class="text-center mb-8">
+      <span class="text-xs font-bold tracking-widest text-botanical-terracotta uppercase block mb-1">Nuestra Historia en Fotos</span>
+      <h2 class="font-display text-3xl text-botanical-dark">Galería Botánica</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div class="rounded-2xl overflow-hidden aspect-[4/5] shadow-md group relative">
+        <img src="assets/photo_candid_smile.png" alt="Camila y Cristóbal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-[4/5] shadow-md group relative">
+        <img src="assets/photo_golden_tree.png" alt="Paseo de compromiso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-[4/5] shadow-md group relative">
+        <img src="assets/hero_couple.png" alt="Atardecer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO RSVP AVANZADO -->
+  <section class="py-16 px-4 max-w-lg mx-auto" id="rsvp">
+    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-botanical-border shadow-xl text-center">
+      <span class="text-xs font-bold tracking-widest text-botanical-terracotta uppercase block mb-1">Confirmación RSVP</span>
+      <h2 class="font-display text-3xl text-botanical-dark mb-2">Confirma tu Asistencia</h2>
+      <p class="text-xs sm:text-sm text-stone-600 mb-6">
+        Por favor indícanos tus preferencias de menú y acompañantes antes del <b>30 de Octubre de 2025</b>.
+      </p>
+
+      <form id="botanicalRsvpForm" class="space-y-4 text-left">
+        <div>
+          <label class="block text-xs font-bold text-botanical-dark mb-1">Nombre y Apellidos</label>
+          <input type="text" id="bRsvpName" required placeholder="Tu nombre completo" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-border bg-botanical-bg text-sm focus:outline-none focus:border-botanical-olive">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-botanical-dark mb-1">¿Podrás asistir?</label>
+          <select id="bRsvpStatus" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-border bg-botanical-bg text-sm focus:outline-none focus:border-botanical-olive">
+            <option value="si">¡Sí, con muchísima ilusión!</option>
+            <option value="no">Lamentablemente no podré asistir</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-botanical-dark mb-1">Preferencia de Menú</label>
+          <select id="bMenuType" class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-border bg-botanical-bg text-sm focus:outline-none focus:border-botanical-olive">
+            <option value="Tradicional">Menú Tradicional (Carne/Pescado)</option>
+            <option value="Vegetariano">Menú Vegetariano</option>
+            <option value="Vegano">Menú Vegano</option>
+            <option value="Celiaco">Menú Celíaco (Sin Gluten)</option>
+            <option value="Infantil">Menú Infantil</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-botanical-dark mb-1">Alergias o Restricciones (Opcional)</label>
+          <input type="text" id="bAllergies" placeholder="Ej. Alergia a frutos secos, mariscos..." class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-border bg-botanical-bg text-sm focus:outline-none focus:border-botanical-olive">
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-botanical-dark mb-1">Dedicatoria para los novios</label>
+          <textarea id="bMsg" rows="2" placeholder="Unas palabras con cariño..." class="w-full px-3.5 py-2.5 rounded-xl border border-botanical-border bg-botanical-bg text-sm focus:outline-none focus:border-botanical-olive"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-botanical-olive hover:bg-botanical-dark text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md active:scale-98">
+          <span>Enviar Confirmación a los Novios</span>
+          <span class="material-symbols-outlined text-sm">send</span>
+        </button>
+      </form>
+
+      <div id="bRsvpFeedback" class="hidden mt-4 p-3 bg-green-50 text-botanical-olive border border-green-200 rounded-xl text-xs font-semibold">
+        🌿 ¡Gracias por confirmar! Tu respuesta ha sido procesada.
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING RETURN BUTTON -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a href="../../catalogo/" class="flex items-center gap-2 bg-botanical-dark text-white hover:bg-botanical-olive px-4 py-2.5 rounded-full shadow-xl text-xs font-bold uppercase tracking-wider transition-all transform hover:scale-105 border border-white/20">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      <span>Volver al Catálogo</span>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-8 text-center text-xs text-stone-500 border-t border-botanical-border bg-white">
+    <p class="font-display italic text-base text-botanical-dark mb-1">Camila & Cristóbal</p>
+    <p>22.11.2025 • Finca El Olivar</p>
+  </footer>
+
+  <script>
+    // Live Countdown Timer
+    const weddingDate = new Date();
+    weddingDate.setDate(weddingDate.getDate() + 154);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate.getTime() - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('tDays').innerText = days;
+      document.getElementById('tHours').innerText = hours;
+      document.getElementById('tMinutes').innerText = minutes;
+      document.getElementById('tSeconds').innerText = seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Audio Music Player Logic
+    const bgAudio = document.getElementById('bgAudio');
+    const musicIcon = document.getElementById('musicIcon');
+    const soundWaves = document.getElementById('soundWaves');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (!isPlaying) {
+        bgAudio.play().then(() => {
+          isPlaying = true;
+          musicIcon.innerText = 'pause';
+          soundWaves.classList.add('animate-pulse');
+        }).catch(() => {
+          console.log('Audio playback prevented');
+        });
+      } else {
+        bgAudio.pause();
+        isPlaying = false;
+        musicIcon.innerText = 'play_arrow';
+        soundWaves.classList.remove('animate-pulse');
+      }
+    }
+
+    // Interactive Color Palette
+    function selectColor(name, desc) {
+      document.getElementById('colorFeedback').innerHTML = `<b>${name}:</b> ${desc}`;
+    }
+
+    // Add to Calendar handler
+    function addToCalendar() {
+      const title = encodeURIComponent("Boda de Camila & Cristóbal");
+      const details = encodeURIComponent("Ceremonia y Banquete en Finca El Olivar, Madrid.");
+      const location = encodeURIComponent("Finca El Olivar, Madrid");
+      const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=20251122T163000Z/20251123T040000Z`;
+      window.open(url, '_blank');
+    }
+
+    // RSVP Form handler
+    document.getElementById('botanicalRsvpForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('bRsvpName').value;
+      const status = document.getElementById('bRsvpStatus').value;
+      const menu = document.getElementById('bMenuType').value;
+      const allergies = document.getElementById('bAllergies').value;
+      const msg = document.getElementById('bMsg').value;
+
+      const statusTxt = status === 'si' ? '¡Confirmo mi asistencia con alegría!' : 'Lamentablemente no podré asistir';
+      const text = encodeURIComponent(`Hola Camila y Cristóbal! Soy ${name}.\n${statusTxt}\nMenú: ${menu}\nAlergias: ${allergies || 'Ninguna'}\nDedicatoria: "${msg || '¡Muchas felicidades!'}"`);
+
+      document.getElementById('bRsvpFeedback').classList.remove('hidden');
+      setTimeout(() => {
+        window.open(`https://wa.me/34600000000?text=${text}`, '_blank');
+      }, 600);
+    });
+
+    // Particle Canvas (Falling autumn petals/leaves)
+    const canvas = document.getElementById('fallingPetals');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Petal {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * width;
+        this.y = -20;
+        this.size = Math.random() * 8 + 6;
+        this.speedY = Math.random() * 1.2 + 0.6;
+        this.speedX = Math.random() * 1.5 - 0.75;
+        this.rotation = Math.random() * 360;
+        this.rotSpeed = (Math.random() - 0.5) * 2;
+        this.color = Math.random() > 0.5 ? '#A44A3F' : '#D4A373';
+        this.opacity = Math.random() * 0.4 + 0.2;
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += Math.sin(this.y * 0.01) + this.speedX;
+        this.rotation += this.rotSpeed;
+        if (this.y > height + 20) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.ellipse(0, 0, this.size, this.size / 2, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < 20; i++) {
+      particles.push(new Petal());
+    }
+
+    function animatePetals() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animatePetals);
+    }
+    animatePetals();
+
+    // Smart return to catalog handler
+    document.querySelectorAll('a[href*="catalogo"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        if (window.location.pathname.includes('/invitaciones')) {
+          e.preventDefault();
+          window.location.href = '/invitaciones';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

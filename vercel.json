@@ -21,6 +21,12 @@
     { "source": "/portafolio/comercio/dumore-chocolate", "destination": "/portafolio/comercio/dumorechocolate/index.html" },
     { "source": "/portafolio/comercio/dumore", "destination": "/portafolio/comercio/dumorechocolate/index.html" },
     { "source": "/portafolio/comercio/zafiro-travel", "destination": "/portafolio/comercio/zafirotravel/index.html" },
-    { "source": "/portafolio/comercio/soraya-nails", "destination": "/portafolio/comercio/sorayanails/index.html" }
+    { "source": "/portafolio/comercio/soraya-nails", "destination": "/portafolio/comercio/sorayanails/index.html" },
+    { "source": "/invitaciones", "destination": "/invitaciones/index.html" },
+    { "source": "/invitaciones/catalogo", "destination": "/invitaciones/index.html" },
+    { "source": "/invitaciones/demos/basica", "destination": "/invitaciones/demos/basica/index.html" },
+    { "source": "/invitaciones/demos/tematica", "destination": "/invitaciones/demos/tematica/index.html" },
+    { "source": "/invitaciones/demos/vintage", "destination": "/invitaciones/demos/vintage/index.html" },
+    { "source": "/invitaciones/demos/personalizada", "destination": "/invitaciones/demos/personalizada/index.html" }
   ]
 }
